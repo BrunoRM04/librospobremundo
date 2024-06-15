@@ -17,7 +17,7 @@ function toggleMenu() {
 
 // CATALOGO MANEJO
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../../libros.json')
+    fetch('libros.json')
         .then(response => response.json())
         .then(data => {
             const catalogoGrid = document.getElementById('catalogo-grid');
@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function verMas(id) {
-    window.location.href = `../public/html/libro-detalle.html?id=${id}`;
+    window.location.href = `public/html/libro-detalle.html?id=${id}`;
 }
 // CATALOGO MANEJO
