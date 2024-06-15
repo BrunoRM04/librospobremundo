@@ -63,9 +63,10 @@
                     const libro = data.find(libro => libro.id == bookId);
                     if (libro) {
                         const detailsContent = document.getElementById('details-content');
+                        const imagePath = `../../${libro.imagen}`; // Ajustar la ruta de la imagen
                         detailsContent.innerHTML = `
                             <div class="details-left">
-                                <img src="${libro.imagen}" alt="${libro.titulo}">
+                                <img src="${imagePath}" alt="${libro.titulo}">
                             </div>
                             <div class="details-right">
                                 <h1 class="book-title">${libro.titulo}</h1>

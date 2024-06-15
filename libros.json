@@ -7,7 +7,7 @@
         "editorial": "METALES PESADOS",
         "precio": "UYU 850",
         "descripcion": "La puntuación, como sabemos, tiene una larga historia, desde los libros de cuentas de los antiguos escribas egipcios hasta los últimos smileys. Sin dejar de prestar la máxima atención al arte de la puntuación en sus formas clásica y contemporánea, este libro pretende abrir un campo más amplio: el de la estigmatología (del griego stigmê: 'punto'), que analiza los efectos de puntuación allí donde aparecen. En la experiencia estética, en primer lugar: escuchar, mirar, significa siempre puntuar la imagen o el sonido, como ejemplifican la práctica de la auscultación (que dista mucho de limitarse a la medicina) o la práctica del cabeceo en el cine. En segundo lugar, en la narrativa y en la producción autobiográfica del yo: el sujeto no es más que la secuela de una serie de puntuaciones, como sugieren el psicoanálisis y la literatura, desde Tristram Shandy hasta Lacan y el extraordinario cuento de Chéjov El signo de exclamación. Para describir todos estos efectos de puntuación, intentamos finalmente construir un concepto filosófico de la puntuación -con Hegel, Nietzsche y algunos otros- que esté atento al ritmo y a la pulsación del fraseo, así como a las implicaciones políticas inherentes a cada punto final. P. Sz.",
-        "imagen": "../public/img/portadas/a fuerza de puntos.jpg"
+        "imagen": "./public/img/portadas/a fuerza de puntos.jpg"
     },
     {
         "id": 2,
@@ -27,7 +27,7 @@
         "editorial": "BATISCAFO",
         "precio": "UYU 1450",
         "descripcion": "Ida es arquitecta, sin hijos y en su mejor momento, pero últimamente las señales de advertencia se han vuelto demasiado diferentes para ignorarlas. Por seguridad, ha explorado la posibilidad de congelar sus óvulos para usarlos más adelante, si encuentra al hombre adecuado. Ahora es verano e Ida está en un autobús rumbo al sur hacia la idílica cabaña familiar junto al mar, donde su madre celebrará su 65 cumpleaños con su pequeña familia. Todo parece listo para un fin de semana de verano perfecto, pero entonces Marthe, la hermana menor de Ida, da una noticia. 'Adultos' es una historia edificante, divertida e inesperadamente devastadora sobre una familia moderna disfuncional.",
-        "imagen": "/public/img/portadas/adultos.jpg"
+        "imagen": "./public/img/portadas/adultos.jpg"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "editorial": "ACANTILADO",
         "precio": "UYU 1150",
         "descripcion": "Llueve intensamente en Nápoles y a las pocas horas los estragos del agua se dejan sentir en la ciudad, algunos edificios se derrumban, grandes simas se abren en las calles. Por si fuera poco, empiezan a producirse extraños fenómenos: de la fortaleza almenada de la ciudad salen voces fantasmagóricas, las monedas de cinco liras emiten una dulce melodía, el mar se desborda y sus aguas siguen el rastro de los niños que callejean, tres muñecas raídas aparecen abandonadas en lugares misteriosos... Todo parece indicar que la lluvia es el presagio de un inminente suceso aún más extraordinario que cambiará para siempre el sentido mismo de la vida. Publicada con inmenso éxito en 1977 pero jamás reeditada hasta la muerte del autor, esta novela coral e inquietante, que la crítica ha considerado como uno de los relatos más bellos jamás escritos sobre Nápoles, se ha convertido al cabo de las décadas en una obra de culto aguardada por generaciones de lectores.",
-        "imagen": "/public/img/portadas/aguamala.jpg"
+        "imagen": "./public/img/portadas/aguamala.jpg"
     },
     {
         "id": 5,
@@ -47,6 +47,6 @@
         "editorial": "NAVONA EDITORIAL",
         "precio": "UYU 1550",
         "descripcion": "Considerada por el autor su mejor obra, el ciclo 'Alamedas oscuras' constituye un hito en la prosa rusa del siglo XX: último exponente de la larga tradición literaria decimonónica iniciada por Pushkin ―una despedida de aquella Rusia patriarcal de nobles y campesinos, de siervos y terratenientes, de fincas, carretas, casas señoriales y celebraciones religiosas―, es también una exploración, una búsqueda del lenguaje y del estilo adecuados para narrar la intimidad de las relaciones amorosas. Iván Bunin, uno de los escritores más exquisitos de su tierra, condensa en estos relatos toda su experiencia vital y artística y alcanza cimas de belleza, sensibilidad y concisión.",
-        "imagen": "/public/img/portadas/alamedas oscuras.jpg"
+        "imagen": "./public/img/portadas/alamedas oscuras.jpg"
     }
 ]
