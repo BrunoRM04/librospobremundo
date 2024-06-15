@@ -361,7 +361,9 @@ nav ul li a:hover {
 .book-isbn,
 .book-author,
 .book-price,
-.book-editorial {
+.book-editorial,
+.book-pages,
+.book-tematica {
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -837,7 +839,9 @@ footer {
     .book-isbn,
     .book-author,
     .book-price,
-    .book-editorial {
+    .book-editorial,
+    .book-pages,
+    .book-tematica {
         font-size: 14px;
     }
 
@@ -865,7 +869,9 @@ footer {
     .book-isbn,
     .book-author,
     .book-price,
-    .book-editorial {
+    .book-editorial,
+    .book-pages,
+    .book-tematica {
         font-size: 12px;
     }
 
@@ -897,7 +903,9 @@ footer {
     .book-isbn,
     .book-author,
     .book-price,
-    .book-editorial {
+    .book-editorial,
+    .book-pages,
+    .book-tematica {
         font-size: 12px;
     }
 
@@ -929,7 +937,9 @@ footer {
     .book-isbn,
     .book-author,
     .book-price,
-    .book-editorial {
+    .book-editorial,
+    .book-pages,
+    .book-tematica {
         font-size: 12px;
     }
 
