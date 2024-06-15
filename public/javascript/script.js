@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 let librosData = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../libros.json') // Ruta corregida
+    fetch('libros.json') // Ruta correcta para el archivo JSON
         .then(response => response.json())
         .then(data => {
             librosData = data;
