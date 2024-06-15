@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros Del Pobre Mundo | Inicio</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="shortcut icon" href="public/img/logotipos/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="top-banner">
+        <p>Envios a todo el país | Más de 20.000 títulos en nuestro catálogo | Consultar disponibilidad</p>
+    </div>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="public/img/logotipos/blanco.png" alt="Logotipo Libros del pobre mundo">
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </div>
+        <nav id="nav-menu">
+            <div class="close-menu" onclick="toggleMenu()">&#10005;</div>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="catalogo.html">CATÁLOGO</a></li>
+                <li><a href="podcastyreseñas.html">PODCAST Y RESEÑAS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- 
+        <div class="banner">
+            <img src="public/img/banners/banner1.jpg" alt="Banner Libros del pobre mundo">
+        </div>
+        -->
+        <section class="search-section">
+            <div class="search-container">
+                <h2>BUSCADOR DE LIBROS</h2>
+                <p>Título, autor o isbn</p>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar libros por título, autor, ISBN..." oninput="buscarLibros()">
+                    <button class="search-button" onclick="buscarLibros()"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+        <div id="search-results" class="search-results"></div>
+        <section class="novedades-section">
+            <h2><span></span>DESTACADOS<span></span></h2>
+        </section> <!--
+        <section class="book-carousel-section" id="carousel-1"> 
+            <div class="carousel-container">
+                <button class="carousel-button prev-button">&#10094;</button>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="book-card current-slide">
+                            <img src="public/img/portadas/a fuerza de puntos.jpg" alt="Título del libro 1">
+                            <div class="book-info">
+                                <h3 class="book-title">A FUERZA DE PUNTOS</h3>
+                                <p class="book-author">PETER SZENDY</p>
+                                <p class="book-price">UYU 850</p>
+                                <button class="more-button" onclick="verMas(1)">Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button next-button">&#10095;</button>
+            </div>
+        </section> -->
+        <div class="whatsapp-bubble">
+            <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta." target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Todos los derechos reservados © 2024 Libros Del Pobre Mundo - Librería Online</p>
+            <p>Diseño por <a href="">codeviciadodev</a></p>
+        <div class="payment-methods">
+            <p>Métodos de pagos y transferencia:</p>
+            <img src="public/img/pagos/mercadopago.png" alt="Método de pago 1">
+            <img src="public/img/pagos/itau.png" alt="Método de pago 2">
+            <img src="public/img/pagos/prex.png" alt="Método de pago 3">
+            <img src="public/img/pagos/oca blue.png" alt="Método de pago 4">
+        </div>
+        </div>
+    </footer>
+    <script src="public/javascript/script.js"></script>
+</body>
+</html>
