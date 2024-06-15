@@ -54,7 +54,7 @@
         </div>
     </footer>
     <script>
-                document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const bookId = urlParams.get('id');
             fetch('../../libros.json')
@@ -63,9 +63,10 @@
                     const libro = data.find(libro => libro.id == bookId);
                     if (libro) {
                         const detailsContent = document.getElementById('details-content');
+                        const imagePath = `../../${libro.imagen}`; // Ajustar la ruta de la imagen
                         detailsContent.innerHTML = `
                             <div class="details-left">
-                                <img src="${libro.imagen}" alt="${libro.titulo}">
+                                <img src="${imagePath}" alt="${libro.titulo}">
                             </div>
                             <div class="details-right">
                                 <h1 class="book-title">${libro.titulo}</h1>
@@ -74,15 +75,16 @@
                                 <p class="book-isbn"><strong>ISBN:</strong> ${libro.isbn}</p>
                                 <p class="book-price"><strong>Precio:</strong> ${libro.precio}</p>
                                 <p class="book-pages"><strong>Número de páginas:</strong> ${libro.numPaginas}</p>
-                                <p class="book-tematica"><strong>Temática:</strong> ${libro.tematica}</p>
                                 <p class="book-description">${libro.descripcion}</p>
                                 <button class="buy-button" data-whatsapp="59894090711">Comprar</button>
                                 <div class="shipping-info">
-                                    <h3>Envíos a todo el país.</h3>
+                                    <h3>Envíos a todo el país por DAC.</h3>
                                 </div>
                                 <div class="payment-info">
-                                    <img src="../img/logotipos/mercadopago.png" alt="Mercado Pago">
-                                    <img src="../img/logotipos/santander.png" alt="Santander">
+                                    <img src="../img/pagos/mercadopago rojo.png" alt="Mercado Pago">
+                                    <img src="../img/pagos/itau rojo.png" alt="Itau">
+                                    <img src="../img/pagos/prex rojo.png" alt="Prex">
+                                    <img src="../img/pagos/oca blue rojo.png" alt="Oca Blue">
                                 </div>
                             </div>
                         `;
@@ -97,7 +99,7 @@
                 })
                 .catch(error => console.error('Error al cargar el archivo JSON:', error));
         });
-
+    
         // MENÚ DESPLIEGUE
         function toggleMenu() {
             var menu = document.getElementById("nav-menu");

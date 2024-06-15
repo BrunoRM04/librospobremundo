@@ -414,18 +414,19 @@ nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .catalogo-card {
     overflow: hidden;
     width: 100%;
     text-align: left;
-    border-radius: 8px;
     transition: transform 0.2s;
 }
 .catalogo-card img {
-    width: 100%;
-    height: auto;
+    width: 180px;
+    height: 280px; 
+    object-fit: cover;
+    margin: 0 auto 15px;
     display: block;
 }
 .catalogo-info {
