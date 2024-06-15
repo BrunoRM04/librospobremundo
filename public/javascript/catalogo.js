@@ -14,10 +14,9 @@ function toggleMenu() {
 }
 // MENÚ DESPLIEGUE
 
-
 // CATALOGO MANEJO
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('libros.json')
+    fetch('libros.json') // Ruta correcta para el archivo JSON desde la raíz del proyecto
         .then(response => response.json())
         .then(data => {
             const catalogoGrid = document.getElementById('catalogo-grid');
