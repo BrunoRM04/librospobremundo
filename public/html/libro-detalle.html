@@ -7,6 +7,146 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="shortcut icon" href="../img/logotipos/icono.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Titulos */
+        .novedades-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .novedades-section h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px; /* Titulo ajustado */
+            color: #9E0001;
+            font-weight: bold;
+        }
+        .novedades-section h2 span {
+            flex: 1;
+            height: 5px;
+            background-color: #9E0001;
+            margin: 0 50px; /* Ajustado el margen */
+            border-radius: 20px;
+        }
+
+        /* Carrusel */
+        .carousel-container {
+            max-width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 200px;
+            margin-right: 20px;
+        }
+        .carousel-slide img {
+            width: 180px;
+            height: 280px;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-button {
+            background-color: #9E0001;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .carousel-button.prev {
+            left: 0;
+        }
+        .carousel-button.next {
+            right: 0;
+        }
+        .book-info {
+            padding: 10px;
+        }
+        .book-title {
+            font-size: 16px;
+            color: #000;
+            margin: 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .book-author {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .book-price {
+            font-size: 14px;
+            color: #9E0001;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .more-button {
+            padding: 6px 12px;
+            background-color: #9E0001;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .more-button:hover {
+            background-color: black;
+            transition: 0.3s;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .novedades-section h2 {
+                font-size: 20px;
+            }
+            .novedades-section h2 span {
+                margin: 0 20px;
+            }
+            .carousel-slide img {
+                width: 150px; /* Ajustar tamaño de la imagen para pantallas pequeñas */
+                height: 230px;
+            }
+            .carousel-slide {
+                min-width: 150px; /* Ajustar tamaño de la tarjeta para pantallas pequeñas */
+                margin-right: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .novedades-section h2 {
+                font-size: 18px;
+            }
+            .novedades-section h2 span {
+                margin: 0 10px;
+            }
+            .carousel-slide img {
+                width: 120px; /* Ajustar tamaño de la imagen para pantallas muy pequeñas */
+                height: 200px;
+            }
+            .carousel-slide {
+                min-width: 120px; /* Ajustar tamaño de la tarjeta para pantallas muy pequeñas */
+                margin-right: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="top-banner">
@@ -38,19 +178,31 @@
                     <!-- Contenido dinámico cargado aquí -->
                 </div>
             </section>
+            <div class="novedades-section">
+                <h2><span></span>MÁS LIBROS DE NUESTRO CATÁLOGO<span></span></h2>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Libros al azar cargados aquí -->
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button prev" id="prev-button">&#10094;</button>
+                    <button class="carousel-button next" id="next-button">&#10095;</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
         <div class="footer-content">
             <p>Todos los derechos reservados © 2024 Libros Del Pobre Mundo - Librería Online</p>
             <p>Diseño por <a href="">codeviciadodev</a></p>
-        <div class="payment-methods">
-            <p>Métodos de pagos y transferencia:</p>
-            <img src="../img/pagos/mercadopago.png" alt="Método de pago 1">
-            <img src="../img/pagos/itau.png" alt="Método de pago 2">
-            <img src="../img/pagos/prex.png" alt="Método de pago 3">
-            <img src="../img/pagos/oca blue.png" alt="Método de pago 4">
-        </div>
+            <div class="payment-methods">
+                <p>Métodos de pagos y transferencia:</p>
+                <img src="../img/pagos/mercadopago.png" alt="Método de pago 1">
+                <img src="../img/pagos/itau.png" alt="Método de pago 2">
+                <img src="../img/pagos/prex.png" alt="Método de pago 3">
+                <img src="../img/pagos/oca blue.png" alt="Método de pago 4">
+            </div>
         </div>
     </footer>
     <script>
@@ -63,7 +215,7 @@
                     const libro = data.find(libro => libro.id == bookId);
                     if (libro) {
                         const detailsContent = document.getElementById('details-content');
-                        const imagePath = `../../${libro.imagen}`; // Ajustar la ruta de la imagen
+                        const imagePath = `../../${libro.imagen}`;
                         detailsContent.innerHTML = `
                             <div class="details-left">
                                 <img src="${imagePath}" alt="${libro.titulo}">
@@ -93,14 +245,43 @@
                             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola,%20estoy%20interesado%20en%20comprar%20el%20libro%20${libro.titulo}%20de%20${libro.autor}`;
                             window.open(whatsappUrl, '_blank');
                         });
+
+                        // Cargar libros al azar en el carrusel
+                        const randomBooks = getRandomBooks(data.filter(item => item.id != bookId), 20); // Obtener 5 libros al azar
+                        const carouselTrack = document.getElementById('carousel-track');
+                        randomBooks.forEach(libro => {
+                            const bookSlide = document.createElement('div');
+                            bookSlide.className = 'carousel-slide';
+                            bookSlide.innerHTML = `
+                                <img src="../../${libro.imagen}" alt="${libro.titulo}">
+                                <div class="book-info">
+                                    <h3 class="book-title">${libro.titulo}</h3>
+                                    <p class="book-author">${libro.autor}</p>
+                                    <p class="book-price">${libro.precio}</p>
+                                    <button class="more-button" onclick="verMas(${libro.id})">Ver más</button>
+                                </div>
+                            `;
+                            carouselTrack.appendChild(bookSlide);
+                        });
+
+                        // Iniciar el carrusel
+                        initCarousel();
                     } else {
                         document.getElementById('details-content').innerHTML = '<p>Libro no encontrado.</p>';
                     }
                 })
                 .catch(error => console.error('Error al cargar el archivo JSON:', error));
         });
-    
-        // MENÚ DESPLIEGUE
+
+        function getRandomBooks(data, count) {
+            const shuffled = data.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        function verMas(id) {
+            window.location.href = `libro-detalle.html?id=${id}`;
+        }
+
         function toggleMenu() {
             var menu = document.getElementById("nav-menu");
             var body = document.body;
@@ -114,8 +295,30 @@
                 body.classList.add('menu-open');
             }
         }
-        // MENÚ DESPLIEGUE
+
+        function initCarousel() {
+            const track = document.getElementById('carousel-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('next-button');
+            const prevButton = document.getElementById('prev-button');
+            const slideWidth = slides[0].getBoundingClientRect().width;
+
+            slides.forEach((slide, index) => {
+                slide.style.left = slideWidth * index + 'px';
+            });
+
+            let currentSlideIndex = 0;
+
+            nextButton.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+            });
+
+            prevButton.addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
+            });
+        }
     </script>
-    <script src="../javascript/script.js"></script>
 </body>
 </html>
