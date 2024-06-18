@@ -32,11 +32,6 @@
         </nav>
     </header>
     <main>
-        <!-- 
-        <div class="banner">
-            <img src="public/img/banners/banner1.jpg" alt="Banner Libros del pobre mundo">
-        </div>
-        -->
         <section class="search-section">
             <div class="search-container">
                 <h2>BUSCADOR DE LIBROS</h2>
@@ -50,26 +45,138 @@
         <div id="search-results" class="search-results"></div>
         <section class="novedades-section">
             <h2><span></span>DESTACADOS<span></span></h2>
-        </section> <!--
-        <section class="book-carousel-section" id="carousel-1"> 
+        </section> 
+        <section class="book-carousel-section" id="carousel-1">
             <div class="carousel-container">
                 <button class="carousel-button prev-button">&#10094;</button>
                 <div class="carousel">
                     <div class="carousel-track">
+                        <!-- JSON books will be inserted here -->
+                        <!-- Book Card 1 -->
                         <div class="book-card current-slide">
-                            <img src="public/img/portadas/a fuerza de puntos.jpg" alt="Título del libro 1">
+                            <img src="./public/img/portadas/jose mujica otros mundos posibles.jpg" alt="JOSÉ MUJICA - OTROS MUNDOS POSIBLES">
                             <div class="book-info">
-                                <h3 class="book-title">A FUERZA DE PUNTOS</h3>
-                                <p class="book-author">PETER SZENDY</p>
-                                <p class="book-price">UYU 850</p>
-                                <button class="more-button" onclick="verMas(1)">Ver más</button>
+                                <h3 class="book-title">JOSÉ MUJICA - OTROS MUNDOS POSIBLES</h3>
+                                <p class="book-author">GERARDO CAETANO</p>
+                                <p class="book-price">UYU 890</p>
+                                <button class="more-button" onclick="verMas(294)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 2 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/conversaciones con allende.jpg" alt="CONVERSACIONES CON ALLENDE">
+                            <div class="book-info">
+                                <h3 class="book-title">CONVERSACIONES CON ALLENDE</h3>
+                                <p class="book-author">RÉGIS DEBRAY</p>
+                                <p class="book-price">UYU 980</p>
+                                <button class="more-button" onclick="verMas(295)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 3 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/vida y muerte del cartel de medellin.jpg" alt="VIDA Y MUERTE DEL CARTEL DE MEDELLÍN">
+                            <div class="book-info">
+                                <h3 class="book-title">VIDA Y MUERTE DEL CARTEL DE MEDELLÍN</h3>
+                                <p class="book-author">CARLOS LEHDER RIVAS</p>
+                                <p class="book-price">UYU 990</p>
+                                <button class="more-button" onclick="verMas(296)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 4 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/porque fracasan los paises.jpg" alt="POR QUÉ FRACASAN LOS PAÍSES">
+                            <div class="book-info">
+                                <h3 class="book-title">POR QUÉ FRACASAN LOS PAÍSES</h3>
+                                <p class="book-author">DARON ACEMOGLU, JAMES A. ROBINSON</p>
+                                <p class="book-price">UYU 980</p>
+                                <button class="more-button" onclick="verMas(297)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 5 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/en el pensamiento.jpg" alt="EN EL PENSAMIENTO">
+                            <div class="book-info">
+                                <h3 class="book-title">EN EL PENSAMIENTO</h3>
+                                <p class="book-author">CESAR AIRA</p>
+                                <p class="book-price">UYU 980</p>
+                                <button class="more-button" onclick="verMas(298)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 6 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/el caso astesiano.jpg" alt="EL CASO ASTESIANO">
+                            <div class="book-info">
+                                <h3 class="book-title">EL CASO ASTESIANO</h3>
+                                <p class="book-author">LUCAS SILVA</p>
+                                <p class="book-price">UYU 990</p>
+                                <button class="more-button" onclick="verMas(299)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 7 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/utopias digitales.jpg" alt="UTOPÍAS DIGITALES">
+                            <div class="book-info">
+                                <h3 class="book-title">UTOPÍAS DIGITALES</h3>
+                                <p class="book-author">EKAITZ CANCELA</p>
+                                <p class="book-price">UYU 1090</p>
+                                <button class="more-button" onclick="verMas(300)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 8 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/la miseria de la teoria.jpg" alt="LA MISERIA DE LA TEORÍA">
+                            <div class="book-info">
+                                <h3 class="book-title">LA MISERIA DE LA TEORÍA</h3>
+                                <p class="book-author">E. P. THOMPSON</p>
+                                <p class="book-price">UYU 1290</p>
+                                <button class="more-button" onclick="verMas(301)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 9 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/la larga revolucion.jpg" alt="LA LARGA REVOLUCIÓN">
+                            <div class="book-info">
+                                <h3 class="book-title">LA LARGA REVOLUCIÓN</h3>
+                                <p class="book-author">RAYMOND WILLIAMS</p>
+                                <p class="book-price">UYU 1390</p>
+                                <button class="more-button" onclick="verMas(302)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 10 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/la larga revolucion de las mujeres.jpg" alt="LA LARGA REVOLUCIÓN DE LAS MUJERES">
+                            <div class="book-info">
+                                <h3 class="book-title">LA LARGA REVOLUCIÓN DE LAS MUJERES</h3>
+                                <p class="book-author">JULIET MITCHELL</p>
+                                <p class="book-price">UYU 790</p>
+                                <button class="more-button" onclick="verMas(303)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 11 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/trumpismos.jpg" alt="TRUMPISMOS">
+                            <div class="book-info">
+                                <h3 class="book-title">TRUMPISMOS</h3>
+                                <p class="book-author">MIGUEL URBÁN</p>
+                                <p class="book-price">UYU 1290</p>
+                                <button class="more-button" onclick="verMas(304)">Ver más</button>
+                            </div>
+                        </div>
+                        <!-- Book Card 12 -->
+                        <div class="book-card">
+                            <img src="./public/img/portadas/la alternativa socialista.jpg" alt="LA ALTERNATIVA SOCIALISTA">
+                            <div class="book-info">
+                                <h3 class="book-title">LA ALTERNATIVA SOCIALISTA</h3>
+                                <p class="book-author">MICHAEL A. LEBOWITZ</p>
+                                <p class="book-price">UYU 990</p>
+                                <button class="more-button" onclick="verMas(305)">Ver más</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button class="carousel-button next-button">&#10095;</button>
             </div>
-        </section> -->
+        </section>        
         <div class="whatsapp-bubble">
             <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta." target="_blank">
                 <i class="fab fa-whatsapp"></i>

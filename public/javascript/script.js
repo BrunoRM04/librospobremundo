@@ -12,9 +12,6 @@ function toggleMenu() {
         body.classList.add('menu-open');
     }
 }
-// MENÚ DESPLIEGUE
-
-
 
 // CARRUSEL
 document.addEventListener('DOMContentLoaded', function() {
@@ -92,45 +89,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-// CARRUSEL
-
-
-
-
-
-
-
 
 // BUSCADOR
 let librosData = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('libros.json') // Ruta correcta para el archivo JSON desde la raíz del proyecto
+    fetch('libros.json')
         .then(response => response.json())
         .then(data => {
             librosData = data;
-            console.log('Datos cargados:', librosData); // Verificar carga de datos
+            console.log('Datos cargados:', librosData);
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 });
 
 function buscarLibros() {
-    const input = document.getElementById('search-input').value.toLowerCase();
-    console.log('Valor de entrada:', input); // Verificar valor de entrada
+    const input = document.getElementById('search-input').value.toLowerCase().trim();
+    console.log('Valor de entrada:', input);
     const resultsContainer = document.getElementById('search-results');
 
     resultsContainer.innerHTML = '';
 
-    if (input.trim() === '') {
+    if (input === '') {
+        console.log('Entrada vacía, no se realiza la búsqueda');
         return;
     }
 
     const resultados = librosData.filter(libro =>
-        libro.titulo.toLowerCase().includes(input) ||
-        libro.autor.toLowerCase().includes(input) ||
-        libro.isbn.includes(input) ||
-        (libro.editorial && libro.editorial.toLowerCase().includes(input))
+        libro.titulo.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
+        libro.autor.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
+        (libro.isbn && libro.isbn.includes(input)) ||
+        (libro.editorial && libro.editorial.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input))
     );
+
+    console.log('Resultados encontrados:', resultados);
 
     if (resultados.length === 0) {
         resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
@@ -157,4 +149,9 @@ function buscarLibros() {
 function verMas(id) {
     window.location.href = `public/html/libro-detalle.html?id=${id}`;
 }
-// BUSCADOR
+
+// Inicializa el menú desplegable y el buscador
+document.addEventListener('DOMContentLoaded', () => {
+    toggleMenu();
+    buscarLibros();
+});

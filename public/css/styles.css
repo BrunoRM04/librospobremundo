@@ -249,13 +249,14 @@ nav ul li a:hover {
 .book-card {
     overflow: hidden;
     width: 200px;
-    margin: 0 30px;
+    margin: 0 5px;
     flex-shrink: 0;
     text-align: left;
 }
 .book-card img {
-    width: 100%;
-    height: auto;
+    width: 200px; 
+    height: 300px; 
+    object-fit: cover; 
     display: block;
 }
 .book-info {
@@ -807,22 +808,33 @@ footer {
         padding: 6px 12px;
     }
 }
-@media (max-width: 768px) {
+@media (min-width: 576px) {
     .book-card {
-        width: 150px;
+        width: 200px; /* Ajuste para pantallas medianas */
+        margin: 0 5px;
     }
     .book-title {
-        font-size: 16px;
+        font-size: 18px;
     }
-    .book-author {
-        font-size: 12px;
+}
+
+@media (min-width: 768px) {
+    .book-card {
+        width: 250px; /* Ajuste para pantallas grandes */
+        margin: 0 5px;
     }
-    .book-price {
-        font-size: 14px;
+    .book-title {
+        font-size: 20px;
     }
-    .more-button {
-        font-size: 12px;
-        padding: 6px 12px;
+}
+
+@media (min-width: 992px) {
+    .book-card {
+        width: 300px; /* Ajuste para pantallas muy grandes */
+        margin: 0 5px;
+    }
+    .book-title {
+        font-size: 22px;
     }
 }
 @media (max-width: 768px) {
