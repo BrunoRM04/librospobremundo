@@ -421,6 +421,7 @@ nav ul li a:hover {
     width: 100%;
     text-align: left;
     transition: transform 0.2s;
+    position: relative; /* Añadido para posicionar la nubecita */
 }
 .catalogo-card img {
     width: 180px;
@@ -468,6 +469,25 @@ nav ul li a:hover {
 .catalogo-button:hover {
     background-color: black;
     transition: 0.3s;
+}
+.book-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #9E0001;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: 1;
+}
+.book-status.nuevo {
+    background-color: rgba(0, 255, 0, 0.8);
+}
+.book-status.usado {
+    background-color: #9E0001;
+    color: white;
 }
 /*CATALOGO*/
 /*FOOTER*/
@@ -528,7 +548,7 @@ footer {
     transform: scale(1.1);
 }
 /*BURBUJA*/
-
+/*NOT FOUND*/
 .simple-notfound-container {
     text-align: center;
     background-color: #9E0001;
@@ -539,39 +559,33 @@ footer {
     margin: 0;
     margin-bottom: -150px;
 }
-
 .simple-notfound-content {
     padding: 20px;
     border-radius: 5px;
 }
-
 .simple-notfound-content h1 {
     font-size: 4em;
     margin: 0;
     color: white;
 }
-
 .simple-notfound-content p {
     font-size: 1.2em;
     margin: 10px 0;
     color: white;
 }
-
 .simple-notfound-content a {
     color: black;
     text-decoration: none;
 }
-
 .simple-notfound-content a:hover {
     text-decoration: underline;
 }
-
 .simple-notfound-image {
     margin-top: 20px;
     max-width: 100%;
     height: auto;
 }
-
+/*NOT FOUND*/
 
 
 

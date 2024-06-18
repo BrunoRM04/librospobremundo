@@ -16,13 +16,16 @@ function toggleMenu() {
 
 // CATALOGO MANEJO
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('libros.json') // Ruta correcta para el archivo JSON desde la raíz del proyecto
+    fetch('libros.json')
         .then(response => response.json())
         .then(data => {
             const catalogoGrid = document.getElementById('catalogo-grid');
             data.forEach(libro => {
                 const bookCard = document.createElement('div');
                 bookCard.classList.add('catalogo-card');
+                
+                const bookStatus = libro.estado ? `<div class="book-status ${libro.estado}">${libro.estado.charAt(0).toUpperCase() + libro.estado.slice(1)}</div>` : '';
+
                 bookCard.innerHTML = `
                     <img src="${libro.imagen}" alt="${libro.titulo}">
                     <div class="catalogo-info">
@@ -31,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="catalogo-price">${libro.precio}</p>
                         <button class="catalogo-button" onclick="verMas(${libro.id})">Ver más</button>
                     </div>
+                    ${bookStatus}
                 `;
                 catalogoGrid.appendChild(bookCard);
             });
