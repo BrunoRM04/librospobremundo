@@ -216,6 +216,10 @@
                     if (libro) {
                         const detailsContent = document.getElementById('details-content');
                         const imagePath = `../../${libro.imagen}`;
+                        
+                        const precioOriginal = parseFloat(libro.precio.replace('UYU ', ''));
+                        const precioDescuento = Math.round(precioOriginal * 0.95);
+
                         detailsContent.innerHTML = `
                             <div class="details-left">
                                 <img src="${imagePath}" alt="${libro.titulo}">
@@ -225,7 +229,7 @@
                                 <p class="book-author">${libro.autor}</p>
                                 <p class="book-editorial"><strong>Editorial:</strong> ${libro.editorial}</p>
                                 <p class="book-isbn"><strong>ISBN:</strong> ${libro.isbn}</p>
-                                <p class="book-price"><strong>Precio:</strong> ${libro.precio}</p>
+                                <p class="book-price"><strong>Precio:</strong> <span class="original-price">UYU ${precioOriginal}</span> <span class="discounted-price">UYU ${precioDescuento}</span> (5%)</p>
                                 <p class="book-pages"><strong>Número de páginas:</strong> ${libro.numPaginas}</p>
                                 <p class="book-description">${libro.descripcion}</p>
                                 <button class="buy-button" data-whatsapp="59894090711">Comprar</button>
@@ -247,7 +251,7 @@
                         });
 
                         // Cargar libros al azar en el carrusel
-                        const randomBooks = getRandomBooks(data.filter(item => item.id != bookId), 20); // Obtener 5 libros al azar
+                        const randomBooks = getRandomBooks(data.filter(item => item.id != bookId), 20); 
                         const carouselTrack = document.getElementById('carousel-track');
                         randomBooks.forEach(libro => {
                             const bookSlide = document.createElement('div');

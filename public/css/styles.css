@@ -251,13 +251,13 @@ nav ul li a:hover {
     width: 200px;
     margin: 0 5px;
     flex-shrink: 0;
-    text-align: left;
+    text-align: center;
 }
 .book-card img {
     width: 200px; 
     height: 300px; 
     object-fit: cover; 
-    display: block;
+    display: inline-block; /* Asegúrate de que la imagen se comporte como un elemento en línea */
 }
 .book-info {
     padding: 10px;
@@ -489,6 +489,43 @@ nav ul li a:hover {
 .book-status.usado {
     background-color: #9E0001;
     color: white;
+}
+.original-price {
+    text-decoration: line-through;
+    color: #242424;
+    margin-right: 8px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.discounted-price {
+    font-weight: bold;
+    color: #9E0001;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .original-price, .discounted-price {
+        font-size: 12px;
+    }
+
+    .discounted-price {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .original-price, .discounted-price {
+        font-size: 10px;
+    }
+
+    .discounted-price {
+        font-size: 12px;
+    }
 }
 /*CATALOGO*/
 /*FOOTER*/

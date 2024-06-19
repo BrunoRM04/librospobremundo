@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         slides.forEach((slide, index) => {
             slide.style.left = slideWidth * index + 'px';
+
+            // Actualizar precios
+            const priceElement = slide.querySelector('.book-price');
+            const originalPrice = parseFloat(priceElement.textContent.replace('UYU ', ''));
+            const discountedPrice = Math.round(originalPrice * 0.95);
+
+            priceElement.innerHTML = `<span class="original-price">UYU ${originalPrice}</span> <span class="discounted-price">UYU ${discountedPrice} (-5%)</span>`;
         });
 
         const moveToSlide = (track, currentSlide, targetSlide) => {

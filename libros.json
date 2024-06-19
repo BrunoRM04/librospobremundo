@@ -3353,5 +3353,16 @@
         "precio": "UYU 990",
         "descripcion": "Una buena sociedad nos dice Michael Lebowitz es aquella que permite el pleno desarrollo del potencial humano. Tal sociedad es posible, nos argumenta en este libro breve, lúcido y perspicaz. Que el capitalismo no responde a su definición de buena sociedad resulta evidente incluso tras un somero examen de sus principales características. Lo primero en el capitalismo no es el desarrollo humano, sino los beneficios acumulados de forma privada por una pequeña minoría de la población. Cuando hay un conflicto entre los beneficios y el desarrollo humano, los beneficios de esta minoría tienen prioridad. Pero si no es el capitalismo, ¿qué? Lebowitz también critica a las sociedades que han proclamado el «socialismo», como la antigua Unión Soviética o China. Aunque sus sistemas no eran capitalistas y eran capaces de lograr parte de lo necesario para el «desarrollo del potencial humano», no eran «sociedades buenas». Una buena sociedad, tal como la define Lebowitz, debe estar marcada por tres características: propiedad social de los medios de producción, producción social controlada por los trabajadores y satisfacción de las necesidades y propósitos comunitarios. Lebowitz muestra cómo estas características interactúan entre sí y se refuerzan mutuamente, y se pregunta cómo pueden desarrollarse hasta el punto en que se produzcan de forma más o menos automática, es decir, que se conviertan tanto en premisas como en resultados. A su vez, nos ofrece fascinantes reflexiones sobre cuestiones como la naturaleza de la riqueza, la ilegitimidad de los beneficios, las insuficiencias de las empresas controladas por los trabajadores, la división del trabajo y mucho más.",
         "imagen": "./public/img/portadas/la alternativa socialista.jpg"
+    },
+    {
+            "id": 306,
+            "titulo": "LOS NIETOS TE CUENTAN CÓMO FUE",
+            "autor": "ANALÍA ARGENTO / MARIANA ZAFFARONI ISLAS",
+            "editorial": "MAREA",
+            "numPaginas": 152,
+            "isbn": "9789878230276",
+            "precio": "UYU 690",
+            "descripcion": "¿Sabías que hay desaparecidos que aún pueden aparecer y volver con sus familias? Son las nietas y los nietos que buscan las Abuelas de Plaza de Mayo. ¿Faltan 300? ¿400? El número exacto no se sabe. Hay 133 que fueron hallados y volvieron a casa. En este libro 13 nietas y nietos les cuentan a los jóvenes lectores cómo recuperaron su identidad. ¿Te imaginás descubriendo que tu mamá y tu papá no son quienes pensás? ¿Que hay una familia que te busca? ¿Que tenés otro nombre y hasta tu fecha de cumpleaños es distinta? Conocer a los nietos que aparecieron es el primer paso para encontrar a los que faltan. ¿Nos ayudás?",
+            "imagen": "./public/img/portadas/los nietos te cuentan como fue.jpg"
     }
 ]
