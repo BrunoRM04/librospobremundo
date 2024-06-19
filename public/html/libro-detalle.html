@@ -216,13 +216,17 @@
                     if (libro) {
                         const detailsContent = document.getElementById('details-content');
                         const imagePath = `../../${libro.imagen}`;
-                        
+    
                         const precioOriginal = parseFloat(libro.precio.replace('UYU ', ''));
                         const precioDescuento = Math.round(precioOriginal * 0.95);
-
+    
+                        const estado = libro.estado || 'Desconocido';
+                        const estadoClase = estado.toLowerCase().includes('nuevo') ? 'nuevo' : 'usado';
+    
                         detailsContent.innerHTML = `
-                            <div class="details-left">
+                            <div class="details-left" style="position: relative;">
                                 <img src="${imagePath}" alt="${libro.titulo}">
+                                ${estado !== 'Desconocido' ? `<div class="book-status ${estadoClase}">${estado}</div>` : ''}
                             </div>
                             <div class="details-right">
                                 <h1 class="book-title">${libro.titulo}</h1>
@@ -249,7 +253,7 @@
                             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola,%20estoy%20interesado%20en%20comprar%20el%20libro%20${libro.titulo}%20de%20${libro.autor}`;
                             window.open(whatsappUrl, '_blank');
                         });
-
+    
                         // Cargar libros al azar en el carrusel
                         const randomBooks = getRandomBooks(data.filter(item => item.id != bookId), 20); 
                         const carouselTrack = document.getElementById('carousel-track');
@@ -267,7 +271,7 @@
                             `;
                             carouselTrack.appendChild(bookSlide);
                         });
-
+    
                         // Iniciar el carrusel
                         initCarousel();
                     } else {
@@ -276,16 +280,16 @@
                 })
                 .catch(error => console.error('Error al cargar el archivo JSON:', error));
         });
-
+    
         function getRandomBooks(data, count) {
             const shuffled = data.sort(() => 0.5 - Math.random());
             return shuffled.slice(0, count);
         }
-
+    
         function verMas(id) {
             window.location.href = `libro-detalle.html?id=${id}`;
         }
-
+    
         function toggleMenu() {
             var menu = document.getElementById("nav-menu");
             var body = document.body;
@@ -299,25 +303,25 @@
                 body.classList.add('menu-open');
             }
         }
-
+    
         function initCarousel() {
             const track = document.getElementById('carousel-track');
             const slides = Array.from(track.children);
             const nextButton = document.getElementById('next-button');
             const prevButton = document.getElementById('prev-button');
             const slideWidth = slides[0].getBoundingClientRect().width;
-
+    
             slides.forEach((slide, index) => {
                 slide.style.left = slideWidth * index + 'px';
             });
-
+    
             let currentSlideIndex = 0;
-
+    
             nextButton.addEventListener('click', () => {
                 currentSlideIndex = (currentSlideIndex + 1) % slides.length;
                 track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
             });
-
+    
             prevButton.addEventListener('click', () => {
                 currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
                 track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;

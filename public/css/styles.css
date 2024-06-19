@@ -484,7 +484,7 @@ nav ul li a:hover {
     z-index: 1;
 }
 .book-status.nuevo {
-    background-color: rgba(0, 255, 0, 0.8);
+    background-color: #9E0001;
 }
 .book-status.usado {
     background-color: #9E0001;
