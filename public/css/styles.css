@@ -531,7 +531,7 @@ footer {
     bottom: 20px;
     left: 20px;
     z-index: 1000;
-    background-color: #9E0001;
+    background-color: #07C692;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -627,7 +627,7 @@ footer {
 }
 @media (max-width: 768px) {
     .popup-content {
-        max-width: 90%;
+        max-width: 100%;
         padding: 15px;
         z-index: 10001;
     }
@@ -640,10 +640,9 @@ footer {
         right: 5px;
     }
 }
-
 @media (max-width: 480px) {
     .popup-content {
-        max-width: 95%;
+        max-width: 90%;
         padding: 10px;
         z-index: 10001;
     }
