@@ -150,8 +150,32 @@ function verMas(id) {
     window.location.href = `public/html/libro-detalle.html?id=${id}`;
 }
 
-// Inicializa el menú desplegable y el buscador
+// Evita llamar a toggleMenu al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    toggleMenu();
+    // Inicializa el buscador
     buscarLibros();
+});
+
+
+
+
+
+
+
+
+
+// script.js
+document.addEventListener('DOMContentLoaded', (event) => {
+    const popup = document.getElementById('popup');
+    const closeButton = document.getElementById('close-button');
+
+    // Verifica si el popup ya fue mostrado en esta sesión
+    if (!sessionStorage.getItem('popupDisplayed')) {
+        popup.style.display = 'flex'; // Muestra el popup
+        sessionStorage.setItem('popupDisplayed', 'true'); // Marca como mostrado en esta sesión
+    }
+
+    closeButton.addEventListener('click', () => {
+        popup.style.display = 'none'; // Cierra el popup
+    });
 });
