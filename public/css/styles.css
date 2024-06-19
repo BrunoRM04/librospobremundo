@@ -1082,6 +1082,7 @@ footer {
     }
     .payment-methods img {
         width: 100px;
+        padding: 5px;
     }
 }
 
@@ -1091,6 +1092,7 @@ footer {
     }
     .payment-methods img {
         width: 80px;
+        padding: 5px;
     }
 }
 
@@ -1101,6 +1103,7 @@ footer {
     }
     .payment-methods img {
         width: 60px;
+        padding: 5px;
     }
 }
 @media (max-width: 600px) {

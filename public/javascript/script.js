@@ -164,18 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// script.js
+// VENTANA EMERGENTE
 document.addEventListener('DOMContentLoaded', (event) => {
     const popup = document.getElementById('popup');
     const closeButton = document.getElementById('close-button');
-
-    // Verifica si el popup ya fue mostrado en esta sesión
     if (!sessionStorage.getItem('popupDisplayed')) {
-        popup.style.display = 'flex'; // Muestra el popup
-        sessionStorage.setItem('popupDisplayed', 'true'); // Marca como mostrado en esta sesión
+        popup.style.display = 'flex'; 
+        sessionStorage.setItem('popupDisplayed', 'true'); 
     }
-
     closeButton.addEventListener('click', () => {
-        popup.style.display = 'none'; // Cierra el popup
+        popup.style.display = 'none'; 
     });
 });
+// VENTANA EMERGENTE
