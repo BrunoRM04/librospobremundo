@@ -71,6 +71,7 @@
                                     <p class="book-author">ANALÍA ARGENTO / MARIANA ZAFFARONI ISLAS</p>
                                     <p class="book-price">UYU 690</p>
                                     <button class="more-button" onclick="verMas(306)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(306)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 1 -->
@@ -81,6 +82,7 @@
                                     <p class="book-author">GERARDO CAETANO</p>
                                     <p class="book-price">UYU 890</p>
                                     <button class="more-button" onclick="verMas(294)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(294)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 2 -->
@@ -91,6 +93,7 @@
                                     <p class="book-author">RÉGIS DEBRAY</p>
                                     <p class="book-price">UYU 980</p>
                                     <button class="more-button" onclick="verMas(295)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(295)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 3 -->
@@ -101,6 +104,7 @@
                                     <p class="book-author">CARLOS LEHDER RIVAS</p>
                                     <p class="book-price">UYU 990</p>
                                     <button class="more-button" onclick="verMas(296)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(296)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 4 -->
@@ -111,6 +115,7 @@
                                     <p class="book-author">DARON ACEMOGLU, JAMES A. ROBINSON</p>
                                     <p class="book-price">UYU 1350</p>
                                     <button class="more-button" onclick="verMas(297)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(297)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 5 -->
@@ -121,6 +126,7 @@
                                     <p class="book-author">CESAR AIRA</p>
                                     <p class="book-price">UYU 690</p>
                                     <button class="more-button" onclick="verMas(298)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(298)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 6 -->
@@ -131,6 +137,7 @@
                                     <p class="book-author">LUCAS SILVA</p>
                                     <p class="book-price">UYU 990</p>
                                     <button class="more-button" onclick="verMas(299)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(299)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 7 -->
@@ -141,6 +148,7 @@
                                     <p class="book-author">EKAITZ CANCELA</p>
                                     <p class="book-price">UYU 1090</p>
                                     <button class="more-button" onclick="verMas(300)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(300)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 8 -->
@@ -151,6 +159,7 @@
                                     <p class="book-author">E. P. THOMPSON</p>
                                     <p class="book-price">UYU 1290</p>
                                     <button class="more-button" onclick="verMas(301)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(301)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 9 -->
@@ -161,6 +170,7 @@
                                     <p class="book-author">RAYMOND WILLIAMS</p>
                                     <p class="book-price">UYU 1390</p>
                                     <button class="more-button" onclick="verMas(302)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(302)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 10 -->
@@ -171,6 +181,7 @@
                                     <p class="book-author">JULIET MITCHELL</p>
                                     <p class="book-price">UYU 790</p>
                                     <button class="more-button" onclick="verMas(303)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(303)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 11 -->
@@ -181,6 +192,7 @@
                                     <p class="book-author">MIGUEL URBÁN</p>
                                     <p class="book-price">UYU 1290</p>
                                     <button class="more-button" onclick="verMas(304)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(304)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 12 -->
@@ -191,6 +203,7 @@
                                     <p class="book-author">MICHAEL A. LEBOWITZ</p>
                                     <p class="book-price">UYU 990</p>
                                     <button class="more-button" onclick="verMas(305)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(305)"><i class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                         </div>
@@ -198,7 +211,14 @@
                     <button class="carousel-button next-button">&#10095;</button>
                 </div>
             </section>
-            
+            <div id="cart-icon-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div id="cart-container" style="display:none;">
+                <div id="cart-list"></div>
+                <button id="send-whatsapp-button" onclick="sendCartToWhatsApp()">Enviar Pedido</button>
+            </div>
         <div class="whatsapp-bubble">
             <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta." target="_blank">
                 <i class="fab fa-whatsapp"></i>
@@ -225,5 +245,6 @@
         </div>
     </footer>
     <script src="public/javascript/script.js"></script>
+    <script src="public/javascript/catalogo.js"></script>
 </body>
 </html>

@@ -291,6 +291,7 @@ nav ul li a:hover {
     border: none;
     cursor: pointer;
     font-size: 14px;
+    border-radius: 5px;
 }
 .more-button:hover {
     background-color: black;
@@ -313,68 +314,73 @@ nav ul li a:hover {
 .next-button {
     right: 10px;
 }
+.cart-button {
+    border-radius: 5px;
+}
 /*CARRUSEL*/
 /*DETALLES LIBRO*/
-.container {
-    max-width: 1000px;
-    margin: 100px auto;
-    padding: 20px;
-}
-
-.book-details {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-    padding: 20px;
-}
-
 .details-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .details-left {
     flex: 1;
+    max-width: 100%;
     padding-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .details-left img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .details-right {
     flex: 2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-.book-title {
+.details-right .book-title {
     font-size: 24px;
     margin-bottom: 10px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal; /* Permite el ajuste en múltiples líneas */
+    color: #333;
+    font-weight: bold;
 }
 
-.book-isbn,
-.book-author,
-.book-price,
-.book-editorial,
-.book-pages,
-.book-tematica {
+.details-right .book-author,
+.details-right .book-isbn,
+.details-right .book-editorial,
+.details-right .book-pages,
+.details-right .book-price {
     font-size: 16px;
     margin-bottom: 10px;
+    color: #000;
 }
 
-.book-description {
+.details-right .book-description {
     font-size: 14px;
     margin-bottom: 20px;
+    line-height: 1.6;
 }
 
-.buy-button {
+.details-right .buy-button {
     padding: 10px 20px;
     background-color: #9E0001;
     color: white;
@@ -382,28 +388,183 @@ nav ul li a:hover {
     cursor: pointer;
     font-size: 16px;
     margin-bottom: 20px;
+    align-self: flex-start;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.buy-button:hover {
+.details-right .buy-button:hover {
     background-color: black;
     transition: 0.3s;
 }
 
-.shipping-info {
+.details-right .shipping-info {
     font-size: 14px;
     margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    color: #333;
+    font-weight: bold;
 }
 
-.payment-info {
+.details-right .payment-info {
     display: flex;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.payment-info img {
+.details-right .payment-info img {
     max-width: 100px;
+    height: auto;
+    margin: 5px;
+}
+
+.details-left .book-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #9E0001;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.details-left .book-status.nuevo {
+    background-color: #9E0001;
+}
+
+.details-left .book-status.usado {
+    background-color: #9E0001;
+}
+
+.details-right .social-share {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.details-right .social-share button {
+    background-color: #9E0001;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.details-right .social-share button:hover {
+    background-color: black;
+    transition: 0.3s;
+}
+
+.details-right .rating,
+.details-right .comments {
+    margin-bottom: 20px;
+}
+
+.details-right .rating span,
+.details-right .comments span {
+    display: block;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .details-left,
+    .details-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .details-container {
+        padding: 15px;
+    }
+
+    .details-left {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .details-right .book-title {
+        font-size: 22px;
+    }
+
+    .details-right .book-author,
+    .details-right .book-isbn,
+    .details-right .book-editorial,
+    .details-right .book-pages,
+    .details-right .book-price {
+        font-size: 14px;
+    }
+
+    .details-right .book-description {
+        font-size: 12px;
+    }
+
+    .details-right .buy-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .details-right .shipping-info {
+        font-size: 12px;
+    }
+
+    .details-right .payment-info img {
+        max-width: 80px;
+    }
+
+    .details-right .social-share button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .details-container {
+        padding: 10px;
+    }
+
+    .details-right .book-title {
+        font-size: 20px;
+    }
+
+    .details-right .book-author,
+    .details-right .book-isbn,
+    .details-right .book-editorial,
+    .details-right .book-pages,
+    .details-right .book-price {
+        font-size: 12px;
+    }
+
+    .details-right .book-description {
+        font-size: 10px;
+    }
+
+    .details-right .buy-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .details-right .shipping-info {
+        font-size: 10px;
+    }
+
+    .details-right .payment-info img {
+        max-width: 60px;
+    }
+
+    .details-right .social-share button {
+        font-size: 12px;
+    }
 }
 /*DETALLES LIBRO*/
 /*CATALOGO*/
@@ -422,7 +583,7 @@ nav ul li a:hover {
     width: 100%;
     text-align: left;
     transition: transform 0.2s;
-    position: relative; /* Añadido para posicionar la nubecita */
+    position: relative;
 }
 .catalogo-card img {
     width: 180px;
@@ -456,20 +617,28 @@ nav ul li a:hover {
     margin-bottom: 10px;
     font-weight: bold;
 }
-.catalogo-button {
-    padding: 6px 12px;
+.catalogo-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.catalogo-vermas-button, .catalogo-cart-button {
+    flex: 1;
+    padding: 8px 0;
     background-color: #9E0001;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 12px;
-    display: block;
-    width: 100%;
     text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
-.catalogo-button:hover {
+.catalogo-vermas-button:hover, .catalogo-cart-button:hover {
     background-color: black;
-    transition: 0.3s;
+}
+.catalogo-vermas-button i, .catalogo-cart-button i {
+    margin-right: 5px;
 }
 .book-status {
     position: absolute;
@@ -699,11 +868,125 @@ footer {
 
 
 
+/* Botón "Añadir al carrito" */
+.cart-button {
+    padding: 8px 8px;
+    background-color: #9E0001;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
 
+.cart-button:hover {
+    background-color: black;
+    transition: 0.3s;
+}
 
+.cart-button i {
+    margin-right: 8px;
+}
 
+/* Ícono del carrito como burbuja flotante */
+#cart-icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #9E0001;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
 
+#cart-icon-container #cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
 
+/* Contenedor de carrito */
+#cart-container {
+    position: fixed;
+    bottom: 80px; 
+    right: 20px;
+    background: white;
+    border: 2px solid #9E0001;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.cart-book {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cart-book img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.cart-info h3 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cart-info p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.cart-info button {
+    padding: 5px 10px;
+    background-color: #9E0001;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+#send-whatsapp-button {
+    background-color: #9E0001;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#send-whatsapp-button:hover {
+    background-color: black;
+    transition: 0.3s;
+}
 
 
 
@@ -939,153 +1222,6 @@ footer {
     }
     .book-title {
         font-size: 22px;
-    }
-}
-@media (max-width: 768px) {
-    .book-details {
-        flex-direction: column;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .details-left {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .details-right {
-        flex: 1;
-    }
-
-    .buy-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .book-title {
-        font-size: 20px;
-        white-space: normal;
-    }
-
-    .book-isbn,
-    .book-author,
-    .book-price,
-    .book-editorial,
-    .book-pages,
-    .book-tematica {
-        font-size: 14px;
-    }
-
-    .book-description,
-    .shipping-info {
-        font-size: 12px;
-    }
-
-    .details-container {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    .book-title {
-        font-size: 18px;
-        white-space: normal;
-    }
-
-    .book-isbn,
-    .book-author,
-    .book-price,
-    .book-editorial,
-    .book-pages,
-    .book-tematica {
-        font-size: 12px;
-    }
-
-    .book-description,
-    .shipping-info {
-        font-size: 10px;
-    }
-
-    .buy-button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .payment-info img {
-        max-width: 80px;
-    }
-}
-
-@media (max-width: 375px) {
-    .container {
-        padding: 5px;
-    }
-
-    .book-title {
-        font-size: 16px;
-        white-space: normal;
-    }
-
-    .book-isbn,
-    .book-author,
-    .book-price,
-    .book-editorial,
-    .book-pages,
-    .book-tematica {
-        font-size: 12px;
-    }
-
-    .book-description,
-    .shipping-info {
-        font-size: 10px;
-    }
-
-    .buy-button {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-    .payment-info img {
-        max-width: 60px;
-    }
-}
-
-@media (max-width: 320px) {
-    .container {
-        padding: 5px;
-    }
-
-    .book-title {
-        font-size: 14px;
-        white-space: normal;
-    }
-
-    .book-isbn,
-    .book-author,
-    .book-price,
-    .book-editorial,
-    .book-pages,
-    .book-tematica {
-        font-size: 12px;
-    }
-
-    .book-description,
-    .shipping-info {
-        font-size: 10px;
-    }
-
-    .buy-button {
-        font-size: 9px;
-        padding: 3px 6px;
-    }
-
-    .payment-info img {
-        max-width: 50px;
     }
 }
 @media (max-width: 1200px) {

@@ -184,3 +184,89 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 // VENTANA EMERGENTE
+
+
+
+
+
+
+
+
+    // Actualizar el carrito al cargar la página
+    updateCartCount();
+    displayCart();
+
+// Función para ver más detalles del libro
+function verMas(id) {
+    window.location.href = `public/html/libro-detalle.html?id=${id}`;
+}
+
+// Función para añadir un libro al carrito
+function addToCart(bookId) {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    if (!cart.includes(bookId)) {
+        cart.push(bookId);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        displayCart();
+    }
+}
+
+// Función para eliminar un libro del carrito
+function removeFromCart(bookId) {
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    cart = cart.filter(id => id !== bookId);
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    displayCart();
+}
+
+// Función para actualizar el contador del carrito
+function updateCartCount() {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').textContent = cart.length;
+}
+
+// Función para mostrar los libros en el carrito
+function displayCart() {
+    const cartContainer = document.getElementById('cart-container');
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const cartList = document.getElementById('cart-list');
+    cartList.innerHTML = '';
+    cart.forEach(bookId => {
+        const book = librosData.find(libro => libro.id === bookId);
+        if (book) {
+            const bookElement = document.createElement('div');
+            bookElement.className = 'cart-book';
+            bookElement.innerHTML = `
+                <img src="${book.imagen}" alt="${book.titulo}">
+                <div class="cart-info">
+                    <h3>${book.titulo}</h3>
+                    <p>${book.autor}</p>
+                    <p>${book.precio}</p>
+                    <button onclick="removeFromCart(${book.id})">Eliminar</button>
+                </div>
+            `;
+            cartList.appendChild(bookElement);
+        }
+    });
+    cartContainer.style.display = cart.length > 0 ? 'block' : 'none';
+}
+
+// Función para enviar el carrito a WhatsApp
+function sendCartToWhatsApp() {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const selectedBooks = cart.map(bookId => {
+        const book = librosData.find(libro => libro.id === bookId);
+        return `${book.titulo} de ${book.autor} (Precio: ${book.precio})`;
+    }).join(', ');
+    const whatsappNumber = '59894090711';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Estoy interesado en los siguientes libros: ${selectedBooks}`;
+    window.open(whatsappUrl, '_blank');
+}
+
+// Mostrar/ocultar el contenedor del carrito cuando se hace clic en el ícono del carrito
+document.getElementById('cart-icon-container').addEventListener('click', () => {
+    const cartContainer = document.getElementById('cart-container');
+    cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
+});
