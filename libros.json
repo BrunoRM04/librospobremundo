@@ -4620,5 +4620,16 @@
         "precio": "UYU 1550",
         "descripcion": "El Museo de la Rendición Incondicional, de la célebre escritora yugoslava Dubravka Ugresic, comienza en el zoo de Berlín, con el contenido del estómago de Roland, la morsa, expuesto junto a su piscina (Roland murió en agosto de 1961). Estos objetos -un mechero, palitos de piruleta, un abridor de botellas de cerveza, etc.-, al igual que las piezas de ficción de la propia novela, son aparentemente aleatorios al principio, pero acaban uniéndose de forma significativa y poética. Escrito en diversas formas literarias, El museo de la rendición incondicional capta el mundo destrozado de una vida en el exilio. Algunos capítulos recrean el diario de la madre solitaria y alienada de la narradora, que compra en los improvisados mercadillos de la ciudad y añora a sus hijos; otro es una narración onírica en la que un círculo de amigas recibe la visita de un ángel. Hay reflexiones y relatos sobre el Holocausto y la guerra civil yugoslava, retratos de artistas europeos, una receta de sopa de alcaravea, una conmovedora historia de un encuentro romántico que la narradora tiene en Lisboa, descripciones de fotografías familiares y recuerdos de la pequeña ciudad en la que se crió Ugresic.",
         "imagen": "./public/img/portadas/el museo de la rendicion incondicional.jpg"
+    },
+    {
+        "id": 421,
+        "titulo": "SI TE GUSTA LA OSCURIDAD",
+        "autor": "STEPHEN KING",
+        "editorial": "PLAZA & JANES",
+        "numPaginas": 704,
+        "isbn": "9789915681849",
+        "precio": "UYU 1190",
+        "descripcion": "¿Te gusta la oscuridad? Perfecto. A mí también\" es como termina Stephen King el epílogo de este nuevo y magnífico volumen de doce relatos que se adentran en la parte más sombría de la vida. King lleva más de medio siglo siendo un maestro literario, y estas historias sobre el destino, la mortalidad, la suerte y los múltiples pliegues de la realidad son tan ricas y absorbentes como sus novelas. \"Dos cabrones con talento\" nos revelará el secreto de cómo estos dos caballeros adquirieron sus habilidades. En \"El mal sueño de Danny Coughlin\", una explosión psíquica repentina pone patas arriba la vida de docenas de personas, incluido Danny, con catastróficos resultados. \"Serpientes de cascabel\", secuela de la novela Cujo, nos presenta a un viudo que viaja a Florida buscando descanso y, en su lugar, se encuentra una inesperada herencia… con más de una atadura. En \"Los soñadores\", un taciturno veterano de la guerra de Vietnam acepta un encargo y descubre que hay algunos rincones del universo que deberían quedar inexplorados. \"Hombre Respuesta\" nos plantea si el don de la clarividencia es una bendición o una maldición, y nos recuerda que incluso una vida marcada por la tragedia tiene significado. La habilidad del Rey del Terror para sorprender, inspirar y provocarnos tanto miedo como consuelo al mismo tiempo no tiene comparación. Cada uno de estos relatos contiene sus propios escalofríos, alegrías y misterios, y todos son icónicos. ¿Les gusta la oscuridad? Pues aquí la tienen.",
+        "imagen": "./public/img/portadas/si te gusta la oscuridad.jpg"
     }
 ]
