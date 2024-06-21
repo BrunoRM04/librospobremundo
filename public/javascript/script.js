@@ -1,4 +1,5 @@
 // MENÚ DESPLIEGUE
+// Función para alternar la visibilidad del menú de navegación
 function toggleMenu() {
     var menu = document.getElementById("nav-menu");
     var body = document.body;
@@ -12,22 +13,24 @@ function toggleMenu() {
         body.classList.add('menu-open');
     }
 }
+// FIN MENÚ DESPLIEGUE
 
 // CARRUSEL
 document.addEventListener('DOMContentLoaded', function() {
-    const carousels = document.querySelectorAll('.book-carousel-section');
+    const carousels = document.querySelectorAll('.book-carousel-section'); // Seleccionar todos los carruseles
 
     carousels.forEach(carousel => {
-        const track = carousel.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = carousel.querySelector('.next-button');
-        const prevButton = carousel.querySelector('.prev-button');
-        const slideWidth = slides[0].getBoundingClientRect().width;
+        const track = carousel.querySelector('.carousel-track'); // Pista del carrusel
+        const slides = Array.from(track.children); // Diapositivas del carrusel
+        const nextButton = carousel.querySelector('.next-button'); // Botón siguiente
+        const prevButton = carousel.querySelector('.prev-button'); // Botón anterior
+        const slideWidth = slides[0].getBoundingClientRect().width; // Ancho de cada diapositiva
 
+        // Posicionar diapositivas horizontalmente
         slides.forEach((slide, index) => {
             slide.style.left = slideWidth * index + 'px';
 
-            // Actualizar precios
+            // Actualizar precios con descuento
             const priceElement = slide.querySelector('.book-price');
             const originalPrice = parseFloat(priceElement.textContent.replace('UYU ', ''));
             const discountedPrice = Math.round(originalPrice * 0.95);
@@ -35,13 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
             priceElement.innerHTML = `<span class="original-price">UYU ${originalPrice}</span> <span class="discounted-price">UYU ${discountedPrice} (-5%)</span>`;
         });
 
+        // Función para mover a una diapositiva específica
         const moveToSlide = (track, currentSlide, targetSlide) => {
-            if (!targetSlide) return; // Exit if there's no target slide
+            if (!targetSlide) return; // Salir si no hay diapositiva objetivo
             track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
             currentSlide.classList.remove('current-slide');
             targetSlide.classList.add('current-slide');
         };
 
+        // Mover a la siguiente diapositiva al hacer clic en el botón siguiente
         nextButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
             const nextSlide = currentSlide.nextElementSibling;
@@ -50,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Mover a la diapositiva anterior al hacer clic en el botón anterior
         prevButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
             const prevSlide = currentSlide.previousElementSibling;
@@ -58,16 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Variables para el deslizamiento táctil
         let startX;
         let currentX;
         let isDragging = false;
 
+        // Iniciar el deslizamiento táctil
         track.addEventListener('touchstart', e => {
             startX = e.touches[0].pageX;
             isDragging = true;
             track.style.transition = 'none';
         });
 
+        // Manejar el movimiento táctil
         track.addEventListener('touchmove', e => {
             if (!isDragging) return;
             currentX = e.touches[0].pageX;
@@ -75,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             track.style.transform = `translateX(calc(-${track.querySelector('.current-slide').style.left} + ${deltaX}px))`;
         });
 
+        // Finalizar el deslizamiento táctil
         track.addEventListener('touchend', e => {
             isDragging = false;
             track.style.transition = 'transform 0.3s ease';
@@ -96,10 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// FIN CARRUSEL
 
 // BUSCADOR
 let librosData = [];
 
+// Cargar datos de libros al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     fetch('libros.json')
         .then(response => response.json())
@@ -110,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 });
 
+// Función para buscar libros
 function buscarLibros() {
     const input = document.getElementById('search-input').value.toLowerCase().trim();
     console.log('Valor de entrada:', input);
@@ -122,6 +135,7 @@ function buscarLibros() {
         return;
     }
 
+    // Filtrar resultados de búsqueda
     const resultados = librosData.filter(libro =>
         libro.titulo.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
         libro.autor.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
@@ -131,6 +145,7 @@ function buscarLibros() {
 
     console.log('Resultados encontrados:', resultados);
 
+    // Mostrar resultados de búsqueda
     if (resultados.length === 0) {
         resultsContainer.innerHTML = '<p>No se encontraron resultados.</p>';
     } else {
@@ -153,53 +168,36 @@ function buscarLibros() {
     }
 }
 
-function verMas(id) {
-    window.location.href = `public/html/libro-detalle.html?id=${id}`;
-}
-
-// Evita llamar a toggleMenu al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa el buscador
-    buscarLibros();
-});
-
-
-
-
-
-
-
-
-
-// VENTANA EMERGENTE
-document.addEventListener('DOMContentLoaded', (event) => {
-    const popup = document.getElementById('popup');
-    const closeButton = document.getElementById('close-button');
-    if (!sessionStorage.getItem('popupDisplayed')) {
-        popup.style.display = 'flex'; 
-        sessionStorage.setItem('popupDisplayed', 'true'); 
-    }
-    closeButton.addEventListener('click', () => {
-        popup.style.display = 'none'; 
-    });
-});
-// VENTANA EMERGENTE
-
-
-
-
-
-
-
-
-    // Actualizar el carrito al cargar la página
-    updateCartCount();
-    displayCart();
-
 // Función para ver más detalles del libro
 function verMas(id) {
     window.location.href = `public/html/libro-detalle.html?id=${id}`;
 }
+
+// Inicializar el buscador al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    buscarLibros();
+});
+// FIN BUSCADOR
+
+// VENTANA EMERGENTE
+document.addEventListener('DOMContentLoaded', (event) => {
+    const popup = document.getElementById('popup'); // Ventana emergente
+    const closeButton = document.getElementById('close-button'); // Botón de cierre
+    if (!sessionStorage.getItem('popupDisplayed')) {
+        popup.style.display = 'flex'; // Mostrar ventana emergente si no ha sido mostrada antes
+        sessionStorage.setItem('popupDisplayed', 'true'); // Marcar como mostrada
+    }
+    closeButton.addEventListener('click', () => {
+        popup.style.display = 'none'; // Ocultar ventana emergente al hacer clic en el botón de cierre
+    });
+});
+// FIN VENTANA EMERGENTE
+
+// ACTUALIZAR EL CARRITO AL CARGAR LA PÁGINA
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+    displayCart();
+});
 
 // Función para añadir un libro al carrito
 function addToCart(bookId) {
