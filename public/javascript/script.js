@@ -241,7 +241,6 @@ function displayCart() {
                 <div class="cart-info">
                     <h3>${book.titulo}</h3>
                     <p>${book.autor}</p>
-                    <p>${book.precio}</p>
                     <button onclick="removeFromCart(${book.id})">Eliminar</button>
                 </div>
             `;
@@ -256,7 +255,7 @@ function sendCartToWhatsApp() {
     const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const selectedBooks = cart.map(bookId => {
         const book = librosData.find(libro => libro.id === bookId);
-        return `${book.titulo} de ${book.autor} (Precio: ${book.precio})`;
+        return `${book.titulo} de ${book.autor}`;
     }).join(', ');
     const whatsappNumber = '59894090711';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Estoy interesado en los siguientes libros: ${selectedBooks}`;

@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             librosData = data; // Guardar datos de libros en una variable global
+            shuffleArray(librosData); // Aleatorizar el orden de los libros
             const catalogoGrid = document.getElementById('catalogo-grid'); // Elemento donde se mostrarán los libros
-            data.forEach(libro => {
+            librosData.forEach(libro => {
                 const bookCard = document.createElement('div');
                 bookCard.classList.add('catalogo-card'); // Crear tarjeta para cada libro
 
@@ -56,6 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error)); // Manejo de errores al cargar JSON
 });
+
+// Función para aleatorizar un array (algoritmo Fisher-Yates)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 // Función para ver más detalles del libro
 function verMas(id) {
@@ -105,7 +114,6 @@ function displayCart() {
                 <div class="cart-info">
                     <h3>${book.titulo}</h3>
                     <p>${book.autor}</p>
-                    <p>${book.precio}</p>
                     <button onclick="removeFromCart(${book.id})">Eliminar</button>
                 </div>
             `;
@@ -120,7 +128,7 @@ function sendCartToWhatsApp() {
     const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Obtener carrito de sessionStorage
     const selectedBooks = cart.map(bookId => {
         const book = librosData.find(libro => libro.id === bookId); // Encontrar libro por ID en datos de libros
-        return `${book.titulo} de ${book.autor} (Precio: ${book.precio})`; // Formatear detalles del libro
+        return `${book.titulo} de ${book.autor}`; // Formatear detalles del libro
     }).join(', ');
     const whatsappNumber = '59894090711'; // Número de WhatsApp para enviar mensaje
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola. Estoy interesado en los siguientes libros: ${selectedBooks}`; // URL de WhatsApp con mensaje preformateado
