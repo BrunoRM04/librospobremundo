@@ -1054,7 +1054,7 @@ footer {
 /*RESPONSIVES*/
 @media (max-width: 768px) {
     .top-banner {
-        font-size: 7px;
+        font-size: 8px;
     }
     .header-container {
         flex-direction: row;
