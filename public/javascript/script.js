@@ -15,6 +15,23 @@ function toggleMenu() {
 }
 // FIN MENÚ DESPLIEGUE
 
+
+// BANNER INDEX HTML
+let currentIndex = 0;
+const slides = document.querySelector('.slides');
+const totalSlides = document.querySelectorAll('.slides img').length;
+function showNextSlide() {
+    currentIndex++;
+    if (currentIndex === totalSlides) {
+        currentIndex = 0;
+    }
+    const newTransformValue = `translateX(-${currentIndex * 100}%)`;
+    slides.style.transform = newTransformValue;
+}
+setInterval(showNextSlide, 3000);
+// BANNER INDEX HTML
+
+
 // CARRUSEL
 document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.book-carousel-section'); // Seleccionar todos los carruseles

@@ -50,11 +50,13 @@
         </nav>
     </header>
     <main>
-        <!-- 
-        <div class="banner">
-            <img src="public/img/banners/banner1.jpg" alt="Banner Libros del pobre mundo">
-        </div>
-        -->
+        <div class="banner"> <!-- BANNER 
+            <div class="slides">
+                <img src="public/img/banners/banner-descuento.jpg" alt="Banner 1">
+                <img src="public/img/banners/banner-descuento.jpg" alt="Banner 2">
+                <img src="public/img/banners/banner-descuento.jpg" alt="Banner 3">
+            </div>
+        </div>  BANNER -->
         <section class="search-section">
             <div class="search-container">
                 <h2>BUSCADOR DE LIBROS</h2>
@@ -233,10 +235,145 @@
         </section>
         <!-- DESTACADOS -->
 
-        <!-- LOS MÁS COMERCIALES -->
+        <!-- NOVEDADES -->
+        <section class="novedades-section"> 
+                    <h2><span></span>ÚLTIMAS NOVEDADES<span></span></h2>
+                    <section class="book-carousel-section" id="carousel-2">
+                        <div class="carousel-container">
+                            <button class="carousel-button prev-button">&#10094;</button>
+                            <div class="carousel">
+                                <div class="carousel-track">
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/ritual.jpg" alt="RITUAL">
+                                        <div class="book-info">
+                                            <h3 class="book-title">RITUAL</h3>
+                                            <p class="book-author">SANDRINE DESTOMBES</p>
+                                            <p class="book-price">UYU 850</p>
+                                            <button class="more-button" onclick="verMas(543)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(543)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    <!-- Book Card 1 -->
+                                    <div class="book-card current-slide">
+                                        <img src="./public/img/portadas/la condesa maldita.jpg" alt="LA CONDESA MALDITA">
+                                            <div class="book-info">
+                                            <h3 class="book-title">LA CONDESA MALDITA</h3>
+                                            <p class="book-author">REYES MONFORTE</p>
+                                            <p class="book-price">UYU 1190</p>
+                                            <button class="more-button" onclick="verMas(544)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(544)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/por que meditar.jpg" alt="POR QUE MEDITAR: CIENCIA Y PRÁCTICA DE LA CLARIDAD Y LA COMPASIÓN">
+                                        <div class="book-info">
+                                            <h3 class="book-title">POR QUE MEDITAR: CIENCIA Y PRÁCTICA DE LA CLARIDAD Y LA COMPASIÓN</h3>
+                                            <p class="book-author">DANIEL GOLEMAN</p>
+                                            <p class="book-price">UYU 620</p>
+                                            <button class="more-button" onclick="verMas(545)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(545)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/oh my goa.jpg" alt="ME LLAMO GOA 3: ¡OH MY GOA! ¡(NO) SÍ ES PARA TANTO!">
+                                        <div class="book-info">
+                                            <h3 class="book-title">ME LLAMO GOA 3: ¡OH MY GOA! ¡(NO) SÍ ES PARA TANTO!</h3>
+                                            <p class="book-author">MIRIAM TIRADO</p>
+                                            <p class="book-price">UYU 690</p>
+                                            <button class="more-button" onclick="verMas(546)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(546)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/ley de la atraccion.jpg" alt="LEY DE LA ATRACCIÓN: UN JOURNAL PARA MANIFESTAR TUS DESEOS">
+                                        <div class="book-info">
+                                            <h3 class="book-title">LEY DE LA ATRACCIÓN: UN JOURNAL PARA MANIFESTAR TUS DESEOS</h3>
+                                            <p class="book-author">LATHA JAY</p>
+                                            <p class="book-price">UYU 790</p>
+                                            <button class="more-button" onclick="verMas(547)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(547)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/lecciones de aristoteles.jpg" alt="LECCIONES DE ARISTOTELES: COMPRENDER AL MAYOR FILÓSOFO DE TODOS LOS TIEMPOS">
+                                        <div class="book-info">
+                                            <h3 class="book-title">LECCIONES DE ARISTOTELES: COMPRENDER AL MAYOR FILÓSOFO DE TODOS LOS TIEMPOS</h3>
+                                            <p class="book-author">JOHN SELLARS</p>
+                                            <p class="book-price">UYU 690</p>
+                                            <button class="more-button" onclick="verMas(548)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(548)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/la herejia de miguel angel.jpg" alt="LA HEREJÍA DE MIGUEL ÁNGEL">
+                                        <div class="book-info">
+                                            <h3 class="book-title">LA HEREJÍA DE MIGUEL ÁNGEL</h3>
+                                            <p class="book-author">MATTEO STRUKUL</p>
+                                            <p class="book-price">UYU 620</p>
+                                            <button class="more-button" onclick="verMas(549)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(549)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/hasta el ultimo de mis dias.jpg" alt="HASTA EL ÚLTIMO DE MIS DÍAS">
+                                        <div class="book-info">
+                                            <h3 class="book-title">HASTA EL ÚLTIMO DE MIS DÍAS</h3>
+                                            <p class="book-author">YAMILET CAZARES</p>
+                                            <p class="book-price">UYU 750</p>
+                                            <button class="more-button" onclick="verMas(550)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(550)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/vuelve a amar tu caos y el roce de vivir.jpg" alt="VUELVE A AMAR TU CAOS Y EL ROCE DE VIVIR">
+                                        <div class="book-info">
+                                            <h3 class="book-title">VUELVE A AMAR TU CAOS Y EL ROCE DE VIVIR</h3>
+                                            <p class="book-author">ALBERT ESPINOSA</p>
+                                            <p class="book-price">UYU 790</p>
+                                            <button class="more-button" onclick="verMas(551)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(551)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/el ultimo regalo.jpg" alt="EL ÚLTIMO REGALO">
+                                        <div class="book-info">
+                                            <h3 class="book-title">EL ÚLTIMO REGALO</h3>
+                                            <p class="book-author">SEBASTIAN FITZEK</p>
+                                            <p class="book-price">UYU 620</p>
+                                            <button class="more-button" onclick="verMas(552)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(552)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="book-card">
+                                        <img src="./public/img/portadas/supercomunicadores.jpg" alt="SUPERCOMUNICADORES">
+                                        <div class="book-info">
+                                            <h3 class="book-title">SUPERCOMUNICADORES</h3>
+                                            <p class="book-author">VERGARA</p>
+                                            <p class="book-price">UYU 790</p>
+                                            <button class="more-button" onclick="verMas(553)">Ver más</button>
+                                            <button class="cart-button" onclick="addToCart(553)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-button next-button">&#10095;</button>
+                        </div>
+                    </section>
+        </section>
+        <!-- NOVEDADES -->
+
+        <!-- OTROS TITULOS -->
         <section class="novedades-section">
             <h2><span></span>OTROS TITULOS<span></span></h2>
-            <section class="book-carousel-section" id="carousel-2">
+            <section class="book-carousel-section" id="carousel-3">
                 <div class="carousel-container">
                     <button class="carousel-button prev-button">&#10094;</button>
                     <div class="carousel">
@@ -388,12 +525,12 @@
                 </div>
             </section>
         </section>
-        <!-- LOS MÁS COMERCIALES -->
+        <!-- OTROS TITULOS -->
 
         <!-- PARA LA COPA AMÉRICA -->
         <section class="novedades-section">
                     <h2><span></span>PARA LA COPA AMÉRICA<span></span></h2>
-                    <section class="book-carousel-section" id="carousel-3">
+                    <section class="book-carousel-section" id="carousel-4">
                         <div class="carousel-container">
                             <button class="carousel-button prev-button">&#10094;</button>
                             <div class="carousel">

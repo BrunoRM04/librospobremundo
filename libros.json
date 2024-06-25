@@ -5972,5 +5972,126 @@
         "precio": "UYU 790",
         "descripcion": "Desde sus primeras travesías de montaña, el explorador Franco Michieli se percató de que aceptar el hecho de perderse y acabar en una senda inesperada y desconocida es una buena manera para renovarse. Mientras sigamos itinerarios señalizados, no tendremos forma de saber qué pasaría si buscásemos el camino leyendo solo la naturaleza, interpretando las formas del terreno como se nos presentan, observando los movimientos de los astros, descifrando las redes fluviales o navegando por la niebla según la dirección del viento. . . Este apasionante ensayo ahonda en có­mo podemos recuperar las habilidades naturales de orientación de nuestros antepasados y reflexiona sobre la dimensión espiritual que nace de esa extraordinaria y olvidada experiencia.",
         "imagen": "./public/img/portadas/la vocacion de perderse.jpg"
+    },
+    {
+        "id": 543,
+        "titulo": "RITUAL",
+        "autor": "SANDRINE DESTOMBES",
+        "editorial": "RESERVOIR BOOKS",
+        "numPaginas": 0,
+        "isbn": "9788419437723",
+        "precio": "UYU 850",
+        "descripcion": "Siete pies, cortados y atados entre sí, aparecen flotando en el río Sena, cerca de la sede central de la Policía Judicial francesa. Se forma rápidamente un equipo de investigación, dirigido por el capitán Martin Vaas. La búsqueda de los cuerpos a los que pertenecen esos pies hace que se reabran casos de hace más de veinte años, crímenes en los que al cadáver le faltaba un pie, cometidos cerca del curso de un río. Sin embargo, las piezas no terminan de encajar. Una misteriosa inscripción (en uno de los pies se lee 'ganador') podría encerrar la clave de todo. Ya sabíamos que 'el thriller frances tiene nueva reina' (La Razón), pero Sandrine Destombes vuelve a deslumbrar, más que nunca, con una galería de personajes nuevos y un crimen aparentemente irresoluble.",
+        "imagen": "./public/img/portadas/ritual.jpg"
+    },
+    {
+        "id": 544,
+        "titulo": "LA CONDESA MALDITA",
+        "autor": "REYES MONFORTE",
+        "editorial": "PLAZA & JANES",
+        "numPaginas": 840,
+        "isbn": "9788401032295",
+        "precio": "UYU 1190",
+        "descripcion": "Una emocionante historia de intriga, pasión y crimen protagonizada por la condesa Maria Tarnowska, la mujer que conmocionó al mundo en la Venecia de la belle epoque. Septiembre, 1907. Movido por los celos, el joven traductor ruso Nikolái Naumov dispara contra el conde Kamarowski en su palacio de Venecia al saber que contraerá matrimonio con la mujer que ama en secreto. Cuando el conde muere, la investigación policial apunta a su prometida, la condesa Tarnowska, como instigadora del crimen pasional junto con otro de sus amantes, el abogado Donato Prilukov. Tres años después comienza el juicio más escandaloso de la época, un proceso que sacudió los cimientos de la sociedad, revolucionó la prensa y cambió el sistema legal judicial admitiendo el psicoanálisis freudiano. Señalada como la primera femme fatale del siglo XX surgen dudas: ¿es la condesa culpable o inocente? ¿Víctima o verdugo? No hay crimen sin historia. La condesa maldita narra los días de una mujer arrolladora que coleccionó amantes, desafió los tabúes más férreos del momento y nunca renunció a su libertad.",
+        "imagen": "./public/img/portadas/la condesa maldita.jpg"
+    },
+    {
+        "id": 545,
+        "titulo": "POR QUE MEDITAR: CIENCIA Y PRÁCTICA DE LA CLARIDAD Y LA COMPASIÓN",
+        "autor": "DANIEL GOLEMAN",
+        "editorial": "B de Bolsillo",
+        "numPaginas": 336,
+        "isbn": "9788413148113",
+        "precio": "UYU 620",
+        "descripcion": "Esta guía te ayudará a liberarte de los patrones negativos de pensamiento y a abrazar radicalmente tu propio ser. Por el mítico autor del best seller Inteligencia emocional. La meditación ha pasado de ser una moda a un hábito de millones de personas, pero aún hay muchas cosas por aclarar en torno a su práctica. Daniel Goleman, el mítico autor del best seller Inteligencia emocional, y el aclamado maestro de meditación Tsoknyi Rinpoche nos invitan a revolucionar nuestra salud, a mejorar nuestras relaciones y a disfrutar de los innumerables beneficios que aportan las artes meditativas. Por que meditar ofrece consejos útiles y explicaciones exhaustivas que se basan tanto en los descubrimientos de las neurociencias como en la gran sabiduría de la tradición oriental. Ya sea que busques iniciarte en la meditación, quieras reducir el estres y controlar tus emociones negativas, o seas un meditador experimentado, en estas páginas encontrarás respuestas sobre la creciente sensación de libertad interior que solo la práctica de la meditación puede darte.",
+        "imagen": "./public/img/portadas/por que meditar.jpg"
+    },
+    {
+        "id": 546,
+        "titulo": "ME LLAMO GOA 3: ¡OH MY GOA! ¡(NO) SÍ ES PARA TANTO!",
+        "autor": "MIRIAM TIRADO",
+        "editorial": "B de Blok",
+        "numPaginas": 200,
+        "isbn": "9788419522979",
+        "precio": "UYU 690",
+        "descripcion": "¡Por fin está aquí la 3ª entrega de 'Me llamo Goa', la serie que ha enganchado a miles de lectores y lectoras! '¡¿Por que tiene que ser todo tan difícil?! Mi nuevo hermano no para de llorar, mis notas han bajado, no paro de discutir con mis padres y, por si fuera poco, creo que la he liado con Klaus. Menos mal tengo a mis amigos, si no, ya me habría vuelto loca. Y sí, ¡sí es para tanto!'. El año está a punto de terminar, pero las complicaciones continúan para Goa y sus amigos. Por suerte, se tienen unos a otros para apoyarse mientras lidian con nuevas relaciones, experiencias, emociones desbordantes y conflictos familiares. Porque tener 12 años puede ser una verdadera montaña rusa, pero a veces lo mejor que puedes hacer es gritar y ¡disfrutar del viaje! Llega la tercera entrega de la serie de Míriam Tirado, autora de exitos como El hilo invisible, Sensibles e Infinito. Ida y vuelta, donde explora la adolescencia con el humor y la sensibilidad que la caracterizan.",
+        "imagen": "./public/img/portadas/oh my goa.jpg"
+    },
+    {
+        "id": 547,
+        "titulo": "LEY DE LA ATRACCIÓN: UN JOURNAL PARA MANIFESTAR TUS DESEOS",
+        "autor": "LATHA JAY",
+        "editorial": "GRIJALBO",
+        "numPaginas": 136,
+        "isbn": "9788425366963",
+        "precio": "UYU 790",
+        "descripcion": "Siempre manifestamos y creamos nuestra realidad a traves de nuestros pensamientos, creencias y acciones. Si no lo hacemos de manera intencionada, la manifestación ocurre por omisión, lo que hace que nuestros pensamientos limitantes nos refrenen. En este journal, la coach de manifestación Latha Jay te guiará con metodos para cambiar tus percepciones y así crear la vida que deseas. En este libro encontrarás: - Guías prácticas para cambiar de perspectivas, liberarte de creencias limitantes y entrar en sintonía con tus más grandes deseos. - El metodo 369 para atrapar el poder de los números divinos y amplificar tu habilidad para manifestar. - El metodo 55x5 para cambiar tu forma de pensar a nivel del subconsciente y así cultivar un compromiso profundo. - El metodo del guion o scripting para acceder a diferentes áreas de pensamientos y emociones poderosas.",
+        "imagen": "./public/img/portadas/ley de la atraccion.jpg"
+    },
+    {
+        "id": 548,
+        "titulo": "LECCIONES DE ARISTOTELES: COMPRENDER AL MAYOR FILÓSOFO DE TODOS LOS TIEMPOS",
+        "autor": "JOHN SELLARS",
+        "editorial": "TAURUS",
+        "numPaginas": 168,
+        "isbn": "9788430626502",
+        "precio": "UYU 690",
+        "descripcion": "¿Por que ha tenido Aristóteles una influencia tan asombrosa en el mundo? ¿Cuáles son sus ideas clave y que puede enseñarnos aún hoy? 'A todo el mundo debería interesarle Aristóteles, ya que su filosofía es una base crucial para la etica, la ciencia, la lógica, la política y la estetica del mundo occidental. Este libro breve es una introducción brillante y clara a todo el abanico de su pensamiento'. Robert Eaglestone. El Liceo de Atenas, hoy en ruinas, puede presumir de haber sido uno de los lugares más significativos de la historia del pensamiento. Fue la sede de la escuela de Aristóteles. Allí el filósofo enseñó y discutió las respuestas a los misterios más profundos de la condición humana, y cambió nuestra forma de reflexionar. Hoy puede resultar difícil comprender plenamente la asombrosa influencia de sus lecciones. Sin embargo, sus observaciones sobre el mundo y sus reflexiones sobre la naturaleza del conocimiento sentaron las bases de toda ciencia empírica. Sea lo que sea que nos preocupe o interese, es casi seguro que Aristóteles dijera algo extremadamente inteligente al respecto. Su estudio del pensamiento racional dio lugar a la lógica formal, piedra angular de la investigación filosófica; su examen de las ciudades.",
+        "imagen": "./public/img/portadas/lecciones de aristoteles.jpg"
+    },
+    {
+        "id": 549,
+        "titulo": "LA HEREJÍA DE MIGUEL ÁNGEL",
+        "autor": "MATTEO STRUKUL",
+        "editorial": "B de Bolsillo",
+        "numPaginas": 464,
+        "isbn": "9788413148267",
+        "precio": "UYU 620",
+        "descripcion": "Un Miguel Çngel inedito por el autor de la gran saga de Los Medici. Sumido en una profunda crisis artística y espiritual, el genio del Renacimiento concebirá la versión final de la tumba de Julio II de una forma que podría condenarlo a la hoguera. Roma, otoño de 1542. Miguel Çngel se encuentra en el punto de mira de la Inquisición. Vive una profunda crisis religiosa y su amistad con Vittoria Colonna, la marquesa de Pescara, no ha pasado desapercibida. El jefe del Santo Oficio, el cardenal Gian Pietro Carafa, ha ordenado seguir a la dama para identificar el lugar donde se reúne la secta de los Espirituales, encabezada por Reginald Pole, que aboga por el retorno a la pureza evangelica en una ciudad donde la corrupción campa a sus anchas. Roma, que se ha convertido en una ciudad devorada por el vicio, será el cruel teatro en el que se crucen las vidas de Malasorte, la joven ladronzuela que ha recibido el encargo de espiar a los Espirituales, de Vittorio Corsini, el capitán de los esbirros de la ciudad, de Vittoria Colonna y del mismo Miguel Angel Buonarroti, el artista más genial de su tiempo.",
+        "imagen": "./public/img/portadas/la herejia de miguel angel.jpg"
+    },
+    {
+        "id": 550,
+        "titulo": "HASTA EL ÚLTIMO DE MIS DÍAS",
+        "autor": "YAMILET CAZARES",
+        "editorial": "MONTENA",
+        "numPaginas": 408,
+        "isbn": "9788419501608",
+        "precio": "UYU 750",
+        "descripcion": "Un romance adolescente made in Wattpad sobre la depresión, el abuso y el poder del amor; lleno de pasión, superación y giros desgarradores. Enamórate de Charlie y Jace. Puedes querer y hacer que te quieran, pero si la persona a la que amas está rota por dentro, solo puedes dejarla ir. Duela lo que duela. Charlie Hans es una chica adolescente con un gran talento para el arte, que en los últimos años se ha convertido en su único consuelo. Acosada por problemas familiares y de autoestima, se ha encerrado en sí misma y ha dejado de lado a sus amigos, hasta convertirse en la sombra de aquella joven amable y risueña que había sido. Jace Grey lleva toda la vida enamorado de Charlie. Incluso cuando ella dejó de hablarle sin motivo aparente, el no tiró la toalla, y ahora está más dispuesto que nunca a iluminar el mundo de Charlie, demostrarle que ella se lo merece todo y hacerla feliz. Pero... ¿llegará a tiempo para abrirle los ojos? ¿O ganará la oscuridad que está devorando el corazón de Charlie? La historia de amor más triste y más bella que ha nacido en Wattpad.",
+        "imagen": "./public/img/portadas/hasta el ultimo de mis dias.jpg"
+    },
+    {
+        "id": 551,
+        "titulo": "VUELVE A AMAR TU CAOS Y EL ROCE DE VIVIR",
+        "autor": "ALBERT ESPINOSA",
+        "editorial": "GRIJALBO",
+        "numPaginas": 248,
+        "isbn": "9788425365560",
+        "precio": "UYU 790",
+        "descripcion": "Ama tu caos. Ama tu diferencia. Ama lo que te hace único. Lo más difícil en este mundo es amar tu caos, amar tu diferencia, amar lo que te hace único. Si lo logras, aún te faltará lo más complicado: amar tu caos a pesar del roce de la vida. Y es que el roce de la vida puede hacerte olvidar quien eres y por que eres así. La nueva novela de Albert Espinosa huele a caos, a roce de la vida, a felicidad. Todo ello con mucho humor, al ritmo de cuatro bailes y con unos personajes que están perdidos en este Mundo pero desean encontrar su Universo. ¿Estás dispuesto a amar tu caos a pesar del roce de la vida?",
+        "imagen": "./public/img/portadas/vuelve a amar tu caos y el roce de vivir.jpg"
+    },
+    {
+        "id": 552,
+        "titulo": "EL ÚLTIMO REGALO",
+        "autor": "SEBASTIAN FITZEK",
+        "editorial": "B de Bolsillo",
+        "numPaginas": 392,
+        "isbn": "9788413146355",
+        "precio": "UYU 620",
+        "descripcion": "El autor de thriller más vendido en Alemania vuelve con una historia tan atractiva como aterradora. Milan es un hombre inteligente y creativo, pero tiene un problema. Despues de una peligrosa operación a la que fue sometido en su adolescencia, ha perdido la capacidad de leer. Mientras se dirige en moto a una de las fiestas en las que trabaja como camarero, ve a una joven adolescente dentro de un coche con un papel pegado a la ventanilla pidiendo socorro. Asustado, Milan la sigue, pero poco despues, cuando este se detiene frente a una casa, lo que ve es una escena absolutamente normal en la que un matrimonio y su hija, cargados con la compra, bajan del coche. Milan decide olvidar lo ocurrido. Desconoce que su peor pesadilla no ha hecho más que empezar.",
+        "imagen": "./public/img/portadas/el ultimo regalo.jpg"
+    },
+    {
+        "id": 553,
+        "titulo": "SUPERCOMUNICADORES",
+        "autor": "VERGARA",
+        "editorial": "VERGARA",
+        "numPaginas": 288,
+        "isbn": "9788419820181",
+        "precio": "UYU 790",
+        "descripcion": "¿Que hace que una conversación funcione? Todos podemos aprender a ser supercomunicadores en la vida y en el trabajo. Por el autor del best seller El poder de los hábitos. La comunicación es un superpoder que puede ser entrenado y los mejores comunicadores saben distinguir y emplear los tres tipos de conversaciones que existen -la práctica, la emocional y la social- para conectar con las personas. En este libro aprenderás por que hay gente capaz de hacerse oír y de escuchar a los demás con tanta claridad. Y podrás ser uno de ellos. Charles Duhigg combina una exhaustiva investigación con su pericia narrativa y nos muestra las habilidades que necesitamos para navegar las conversaciones con más exito. El autor nos lleva a los reclutamientos de la CIA, a los debates realizados entre los trabajadores de Netflix y a la sala de guionistas de The Big Bang Theory para mostrarnos cómo identificar y aprovechar las capas ocultas que se esconden en cada conversación. La lección es simple, pero poderosa: con las herramientas adecuadas, todos podemos conectar con cualquiera. La crítica ha dicho: 'Hay pocos libros que se conviertan en manuales esenciales de vida. Este es uno de ellos'. Financial Times.",
+        "imagen": "./public/img/portadas/supercomunicadores.jpg"
     }
 ]
