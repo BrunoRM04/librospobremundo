@@ -6100,7 +6100,7 @@
         "autor": "JO NESBO",
         "editorial": "RESERVOIR BOOKS",
         "isbn": "9788419437709",
-        "paginas": 297,
+        "numPaginas": 297,
         "precio": "UYU 890",
         "descripcion": "Tras la muerte de sus padres, fallecidos en un trágico incendio, Richard Elauved tiene que mudarse a la remota localidad de Ballantyne, donde vivirá con sus tíos. Allí se convierte en seguida en uno de los marginados oficiales del instituto, algo que se acentúa cuando un compañero de clase llamado Tom desaparece en extrañas circunstancias: todos culparán al nuevo alumno, tan raro, retraído, irritable y taciturno. Sin embargo, Richard vio con sus propios ojos lo que le pasó realmente a Tom, una escena verdaderamente espeluznante ocurrida en una cabina de teléfono cercana al bosque. Pero ni la policía ni nadie creen su versión... salvo Karen, otra estudiante arrinconada que lo empuja a llegar hasta el fondo de la cuestión. Las pistas lo conducirán hasta una antigua casa señorial, ahora abandonada. Ante ella, muerto de miedo, rodeado de insectos, Richard descubrirá que lo observa, desde una ventana del cuarto piso, un hombre de rostro inexpresivo. Después, empezará a oír voces.",
         "imagen": "./public/img/portadas/la casa de la noche.jpg"
@@ -6111,7 +6111,7 @@
         "autor": "SANTIAGO LA ROSA",
         "editorial": "SIGILO",
         "isbn": "9789874063878",
-        "paginas": 256,
+        "numPaginas": 256,
         "precio": "UYU 890",
         "descripcion": "El nacimiento de su hija Luna no trae certezas para el joven protagonista de esta novela sino miedo y preocupación, y es en su padre adonde va a buscar consejo, como lo hizo siempre. Pero ese hombre brillante y encantador, que viaja por el mundo dando conferencias y parece tener la mejor solución en cualquier circunstancia, de un día para el otro desaparece de su vida sin dar explicaciones. La decisión es tan inesperada que no puede sino despertarle un sinfín de preguntas. ¿Quién es en verdad su padre? ¿Qué lo hizo actuar así? ¿Qué hay de cierto en todos los relatos que le contó? En la galería oscura que parecen ser las muchas vidas que ha tenido, hay un misterio que obsesiona al protagonista: ¿qué ocurrió con su primera esposa e hija? Mientras se esfuerza por llevar adelante una familia y entenderse con la pequeña Luna, se da cuenta de que, hasta que no encuentre algunas respuestas, no podrá escribir su propia historia ni estar en paz. La otra hija es una novela honda y perturbadora. La sobriedad de su prosa esconde un dominio perfecto de lo que se dice y lo que se calla y por eso sorprende, cautiva y conmueve tanto.",
         "imagen": "./public/img/portadas/la otra hija.jpg"
@@ -6122,9 +6122,20 @@
         "autor": "HIRO ARIKAWA",
         "editorial": "LUMEN",
         "isbn": "9788426430601",
-        "paginas": 272,
+        "numPaginas": 272,
         "precio": "UYU 850",
         "descripcion": "Lumen recupera este conmovedor clásico de la literatura de gatos que conquistó a más de un millón de lectores, se publicó en 33 países y se llevó al cine. Nana no es un gato cualquiera. Tiene el pelaje blanco, una cola de color negro con un gancho en forma de siete, las uñas afiladas y la mirada atenta. Le gustan los filetes de carne de cerdo empanados, el pollo y el salmón. Pero aún hay más: entiende el lenguaje de los humanos y tiene opiniones muy suyas sobre la vida. Nació en la calle y durmió en el capó de una furgoneta hasta que un día un hombre se le acercó sonriendo, y desde entonces son inseparables. Satoru y Nana han convivido durante cinco años, pero ahora ha llegado el momento de separarse y de encontrar un nuevo dueño. Juntos emprenderán un viaje en el que Nana verá por primera vez el mar y los campos sembrados de hierba alta, vivirá las emociones más hondas de los humanos y el dolor de la pérdida, y conquistará el corazón de los lectores gracias a la narración llena de ternura y humor de Hiro Arikawa.",
         "imagen": "./public/img/portadas/cronicas del gato viajero.jpg"
+    },
+    {
+        "id": 557,
+        "titulo": "LO SUFICIENTEMENTE LOCO: UNA BIOGRAFÍA DE MARCELO BIELSA",
+        "autor": "ARIEL SENOSIAÍN",
+        "editorial": "CORREGIDOR",
+        "isbn": "9789500533911",
+        "numPaginas": 176,
+        "precio": "UYU 790",
+        "descripcion": "Ese tipo es parco; férreo; neutro; bravo; solo. Con un par de palabras se refiere a lo esencial; pero sabe que necesita de todas para hacerlo real. Le consta la extraordinaria dedicación que requiere transformar en destino la porción de libertad que le ha tocado en suerte. Jamás se entusiasma con los amores fáciles porque sólo puede descansar a sus anchas luego de las victorias difíciles. Con un puñado de certezas que se licuan bajo el sol de su análisis; debe hacer frente a una profesión donde reina la lógica de lo nunca visto antes. Ese tipo sabe que un segundo antes y un segundo después siempre estará separado; porque es propio del género humano no poder morir de a dos. Este libro; Lo suficientemente loco; habla de ese tipo; Marcelo Bielsa. Lo hace con cautela; que es sigilo de los buenos observadores; con rigor; la exactitud de los disciplinados; con sensibilidad; que es la versión pudorosa de la emoción; con curiosidad; el interés de los discretos; y con belleza; que siempre se agradece. Con palabras justas; entra sin invadir; y proclama sin vulnerar. Habla de ese tipo minucioso con minuciosidad; de ese tipo veraz con verdad; de ese tipo complejo con sencillez. Ese tipo es parco; férreo; neutro; bravo; solo. También es locuaz; distendido; comprometido; dubitativo; colectivo. Lo suficientemente loco lo advierte; y lo relata con el aliento de las grandes biografías; uno de los pocos géneros que consiente la trama de la novela; porque la vida supera al arte; y la disparidad de la historia; porque la palabra es derrotada por la ilusión.",
+        "imagen": "./public/img/portadas/lo suficientemente loco.jpg"
     }
 ]
