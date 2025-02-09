@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Libros Del Pobre Mundo - Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explora nuestro catálogo y encontrá tu próxima lectura.">
-    <meta name="keywords" content="Libros, Librería Online, Libros Nuevos, Libros Usados, Comprar Libros, Tienda de Libros">
+    <meta name="description"
+        content="Libros Del Pobre Mundo - Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explora nuestro catálogo y encontrá tu próxima lectura.">
+    <meta name="keywords"
+        content="Libros, Librería Online, Libros Nuevos, Libros Usados, Comprar Libros, Tienda de Libros">
     <meta name="author" content="CodeViciado Space">
     <meta property="og:title" content="Libros Del Pobre Mundo | Inicio">
-    <meta property="og:description" content="Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explorá nuestro catálogo y encontrá tu próxima lectura.">
+    <meta property="og:description"
+        content="Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explorá nuestro catálogo y encontrá tu próxima lectura.">
     <meta property="og:image" content="public/img/logotipos/icono.png">
     <meta property="og:url" content="https://www.librospobremundo.com">
     <meta property="og:type" content="website">
@@ -15,40 +19,213 @@
     <title>Libros Del Pobre Mundo | Catálogo</title>
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="shortcut icon" href="public/img/logotipos/icono.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DF5MEPLKRP"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-DF5MEPLKRP');
 </script>
+
 <body>
+
     <div class="top-banner">
         <p>Envios a todo el país | Más de 20.000 títulos en nuestro catálogo | Consultar disponibilidad</p>
     </div>
+
     <header>
-            <div class="header-container">
-                <div class="logo">
-                    <img src="public/img/logotipos/blanco.png" alt="Logotipo Libros del pobre mundo">
+
+        <div class="header-container">
+            <div class="logo">
+                <img src="public/img/logotipos/blanco.png" alt="Logotipo Libros del pobre mundo">
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </div>
+        <nav id="nav-menu">
+            <div class="close-menu" onclick="toggleMenu()">&#10005;</div>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="catalogo.html">CATÁLOGO</a></li>
+                <li><a href="podcastyreseñas.html">PODCAST Y RESEÑAS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <button id="boton-categorias" onclick="alternarBarraCategorias()">Categorías</button>
+        <aside id="barra-categorias" class="barra-lateral-categorias">
+            <div class="encabezado-barra">
+                <h2>Categorías</h2>
+                <span class="boton-cerrar-barra" onclick="alternarBarraCategorias()">&times;</span>
+            </div>
+            <div class="contenido-barra">
+                <div class="grupo-categoria">
+                    <h3>📚 Ficción</h3>
+                    <ul class="lista-categorias">
+                        <li>Novela contemporánea</li>
+                        <li>Novela histórica</li>
+                        <li>Novela de aventuras</li>
+                        <li>Ciencia ficción</li>
+                        <li>Fantasía</li>
+                        <li>Distopía</li>
+                        <li>Realismo mágico</li>
+                        <li>Cuentos cortos</li>
+                        <li>Thriller</li>
+                        <li>Novela negra / Policial</li>
+                        <li>Suspenso / Misterio</li>
+                        <li>Terror / Horror</li>
+                        <li>Literatura clásica</li>
+                        <li>Literatura juvenil</li>
+                        <li>Romance</li>
+                        <li>Romántica histórica</li>
+                        <li>Romántica contemporánea</li>
+                        <li>Erótica</li>
+                        <li>Drama</li>
+                    </ul>
                 </div>
-                <div class="hamburger-menu" onclick="toggleMenu()">
-                    &#9776;
+                <div class="grupo-categoria">
+                    <h3>📖 No Ficción</h3>
+                    <ul class="lista-categorias">
+                        <li>Biografías y memorias</li>
+                        <li>Historia</li>
+                        <li>Filosofía</li>
+                        <li>Psicología</li>
+                        <li>Sociología</li>
+                        <li>Política</li>
+                        <li>Economía</li>
+                        <li>Ciencia y tecnología</li>
+                        <li>Ensayos</li>
+                        <li>Desarrollo personal</li>
+                        <li>Autoayuda</li>
+                        <li>Espiritualidad</li>
+                        <li>Religión</li>
+                        <li>Educación y pedagogía</li>
+                        <li>Viajes y turismo</li>
+                        <li>Arte y fotografía</li>
+                        <li>Arquitectura</li>
+                        <li>Cine y televisión</li>
+                        <li>Música</li>
+                        <li>Deportes y actividad física</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>📊 Negocios y Finanzas</h3>
+                    <ul class="lista-categorias">
+                        <li>Emprendimiento</li>
+                        <li>Marketing y publicidad</li>
+                        <li>Finanzas personales</li>
+                        <li>Bolsa e inversiones</li>
+                        <li>Liderazgo</li>
+                        <li>Gestión empresarial</li>
+                        <li>Coaching y motivación</li>
+                        <li>Innovación y creatividad</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>🎓 Académicos y Técnicos</h3>
+                    <ul class="lista-categorias">
+                        <li>Medicina y salud</li>
+                        <li>Ciencias naturales</li>
+                        <li>Matemáticas</li>
+                        <li>Física</li>
+                        <li>Química</li>
+                        <li>Biología</li>
+                        <li>Ingeniería</li>
+                        <li>Tecnología y computación</li>
+                        <li>Inteligencia artificial</li>
+                        <li>Programación</li>
+                        <li>Diseño gráfico</li>
+                        <li>Arquitectura</li>
+                        <li>Ciencias sociales</li>
+                        <li>Derecho</li>
+                        <li>Lingüística</li>
+                        <li>Educación y didáctica</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>👦 Infantil y Juvenil</h3>
+                    <ul class="lista-categorias">
+                        <li>Cuentos infantiles</li>
+                        <li>Libros ilustrados</li>
+                        <li>Literatura juvenil</li>
+                        <li>Cómics y novelas gráficas</li>
+                        <li>Fábulas y mitos</li>
+                        <li>Ciencia ficción y fantasía juvenil</li>
+                        <li>Libros educativos para niños</li>
+                        <li>Libros interactivos</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>🥗 Estilo de Vida y Bienestar</h3>
+                    <ul class="lista-categorias">
+                        <li>Cocina y gastronomía</li>
+                        <li>Nutrición y dietética</li>
+                        <li>Fitness y entrenamiento</li>
+                        <li>Meditación y mindfulness</li>
+                        <li>Jardinería y naturaleza</li>
+                        <li>Manualidades y hobbies</li>
+                        <li>Autoayuda y crecimiento personal</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>🏛 Historia y Cultura</h3>
+                    <ul class="lista-categorias">
+                        <li>Mitología</li>
+                        <li>Historia universal</li>
+                        <li>Historia de América</li>
+                        <li>Historia de Europa</li>
+                        <li>Historia del arte</li>
+                        <li>Historia militar</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>🏳️‍🌈 Diversidad y Sociedad</h3>
+                    <ul class="lista-categorias">
+                        <li>Feminismo</li>
+                        <li>Estudios de género</li>
+                        <li>LGBTIQ+</li>
+                        <li>Derechos humanos</li>
+                        <li>Antropología</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>📜 Poesía y Teatro</h3>
+                    <ul class="lista-categorias">
+                        <li>Poesía clásica</li>
+                        <li>Poesía contemporánea</li>
+                        <li>Teatro clásico</li>
+                        <li>Teatro moderno</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>🎭 Manga, Cómics y Novelas Gráficas</h3>
+                    <ul class="lista-categorias">
+                        <li>Manga</li>
+                        <li>Cómics</li>
+                        <li>Novelas gráficas</li>
+                    </ul>
+                </div>
+                <div class="grupo-categoria">
+                    <h3>🏠 Hogar y Estilo de Vida</h3>
+                    <ul class="lista-categorias">
+                        <li>Decoración</li>
+                        <li>Diseño de interiores</li>
+                        <li>Manualidades</li>
+                    </ul>
                 </div>
             </div>
-            <nav id="nav-menu">
-                <div class="close-menu" onclick="toggleMenu()">&#10005;</div>
-                <ul>
-                    <li><a href="index.html">INICIO</a></li>
-                    <li><a href="catalogo.html">CATÁLOGO</a></li>
-                    <li><a href="podcastyreseñas.html">PODCAST Y RESEÑAS</a></li>
-                    <li><a href="contacto.html">CONTACTO</a></li>
-                </ul>
-            </nav>
-    </header>
-    <main>
+        </aside>
+
         <section class="novedades-section" style="margin-top: 100px;">
             <h2><span></span>NUESTRO CATÁLOGO<span></span></h2>
         </section>
@@ -68,24 +245,30 @@
             <button id="send-whatsapp-button" onclick="sendCartToWhatsApp()">Enviar Pedido</button>
         </div>
         <div class="whatsapp-bubble">
-            <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta." target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta."
+                target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
+
     </main>
+
     <footer>
+
         <div class="footer-content">
             <p>Todos los derechos reservados © 2024 Libros Del Pobre Mundo - Librería Online</p>
             <p>Diseño por <a href="https://brunorm04.github.io/codeviciado/" target="_blank">codeviciadodev</a></p>
-        <div class="payment-methods">
-            <p>Métodos de pagos y transferencia:</p>
-            <img src="public/img/pagos/mercadopago.png" alt="Método de pago 1">
-            <img src="public/img/pagos/itau.png" alt="Método de pago 2">
-            <img src="public/img/pagos/prex.png" alt="Método de pago 3">
-            <img src="public/img/pagos/oca blue.png" alt="Método de pago 4">
+            <div class="payment-methods">
+                <p>Métodos de pagos y transferencia:</p>
+                <img src="public/img/pagos/mercadopago.png" alt="Método de pago 1">
+                <img src="public/img/pagos/itau.png" alt="Método de pago 2">
+                <img src="public/img/pagos/prex.png" alt="Método de pago 3">
+                <img src="public/img/pagos/oca blue.png" alt="Método de pago 4">
+            </div>
         </div>
-        </div>
+        
     </footer>
     <script src="public/javascript/catalogo.js"></script>
 </body>
+
 </html>

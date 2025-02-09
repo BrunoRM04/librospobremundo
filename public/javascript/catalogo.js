@@ -1,4 +1,7 @@
-// MENÚ DESPLIEGUE
+/******************************************/
+/*               MENÚ DESPLIEGUE          */
+/******************************************/
+
 // Función para alternar la visibilidad del menú de navegación
 function toggleMenu() {
     var menu = document.getElementById("nav-menu");
@@ -15,50 +18,114 @@ function toggleMenu() {
 }
 // FIN MENÚ DESPLIEGUE
 
+
+/******************************************/
+/*        VARIABLES / CARGAR DATOS        */
+/******************************************/
+
 let librosData = [];
 
-// Función para cargar los libros en el catálogo
+// Al cargar el DOM, obtenemos los datos del JSON
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('libros.json') // Obtener datos de libros desde un archivo JSON
+    fetch('libros.json') // Obtener datos de libros desde el archivo JSON
         .then(response => response.json())
         .then(data => {
-            librosData = data; // Guardar datos de libros en una variable global
-            shuffleArray(librosData); // Aleatorizar el orden de los libros
-            const catalogoGrid = document.getElementById('catalogo-grid'); // Elemento donde se mostrarán los libros
-            librosData.forEach(libro => {
-                const bookCard = document.createElement('div');
-                bookCard.classList.add('catalogo-card'); // Crear tarjeta para cada libro
+            librosData = data; // Guardamos en la variable global
+            shuffleArray(librosData); // Aleatorizar (opcional)
 
-                const precioOriginal = parseFloat(libro.precio.replace('UYU ', ''));
-                const precioDescuento = Math.round(precioOriginal * 0.95); // Calcular precio con descuento
+            // Mostramos TODOS los libros inicialmente
+            displayBooks(librosData);
 
-                // Estado del libro (nuevo o usado)
-                const bookStatus = libro.estado ? `<div class="book-status ${libro.estado}">${libro.estado.charAt(0).toUpperCase() + libro.estado.slice(1)}</div>` : '';
-
-                // Estructura HTML de cada tarjeta de libro
-                bookCard.innerHTML = `
-                    <img src="${libro.imagen}" alt="${libro.titulo}">
-                    <div class="catalogo-info">
-                        <h3 class="catalogo-title">${libro.titulo}</h3>
-                        <p class="catalogo-author">${libro.autor}</p>
-                        <p class="catalogo-price"><span class="original-price">UYU ${precioOriginal}</span> <span class="discounted-price">UYU ${precioDescuento}</span> (-5%)</p>
-                        <div class="catalogo-buttons">
-                            <button class="catalogo-vermas-button" onclick="verMas(${libro.id})">Ver más</button>
-                            <button class="catalogo-cart-button" onclick="addToCart(${libro.id})"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                        </div>
-                    </div>
-                    ${bookStatus}
-                `;
-                catalogoGrid.appendChild(bookCard); // Añadir tarjeta al catálogo
-            });
-            // Actualizar el carrito al cargar la página
+            // Configuramos y actualizamos el carrito al cargar la página
             updateCartCount();
             displayCart();
+
+            // Activamos la lógica de filtrado por categorías
+            setupCategoryFilters();
         })
-        .catch(error => console.error('Error al cargar el archivo JSON:', error)); // Manejo de errores al cargar JSON
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
 });
 
-// Función para aleatorizar un array (algoritmo Fisher-Yates)
+
+/******************************************/
+/*         MOSTRAR LIBROS (CATÁLOGO)      */
+/******************************************/
+
+// Función para "pintar" (mostrar) los libros en el grid
+function displayBooks(booksArray) {
+    const catalogoGrid = document.getElementById('catalogo-grid');
+    catalogoGrid.innerHTML = ''; // Limpiamos el contenedor antes de volver a llenarlo
+
+    booksArray.forEach(libro => {
+        const bookCard = document.createElement('div');
+        bookCard.classList.add('catalogo-card'); // Tarjeta individual
+
+        const precioOriginal = parseFloat(libro.precio.replace('UYU ', ''));
+        const precioDescuento = Math.round(precioOriginal * 0.95);
+
+        const bookStatus = libro.estado
+            ? `<div class="book-status ${libro.estado}">${libro.estado.charAt(0).toUpperCase() + libro.estado.slice(1)}</div>`
+            : '';
+
+        // Aquí envolvemos la imagen en .catalogo-image-wrapper
+        bookCard.innerHTML = `
+        <div class="catalogo-image-wrapper">
+            <img src="${libro.imagen}" alt="${libro.titulo}">
+        </div>
+        <div class="catalogo-info">
+            <h3 class="catalogo-title">${libro.titulo}</h3>
+            <p class="catalogo-author">${libro.autor}</p>
+            <p class="catalogo-price">
+              <span class="original-price">UYU ${precioOriginal}</span> 
+              <span class="discounted-price">UYU ${precioDescuento}</span> (-5%)
+            </p>
+            <div class="catalogo-buttons">
+                <button class="catalogo-vermas-button" onclick="verMas(${libro.id})">Ver más</button>
+                <button class="catalogo-cart-button" onclick="addToCart(${libro.id})">
+                  <i class="fas fa-shopping-cart"></i> Añadir
+                </button>
+            </div>
+        </div>
+        ${bookStatus}
+      `;
+
+        catalogoGrid.appendChild(bookCard);
+    });
+}
+
+
+/******************************************/
+/*        FILTROS POR CATEGORÍA           */
+/******************************************/
+
+// Función para asociar el clic de cada <li> de categoría con el filtrado
+function setupCategoryFilters() {
+    // Seleccionamos todos los <li> que representan una categoría
+    const categoryItems = document.querySelectorAll('.lista-categorias li');
+
+    categoryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Obtenemos el texto de la categoría, p.e. "Filosofía", "Novela contemporánea", etc.
+            const category = item.textContent.trim();
+
+            // Filtramos los libros según la categoría
+            const filteredBooks = librosData.filter(libro => libro.categoria === category);
+
+            // Mostramos SOLO los libros filtrados
+            displayBooks(filteredBooks);
+
+            // Opcional: cerramos la barra lateral después de hacer clic
+            alternarBarraCategorias();
+        });
+    });
+}
+
+
+/******************************************/
+/*            FUNCIÓN: ALEATORIZAR        */
+/******************************************/
+
+// Función para aleatorizar un array (algoritmo Fisher-Yates, opcional)
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -66,77 +133,112 @@ function shuffleArray(array) {
     }
 }
 
-// Función para ver más detalles del libro
+
+/******************************************/
+/*      VER MÁS DETALLES DE UN LIBRO      */
+/******************************************/
+
+// Función para ver más detalles del libro (redirige a la página detalle)
 function verMas(id) {
-    window.location.href = `public/html/libro-detalle.html?id=${id}`; // Redirigir a la página de detalles del libro
+    window.location.href = `public/html/libro-detalle.html?id=${id}`;
 }
 
-// Función para añadir un libro al carrito
+
+/******************************************/
+/*                CARRITO                 */
+/******************************************/
+
+// Añadir un libro al carrito
 function addToCart(bookId) {
-    const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Obtener carrito de sessionStorage
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     if (!cart.includes(bookId)) {
-        cart.push(bookId); // Añadir libro al carrito si no está ya en él
-        sessionStorage.setItem('cart', JSON.stringify(cart)); // Guardar carrito actualizado en sessionStorage
-        updateCartCount(); // Actualizar contador del carrito
-        displayCart(); // Mostrar contenido del carrito
+        cart.push(bookId);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        displayCart();
     }
 }
 
-// Función para eliminar un libro del carrito
+// Eliminar un libro del carrito
 function removeFromCart(bookId) {
-    let cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Obtener carrito de sessionStorage
-    cart = cart.filter(id => id !== bookId); // Eliminar libro del carrito
-    sessionStorage.setItem('cart', JSON.stringify(cart)); // Guardar carrito actualizado en sessionStorage
-    updateCartCount(); // Actualizar contador del carrito
-    displayCart(); // Mostrar contenido del carrito
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    cart = cart.filter(id => id !== bookId);
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    displayCart();
 }
 
-// Función para actualizar el contador del carrito
+// Actualizar el contador del carrito
 function updateCartCount() {
-    const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Obtener carrito de sessionStorage
-    document.getElementById('cart-count').textContent = cart.length; // Actualizar elemento con el número de ítems en el carrito
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').textContent = cart.length;
 }
 
-// Función para mostrar los libros en el carrito
+// Mostrar el contenido del carrito en pantalla
 function displayCart() {
-    const cartContainer = document.getElementById('cart-container'); // Contenedor del carrito
-    const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Obtener carrito de sessionStorage
-    const cartList = document.getElementById('cart-list'); // Lista de libros en el carrito
-    cartList.innerHTML = ''; // Limpiar lista actual
+    const cartContainer = document.getElementById('cart-container');
+    const cartList = document.getElementById('cart-list');
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+    cartList.innerHTML = ''; // Limpiamos la lista actual
+
     cart.forEach(bookId => {
-        const book = librosData.find(libro => libro.id === bookId); // Encontrar libro por ID en datos de libros
+        const book = librosData.find(libro => libro.id === bookId);
         if (book) {
-            // Estructura HTML de cada libro en el carrito
             const bookElement = document.createElement('div');
             bookElement.className = 'cart-book';
             bookElement.innerHTML = `
-                <img src="${book.imagen}" alt="${book.titulo}">
-                <div class="cart-info">
-                    <h3>${book.titulo}</h3>
-                    <p>${book.autor}</p>
-                    <button onclick="removeFromCart(${book.id})">Eliminar</button>
-                </div>
-            `;
-            cartList.appendChild(bookElement); // Añadir libro a la lista del carrito
+        <img src="${book.imagen}" alt="${book.titulo}">
+        <div class="cart-info">
+          <h3>${book.titulo}</h3>
+          <p>${book.autor}</p>
+          <button onclick="removeFromCart(${book.id})">Eliminar</button>
+        </div>
+      `;
+            cartList.appendChild(bookElement);
         }
     });
-    cartContainer.style.display = cart.length > 0 ? 'block' : 'none'; // Mostrar u ocultar contenedor del carrito
+
+    // Si el carrito está vacío, ocultar el contenedor
+    cartContainer.style.display = cart.length > 0 ? 'block' : 'none';
 }
 
-// Función para enviar el carrito a WhatsApp
+
+// Enviar el carrito a WhatsApp
 function sendCartToWhatsApp() {
-    const cart = JSON.parse(sessionStorage.getItem('cart')) || []; // Obtener carrito de sessionStorage
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const selectedBooks = cart.map(bookId => {
-        const book = librosData.find(libro => libro.id === bookId); // Encontrar libro por ID en datos de libros
-        return `${book.titulo} de ${book.autor}`; // Formatear detalles del libro
+        const book = librosData.find(libro => libro.id === bookId);
+        return `${book.titulo} de ${book.autor}`;
     }).join(', ');
-    const whatsappNumber = '59894090711'; // Número de WhatsApp para enviar mensaje
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola. Estoy interesado en los siguientes libros: ${selectedBooks}`; // URL de WhatsApp con mensaje preformateado
-    window.open(whatsappUrl, '_blank'); // Abrir URL en nueva pestaña
+
+    const whatsappNumber = '59894090711';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola. Estoy interesado en los siguientes libros: ${selectedBooks}`;
+    window.open(whatsappUrl, '_blank');
 }
 
-// Mostrar/ocultar el contenedor del carrito cuando se hace clic en el ícono del carrito
+// Mostrar/ocultar el contenedor del carrito cuando se hace clic en el ícono
 document.getElementById('cart-icon-container').addEventListener('click', () => {
-    const cartContainer = document.getElementById('cart-container'); // Contenedor del carrito
-    cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none'; // Alternar visibilidad del contenedor
+    const cartContainer = document.getElementById('cart-container');
+    cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
 });
+
+
+/******************************************/
+/*   BARRA LATERAL DE CATEGORÍAS (toggle) */
+/******************************************/
+
+// Función para abrir/cerrar la barra lateral de categorías
+function alternarBarraCategorias() {
+    const barra = document.getElementById('barra-categorias');
+    const boton = document.getElementById('boton-categorias');
+
+    if (barra.classList.contains('abierta')) {
+        barra.classList.remove('abierta');
+        boton.style.display = 'block';
+    } else {
+        barra.classList.add('abierta');
+        boton.style.display = 'none';
+    }
+}
+// FIN DE catalogo.js

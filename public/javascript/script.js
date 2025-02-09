@@ -1,4 +1,7 @@
-// MENÚ DESPLIEGUE
+/******************************************/
+/*               MENÚ DESPLIEGUE          */
+/******************************************/
+
 // Función para alternar la visibilidad del menú de navegación
 function toggleMenu() {
     var menu = document.getElementById("nav-menu");
@@ -16,11 +19,19 @@ function toggleMenu() {
 // FIN MENÚ DESPLIEGUE
 
 
-// BANNER INDEX HTML
+/******************************************/
+/*            BANNER INDEX HTML           */
+/******************************************/
+
 let currentIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slides img').length;
+const slides = document.querySelector('.slides'); // <-- Podría ser null si no hay .slides en el HTML
+const totalSlides = slides ? document.querySelectorAll('.slides img').length : 0;
+
+// Función para mostrar la siguiente imagen
 function showNextSlide() {
+    // Si no existe 'slides', salimos para evitar error
+    if (!slides) return;
+    
     currentIndex++;
     if (currentIndex === totalSlides) {
         currentIndex = 0;
@@ -28,11 +39,16 @@ function showNextSlide() {
     const newTransformValue = `translateX(-${currentIndex * 100}%)`;
     slides.style.transform = newTransformValue;
 }
+
+// Intervalo para cambiar de imagen cada 3s
 setInterval(showNextSlide, 3000);
-// BANNER INDEX HTML
+// FIN BANNER INDEX HTML
 
 
-// CARRUSEL
+/******************************************/
+/*                CARRUSEL                */
+/******************************************/
+
 document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.book-carousel-section'); // Seleccionar todos los carruseles
 
@@ -125,7 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // FIN CARRUSEL
 
-// BUSCADOR
+
+/******************************************/
+/*                BUSCADOR                */
+/******************************************/
+
+// Variable global para almacenar los datos de libros
 let librosData = [];
 
 // Cargar datos de libros al cargar la página
@@ -156,7 +177,8 @@ function buscarLibros() {
     const resultados = librosData.filter(libro =>
         libro.titulo.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
         libro.autor.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
-        (libro.isbn && libro.isbn.includes(input)) ||
+        // Forzamos a String por si isbn es numérico
+        (libro.isbn && String(libro.isbn).includes(input)) ||
         (libro.editorial && libro.editorial.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input))
     );
 
@@ -196,7 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // FIN BUSCADOR
 
-// VENTANA EMERGENTE
+
+/******************************************/
+/*            VENTANA EMERGENTE           */
+/******************************************/
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const popup = document.getElementById('popup'); // Ventana emergente
     const closeButton = document.getElementById('close-button'); // Botón de cierre
@@ -210,11 +236,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 // FIN VENTANA EMERGENTE
 
-// ACTUALIZAR EL CARRITO AL CARGAR LA PÁGINA
+
+/******************************************/
+/*    ACTUALIZAR EL CARRITO AL CARGAR     */
+/******************************************/
+
 document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
     displayCart();
 });
+
+
+/******************************************/
+/*                CARRITO                 */
+/******************************************/
 
 // Función para añadir un libro al carrito
 function addToCart(bookId) {
@@ -248,6 +283,7 @@ function displayCart() {
     const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const cartList = document.getElementById('cart-list');
     cartList.innerHTML = '';
+
     cart.forEach(bookId => {
         const book = librosData.find(libro => libro.id === bookId);
         if (book) {
@@ -264,6 +300,7 @@ function displayCart() {
             cartList.appendChild(bookElement);
         }
     });
+
     cartContainer.style.display = cart.length > 0 ? 'block' : 'none';
 }
 
@@ -284,3 +321,6 @@ document.getElementById('cart-icon-container').addEventListener('click', () => {
     const cartContainer = document.getElementById('cart-container');
     cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
 });
+// FIN DE script.js
+
+

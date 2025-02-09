@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Libros Del Pobre Mundo - Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explorá nuestro catálogo y encontrá tu próxima lectura.">
-    <meta name="keywords" content="Libros, Librería Online, Libros Nuevos, Libros Usados, Comprar Libros, Tienda de Libros">
+    <meta name="description"
+        content="Libros Del Pobre Mundo - Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explorá nuestro catálogo y encontrá tu próxima lectura.">
+    <meta name="keywords"
+        content="Libros, Librería Online, Libros Nuevos, Libros Usados, Comprar Libros, Tienda de Libros">
     <meta name="author" content="CodeViciado Space">
     <meta property="og:title" content="Libros Del Pobre Mundo | Inicio">
-    <meta property="og:description" content="Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explorá nuestro catálogo y encontrá tu próxima lectura.">
+    <meta property="og:description"
+        content="Tu librería online para descubrir, comprar y disfrutar de libros nuevos y usados. Explorá nuestro catálogo y encontrá tu próxima lectura.">
     <meta property="og:image" content="public/img/logotipos/icono.png">
     <meta property="og:url" content="https://www.librospobremundo.com">
     <meta property="og:type" content="website">
@@ -15,22 +19,27 @@
     <title>Libros Del Pobre Mundo | Inicio</title>
     <link rel="stylesheet" href="public/css/styles.css">
     <link rel="shortcut icon" href="public/img/logotipos/icono.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DF5MEPLKRP"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-DF5MEPLKRP');
 </script>
+
 <body>
+
     <div class="top-banner">
         <p>Envios a todo el país | Más de 20.000 títulos en nuestro catálogo | Consultar disponibilidad</p>
     </div>
+
     <header>
+
         <div class="header-container">
             <div class="logo">
                 <img src="public/img/logotipos/blanco.png" alt="Logotipo Libros del pobre mundo">
@@ -48,8 +57,11 @@
                 <li><a href="contacto.html">CONTACTO</a></li>
             </ul>
         </nav>
+
     </header>
+
     <main>
+
         <!--
         <div class="banner">
             <div class="slides">
@@ -67,199 +79,89 @@
                 <h2>BUSCADOR DE LIBROS</h2>
                 <p>Título, autor o isbn</p>
                 <div class="search-box">
-                    <input type="text" id="search-input" placeholder="Buscar libros por título, autor, ISBN..." oninput="buscarLibros()">
+                    <input type="text" id="search-input" placeholder="Buscar libros por título, autor, ISBN..."
+                        oninput="buscarLibros()">
                     <button class="search-button" onclick="buscarLibros()"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </section>
         <div id="search-results" class="search-results"></div>
+
         <!-- DESTACADOS -->
-        <section class="novedades-section"> 
+        <section class="novedades-section">
             <h2><span></span>DESTACADOS<span></span></h2>
             <section class="book-carousel-section" id="carousel-1">
                 <div class="carousel-container">
-                    <button class="carousel-button prev-button">&#10094;</button>
+                    <button class="carousel-button prev-button" id="prev-destacados">&#10094;</button>
                     <div class="carousel">
-                        <div class="carousel-track">
+                        <div class="carousel-track" id="track-destacados">
+                            <!-- Libro 1: LOS NIETOS TE CUENTAN CÓMO FUE -->
                             <div class="book-card">
-                                <img src="./public/img/portadas/desaparecidos.jpg" alt="LO SUFICIENTEMENTE LOCO: UNA BIOGRAFÍA DE MARCELO BIELSA">
-                                <div class="book-info">
-                                    <h3 class="book-title">DESAPARECIDOS - EN BUSCA DE LA VERDAD</h3>
-                                    <p class="book-author">SAMUEL BLIXEN, NILO PATIÑO</p>
-                                    <p class="book-price">UYU 860</p>
-                                    <button class="more-button" onclick="verMas(712)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(712)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/el familiar.jpg" alt="EL DESCONTENTO">
-                                <div class="book-info">
-                                    <h3 class="book-title">EL FAMILIAR</h3>
-                                    <p class="book-author">LEIGH BARDUGO</p>
-                                    <p class="book-price">UYU 1050</p>
-                                    <button class="more-button" onclick="verMas(713)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(713)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <div class="book-card">
-                                <img src="./public/img/portadas/los nietos te cuentan como fue.jpg" alt="LOS NIETOS TE CUENTAN CÓMO FUE">
+                                <img src="./public/img/portadas/los nietos te cuentan como fue.jpg"
+                                    alt="LOS NIETOS TE CUENTAN CÓMO FUE">
                                 <div class="book-info">
                                     <h3 class="book-title">LOS NIETOS TE CUENTAN CÓMO FUE</h3>
                                     <p class="book-author">ANALÍA ARGENTO / MARIANA ZAFFARONI ISLAS</p>
                                     <p class="book-price">UYU 690</p>
                                     <button class="more-button" onclick="verMas(306)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(306)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(306)">
+                                        <i class="fas fa-shopping-cart"></i> Añadir
+                                    </button>
                                 </div>
                             </div>
-                            <!-- Book Card 1 -->
-                            <div class="book-card current-slide">
-                                <img src="public/img/portadas/jose mujica otros mundos posibles.jpg" alt="JOSÉ MUJICA - OTROS MUNDOS POSIBLES">
+
+                            <!-- Libro 2: JOSÉ MUJICA - OTROS MUNDOS POSIBLES -->
+                            <div class="book-card">
+                                <img src="public/img/portadas/jose mujica otros mundos posibles.jpg"
+                                    alt="JOSÉ MUJICA - OTROS MUNDOS POSIBLES">
                                 <div class="book-info">
                                     <h3 class="book-title">JOSÉ MUJICA - OTROS MUNDOS POSIBLES</h3>
                                     <p class="book-author">GERARDO CAETANO</p>
                                     <p class="book-price">UYU 890</p>
                                     <button class="more-button" onclick="verMas(294)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(294)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(294)">
+                                        <i class="fas fa-shopping-cart"></i> Añadir
+                                    </button>
                                 </div>
                             </div>
+
+                            <!-- Libro 3: EL DÍA QUE EL EMPERADOR MATÓ UN RINOCERONTE -->
                             <div class="book-card">
-                                <img src="./public/img/portadas/si te gusta la oscuridad.jpg" alt="SI TE GUSTA LA OSCURIDAD">
+                                <img src="https://imagessl1.casadellibro.com/a/l/t5/77/9788419942777.jpg"
+                                    alt="EL DÍA QUE EL EMPERADOR MATÓ UN RINOCERONTE">
                                 <div class="book-info">
-                                    <h3 class="book-title">SI TE GUSTA LA OSCURIDAD</h3>
-                                    <p class="book-author">STEPHEN KING</p>
-                                    <p class="book-price">UYU 1190</p>
-                                    <button class="more-button" onclick="verMas(421)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(421)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <h3 class="book-title">EL DÍA QUE EL EMPERADOR MATÓ UN RINOCERONTE</h3>
+                                    <p class="book-author">JERRY TONER</p>
+                                    <p class="book-price">UYU 1400</p>
+                                    <button class="more-button" onclick="verMas(863)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(863)">
+                                        <i class="fas fa-shopping-cart"></i> Añadir
+                                    </button>
                                 </div>
                             </div>
+
+                            <!-- Libro 4: OLIGARQUÍA -->
                             <div class="book-card">
-                                <img src="public/img/portadas/el caso astesiano.jpg" alt="EL CASO ASTESIANO">
+                                <img src="https://imagessl8.casadellibro.com/a/l/t5/58/9788419558558.jpg"
+                                    alt="OLIGARQUÍA">
                                 <div class="book-info">
-                                    <h3 class="book-title">EL CASO ASTESIANO</h3>
-                                    <p class="book-author">LUCAS SILVA</p>
-                                    <p class="book-price">UYU 790</p>
-                                    <button class="more-button" onclick="verMas(299)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(299)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 2 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/conversaciones con allende.jpg" alt="CONVERSACIONES CON ALLENDE">
-                                <div class="book-info">
-                                    <h3 class="book-title">CONVERSACIONES CON ALLENDE</h3>
-                                    <p class="book-author">RÉGIS DEBRAY</p>
-                                    <p class="book-price">UYU 980</p>
-                                    <button class="more-button" onclick="verMas(295)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(295)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 3 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/vida y muerte del cartel de medellin.jpg" alt="VIDA Y MUERTE DEL CARTEL DE MEDELLÍN">
-                                <div class="book-info">
-                                    <h3 class="book-title">VIDA Y MUERTE DEL CARTEL DE MEDELLÍN</h3>
-                                    <p class="book-author">CARLOS LEHDER RIVAS</p>
-                                    <p class="book-price">UYU 990</p>
-                                    <button class="more-button" onclick="verMas(296)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(296)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 4 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/porque fracasan los paises.JPG" alt="POR QUÉ FRACASAN LOS PAÍSES">
-                                <div class="book-info">
-                                    <h3 class="book-title">POR QUÉ FRACASAN LOS PAÍSES</h3>
-                                    <p class="book-author">DARON ACEMOGLU, JAMES A. ROBINSON</p>
-                                    <p class="book-price">UYU 1350</p>
-                                    <button class="more-button" onclick="verMas(297)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(297)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 5 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/en el pensamiento.jpg" alt="EN EL PENSAMIENTO">
-                                <div class="book-info">
-                                    <h3 class="book-title">EN EL PENSAMIENTO</h3>
-                                    <p class="book-author">CESAR AIRA</p>
-                                    <p class="book-price">UYU 690</p>
-                                    <button class="more-button" onclick="verMas(298)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(298)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 7 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/utopias digitales.jpg" alt="UTOPÍAS DIGITALES">
-                                <div class="book-info">
-                                    <h3 class="book-title">UTOPÍAS DIGITALES</h3>
-                                    <p class="book-author">EKAITZ CANCELA</p>
-                                    <p class="book-price">UYU 1090</p>
-                                    <button class="more-button" onclick="verMas(300)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(300)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 8 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/la miseria de la teoria.jpg" alt="LA MISERIA DE LA TEORÍA">
-                                <div class="book-info">
-                                    <h3 class="book-title">LA MISERIA DE LA TEORÍA</h3>
-                                    <p class="book-author">E. P. THOMPSON</p>
-                                    <p class="book-price">UYU 1290</p>
-                                    <button class="more-button" onclick="verMas(301)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(301)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 9 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/la larga revolucion.jpg" alt="LA LARGA REVOLUCIÓN">
-                                <div class="book-info">
-                                    <h3 class="book-title">LA LARGA REVOLUCIÓN</h3>
-                                    <p class="book-author">RAYMOND WILLIAMS</p>
-                                    <p class="book-price">UYU 1390</p>
-                                    <button class="more-button" onclick="verMas(302)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(302)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 10 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/la larga revolucion de las mujeres.jpg" alt="LA LARGA REVOLUCIÓN DE LAS MUJERES">
-                                <div class="book-info">
-                                    <h3 class="book-title">LA LARGA REVOLUCIÓN DE LAS MUJERES</h3>
-                                    <p class="book-author">JULIET MITCHELL</p>
-                                    <p class="book-price">UYU 790</p>
-                                    <button class="more-button" onclick="verMas(303)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(303)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 11 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/trumpismos.jpg" alt="TRUMPISMOS">
-                                <div class="book-info">
-                                    <h3 class="book-title">TRUMPISMOS</h3>
-                                    <p class="book-author">MIGUEL URBÁN</p>
-                                    <p class="book-price">UYU 1290</p>
-                                    <button class="more-button" onclick="verMas(304)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(304)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-                            <!-- Book Card 12 -->
-                            <div class="book-card">
-                                <img src="public/img/portadas/la alternativa socialista.jpg" alt="LA ALTERNATIVA SOCIALISTA">
-                                <div class="book-info">
-                                    <h3 class="book-title">LA ALTERNATIVA SOCIALISTA</h3>
-                                    <p class="book-author">MICHAEL A. LEBOWITZ</p>
-                                    <p class="book-price">UYU 990</p>
-                                    <button class="more-button" onclick="verMas(305)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(305)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <h3 class="book-title">OLIGARQUÍA</h3>
+                                    <p class="book-author">JEFFREY WINTERS</p>
+                                    <p class="book-price">UYU 1500</p>
+                                    <button class="more-button" onclick="verMas(864)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(864)">
+                                        <i class="fas fa-shopping-cart"></i> Añadir
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-button next-button">&#10095;</button>
+                    <button class="carousel-button next-button" id="next-destacados">&#10095;</button>
                 </div>
             </section>
         </section>
         <!-- DESTACADOS -->
+
 
         <!-- NOVEDADES -->
         <section class="novedades-section">
@@ -270,134 +172,54 @@
                     <div class="carousel">
                         <div class="carousel-track">
                             <div class="book-card current-slide">
-                                <img src="./public/img/portadas/basta de bullying.jpg" alt="BASTA DE BULLYING!">
+                                <img src="https://imagessl7.casadellibro.com/a/l/t5/17/9788433927217.jpg"
+                                    alt="LOS ÍNTIMOS">
                                 <div class="book-info">
-                                    <h3 class="book-title">BASTA DE BULLYING!</h3>
-                                    <p class="book-author">CARLOS GARCIA EGURES, AUGUSTO GARCIA AMARAL</p>
-                                    <p class="book-price">UYU 590</p>
-                                    <button class="more-button" onclick="verMas(730)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(730)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/es la microbiota idiota.jpg" alt="¡ES LA MICROBIOTA, IDIOTA!">
-                                <div class="book-info">
-                                    <h3 class="book-title">¡ES LA MICROBIOTA, IDIOTA!</h3>
-                                    <p class="book-author">SARI ARPONEN</p>
-                                    <p class="book-price">UYU 590</p>
-                                    <button class="more-button" onclick="verMas(731)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(731)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/naciste para moverte.jpg" alt="NACISTE PARA MOVERTE">
-                                <div class="book-info">
-                                    <h3 class="book-title">NACISTE PARA MOVERTE</h3>
-                                    <p class="book-author">JULIET STARRETT, KELLY STARRETT</p>
-                                    <p class="book-price">UYU 890</p>
-                                    <button class="more-button" onclick="verMas(732)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(732)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/rebelion en la granja.jpg" alt="REBELIÓN EN LA GRANJA">
-                                <div class="book-info">
-                                    <h3 class="book-title">REBELIÓN EN LA GRANJA</h3>
-                                    <p class="book-author">GEORGE ORWELL</p>
-                                    <p class="book-price">UYU 590</p>
-                                    <button class="more-button" onclick="verMas(733)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(733)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/tu cerebro tiene hambre.jpg" alt="TU CEREBRO TIENE HAMBRE">
-                                <div class="book-info">
-                                    <h3 class="book-title">TU CEREBRO TIENE HAMBRE</h3>
-                                    <p class="book-author">BOTICARIA GARCÍA</p>
-                                    <p class="book-price">UYU 890</p>
-                                    <button class="more-button" onclick="verMas(734)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(734)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/milei una historia del presidente.jpg" alt="MILEI. UNA HISTORIA DEL PRESENTE">
-                                <div class="book-info">
-                                    <h3 class="book-title">MILEI. UNA HISTORIA DEL PRESENTE</h3>
-                                    <p class="book-author">ERNESTO TENEMBAUM</p>
-                                    <p class="book-price">UYU 890</p>
-                                    <button class="more-button" onclick="verMas(735)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(735)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/culpas compartidas.jpg" alt="CULPAS COMPARTIDAS (SERIE BERGMAN 8)">
-                                <div class="book-info">
-                                    <h3 class="book-title">CULPAS COMPARTIDAS (SERIE BERGMAN 8)</h3>
-                                    <p class="book-author">MICHAEL HJORTH, HANS ROSENFELDT</p>
-                                    <p class="book-price">UYU 890</p>
-                                    <button class="more-button" onclick="verMas(736)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(736)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/el hombre mas rico de babilonia.jpg" alt="EL HOMBRE MÁS RICO DE BABILONIA">
-                                <div class="book-info">
-                                    <h3 class="book-title">EL HOMBRE MÁS RICO DE BABILONIA</h3>
-                                    <p class="book-author">GEORGE S. CLASON</p>
-                                    <p class="book-price">UYU 590</p>
-                                    <button class="more-button" onclick="verMas(737)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(737)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/mujeres de ojos grandes.jpg" alt="MUJERES DE OJOS GRANDES">
-                                <div class="book-info">
-                                    <h3 class="book-title">MUJERES DE OJOS GRANDES</h3>
-                                    <p class="book-author">ÁNGELES MASTRETTA</p>
-                                    <p class="book-price">UYU 520</p>
-                                    <button class="more-button" onclick="verMas(738)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(738)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/ales junto a la hoguera.jpg" alt="ALES JUNTO A LA HOGUERA">
-                                <div class="book-info">
-                                    <h3 class="book-title">ALES JUNTO A LA HOGUERA</h3>
-                                    <p class="book-author">JON FOSSE</p>
-                                    <p class="book-price">UYU 790</p>
-                                    <button class="more-button" onclick="verMas(739)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(739)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/autismo.jpg" alt="AUTISMO">
-                                <div class="book-info">
-                                    <h3 class="book-title">AUTISMO</h3>
-                                    <p class="book-author">MATÍAS CADAVEIRA, CLAUDIO WAISBURG</p>
-                                    <p class="book-price">UYU 520</p>
-                                    <button class="more-button" onclick="verMas(740)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(740)"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                                </div>
-                            </div>
-        
-                            <div class="book-card">
-                                <img src="./public/img/portadas/el consultor.jpg" alt="EL CONSULTOR">
-                                <div class="book-info">
-                                    <h3 class="book-title">EL CONSULTOR</h3>
-                                    <p class="book-author">IM SEONG-SUN</p>
+                                    <h3 class="book-title">LOS ÍNTIMOS</h3>
+                                    <p class="book-author">MARTA SANZ</p>
                                     <p class="book-price">UYU 990</p>
-                                    <button class="more-button" onclick="verMas(741)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(741)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="more-button" onclick="verMas(859)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(859)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
+                                </div>
+                            </div>
+
+                            <div class="book-card">
+                                <img src="https://imagessl7.casadellibro.com/a/l/t5/77/9788433922977.jpg"
+                                    alt="LOS VULNERABLES">
+                                <div class="book-info">
+                                    <h3 class="book-title">LOS VULNERABLES</h3>
+                                    <p class="book-author">SIGRID NUNEZ</p>
+                                    <p class="book-price">UYU 790</p>
+                                    <button class="more-button" onclick="verMas(860)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(860)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
+                                </div>
+                            </div>
+
+                            <div class="book-card">
+                                <img src="https://imagessl1.casadellibro.com/a/l/t5/66/9788439744566.jpg"
+                                    alt="EL MONTE DE LAS FURIAS">
+                                <div class="book-info">
+                                    <h3 class="book-title">EL MONTE DE LAS FURIAS</h3>
+                                    <p class="book-author">FERNANDA TRÍAS</p>
+                                    <p class="book-price">UYU 890</p>
+                                    <button class="more-button" onclick="verMas(861)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(861)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
+                                </div>
+                            </div>
+
+                            <div class="book-card">
+                                <img src="https://imagessl3.casadellibro.com/a/l/t5/98/9788410183698.jpg"
+                                    alt="VIVIR EN ZAPATILLAS">
+                                <div class="book-info">
+                                    <h3 class="book-title">VIVIR EN ZAPATILLAS</h3>
+                                    <p class="book-author">PASCAL BRUCKNER</p>
+                                    <p class="book-price">UYU 1200</p>
+                                    <button class="more-button" onclick="verMas(862)">Ver más</button>
+                                    <button class="cart-button" onclick="addToCart(862)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +228,6 @@
                 </div>
             </section>
         </section>
-        
         <!-- NOVEDADES -->
 
         <!-- OTROS TITULOS -->
@@ -424,18 +245,21 @@
                                     <p class="book-author">JAMES CLEAR</p>
                                     <p class="book-price">UYU 990</p>
                                     <button class="more-button" onclick="verMas(443)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(443)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(443)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <!-- Book Card 1 -->
                             <div class="book-card current-slide">
-                                <img src="./public/img/portadas/la felicidad.jpg" alt="LA FELICIDAD MÁS ALLÁ DE LA ILUSIÓN">
+                                <img src="./public/img/portadas/la felicidad.jpg"
+                                    alt="LA FELICIDAD MÁS ALLÁ DE LA ILUSIÓN">
                                 <div class="book-info">
                                     <h3 class="book-title">LA FELICIDAD MÁS ALLÁ DE LA ILUSIÓN</h3>
                                     <p class="book-author">GABRIEL ROLÓN</p>
                                     <p class="book-price">UYU 990</p>
                                     <button class="more-button" onclick="verMas(444)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(444)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(444)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                             <div class="book-card">
@@ -445,10 +269,11 @@
                                     <p class="book-author">VIVIANNE CROWLEY</p>
                                     <p class="book-price">UYU 792</p>
                                     <button class="more-button" onclick="verMas(445)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(445)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(445)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
                                 <img src="./public/img/portadas/el duelo.jpg" alt="EL DUELO">
                                 <div class="book-info">
@@ -456,21 +281,24 @@
                                     <p class="book-author">GABRIEL ROLÓN</p>
                                     <p class="book-price">UYU 750</p>
                                     <button class="more-button" onclick="verMas(446)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(446)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(446)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/el monje que vendio su ferrari.jpg" alt="EL MONJE QUE VENDIÓ SU FERRARI">
+                                <img src="./public/img/portadas/el monje que vendio su ferrari.jpg"
+                                    alt="EL MONJE QUE VENDIÓ SU FERRARI">
                                 <div class="book-info">
                                     <h3 class="book-title">EL MONJE QUE VENDIÓ SU FERRARI</h3>
                                     <p class="book-author">ROBIN SHARMA</p>
                                     <p class="book-price">UYU 590</p>
                                     <button class="more-button" onclick="verMas(447)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(447)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(447)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
                                 <img src="./public/img/portadas/tu marca eres tu.jpg" alt="TU MARCA ERES TÚ">
                                 <div class="book-info">
@@ -478,84 +306,99 @@
                                     <p class="book-author">ANA DELISANTE</p>
                                     <p class="book-price">UYU 990</p>
                                     <button class="more-button" onclick="verMas(448)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(448)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(448)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/discutir es sano si sabes como.jpg" alt="DISCUTIR ES SANO, SI SABES CÓMO">
+                                <img src="./public/img/portadas/discutir es sano si sabes como.jpg"
+                                    alt="DISCUTIR ES SANO, SI SABES CÓMO">
                                 <div class="book-info">
                                     <h3 class="book-title">DISCUTIR ES SANO, SI SABES CÓMO</h3>
                                     <p class="book-author">JUAN MUÑOZ</p>
                                     <p class="book-price">UYU 750</p>
                                     <button class="more-button" onclick="verMas(449)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(449)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(449)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/el pequeño libro de la ansiedad.jpg" alt="EL PEQUEÑO LIBRO DE LA ANSIEDAD">
+                                <img src="./public/img/portadas/el pequeño libro de la ansiedad.jpg"
+                                    alt="EL PEQUEÑO LIBRO DE LA ANSIEDAD">
                                 <div class="book-info">
                                     <h3 class="book-title">EL PEQUEÑO LIBRO DE LA ANSIEDAD</h3>
                                     <p class="book-author">FERRAN CASES</p>
                                     <p class="book-price">UYU 650</p>
                                     <button class="more-button" onclick="verMas(450)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(450)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(450)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/esta herida no me pertenece.jpg" alt="ESTA HERIDA NO ME PERTENECE">
+                                <img src="./public/img/portadas/esta herida no me pertenece.jpg"
+                                    alt="ESTA HERIDA NO ME PERTENECE">
                                 <div class="book-info">
                                     <h3 class="book-title">ESTA HERIDA NO ME PERTENECE</h3>
                                     <p class="book-author">DR. MARIEL BUQUÉ</p>
                                     <p class="book-price">UYU 890</p>
                                     <button class="more-button" onclick="verMas(451)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(451)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(451)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/padre rico padre pobre.jpg" alt="PADRE RICO PADRE POBRE">
+                                <img src="./public/img/portadas/padre rico padre pobre.jpg"
+                                    alt="PADRE RICO PADRE POBRE">
                                 <div class="book-info">
                                     <h3 class="book-title">PADRE RICO PADRE POBRE</h3>
                                     <p class="book-author">ROBERT T. KIYOSAKI</p>
                                     <p class="book-price">UYU 620</p>
                                     <button class="more-button" onclick="verMas(452)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(452)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(452)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/espiritu animal el viaje del alma.jpg" alt="ESPÍRITU ANIMAL EL VIAJE DEL ALMA">
+                                <img src="./public/img/portadas/espiritu animal el viaje del alma.jpg"
+                                    alt="ESPÍRITU ANIMAL EL VIAJE DEL ALMA">
                                 <div class="book-info">
                                     <h3 class="book-title">ESPÍRITU ANIMAL EL VIAJE DEL ALMA</h3>
                                     <p class="book-author">MAGALÍ TAJES</p>
                                     <p class="book-price">UYU 890</p>
                                     <button class="more-button" onclick="verMas(453)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(453)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(453)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/la riqueza que el dinero no puede comprar.jpg" alt="LA RIQUEZA QUE EL DINERO NO PUEDE COMPRAR">
+                                <img src="./public/img/portadas/la riqueza que el dinero no puede comprar.jpg"
+                                    alt="LA RIQUEZA QUE EL DINERO NO PUEDE COMPRAR">
                                 <div class="book-info">
                                     <h3 class="book-title">LA RIQUEZA QUE EL DINERO NO PUEDE COMPRAR</h3>
                                     <p class="book-author">ROBIN SHARMA</p>
                                     <p class="book-price">UYU 850</p>
                                     <button class="more-button" onclick="verMas(454)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(454)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(454)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
-                            
+
                             <div class="book-card">
-                                <img src="./public/img/portadas/marca personal.jpg" alt="MARCA PERSONAL COMO ESTRATEGIA DE MARKETING">
+                                <img src="./public/img/portadas/marca personal.jpg"
+                                    alt="MARCA PERSONAL COMO ESTRATEGIA DE MARKETING">
                                 <div class="book-info">
                                     <h3 class="book-title">MARCA PERSONAL COMO ESTRATEGIA DE MARKETING</h3>
                                     <p class="book-author">RAQUEL OBERLANDER</p>
                                     <p class="book-price">UYU 850</p>
                                     <button class="more-button" onclick="verMas(455)">Ver más</button>
-                                    <button class="cart-button" onclick="addToCart(455)"><i class="fas fa-shopping-cart"></i> Añadir</button>
+                                    <button class="cart-button" onclick="addToCart(455)"><i
+                                            class="fas fa-shopping-cart"></i> Añadir</button>
                                 </div>
                             </div>
                         </div>
@@ -565,16 +408,19 @@
             </section>
         </section>
         <!-- OTROS TITULOS -->
-            <div id="cart-icon-container">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            <div id="cart-container" style="display:none;">
-                <div id="cart-list"></div>
-                <button id="send-whatsapp-button" onclick="sendCartToWhatsApp()">Enviar Pedido</button>
-            </div>
+
+        <div id="cart-icon-container">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div id="cart-container" style="display:none;">
+            <div id="cart-list"></div>
+            <button id="send-whatsapp-button" onclick="sendCartToWhatsApp()">Enviar Pedido</button>
+        </div>
+
         <div class="whatsapp-bubble">
-            <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta." target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=59894090711&text=Hola%20me%20comunico%20desde%20la%20web,%20tengo%20una%20consulta."
+                target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
@@ -583,22 +429,27 @@
                 <span class="close-button" id="close-button">&times;</span>
                 <img id="popup-image" src="public/img/banners/banner-juveniles.jpeg" alt="Mensaje Emergente">
             </div>
-        </div> 
+        </div>
+
     </main>
+
     <footer>
+
         <div class="footer-content">
             <p>Todos los derechos reservados © 2024 Libros Del Pobre Mundo - Librería Online</p>
             <p>Diseño por <a href="https://brunorm04.github.io/codeviciado/" target="_blank">codeviciadodev</a></p>
-        <div class="payment-methods">
-            <p>Métodos de pagos y transferencia:</p>
-            <img src="public/img/pagos/mercadopago.png" alt="Método de pago 1">
-            <img src="public/img/pagos/itau.png" alt="Método de pago 2">
-            <img src="public/img/pagos/prex.png" alt="Método de pago 3">
-            <img src="public/img/pagos/oca blue.png" alt="Método de pago 4">
+            <div class="payment-methods">
+                <p>Métodos de pagos y transferencia:</p>
+                <img src="public/img/pagos/mercadopago.png" alt="Método de pago 1">
+                <img src="public/img/pagos/itau.png" alt="Método de pago 2">
+                <img src="public/img/pagos/prex.png" alt="Método de pago 3">
+                <img src="public/img/pagos/oca blue.png" alt="Método de pago 4">
+            </div>
         </div>
-        </div>
+
     </footer>
     <script src="public/javascript/script.js"></script>
     <script src="public/javascript/catalogo.js"></script>
 </body>
+
 </html>
