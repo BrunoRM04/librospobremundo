@@ -9539,5 +9539,49 @@
                 "precio": "UYU 1500",
                 "descripcion": "La historia de dominación, poder y privilegio de las oligarquías desde la Antigüedad hasta hoy. Durante siglos, se consideró que los oligarcas estaban empoderados por las fortunas gigantescas que poseían, una idea eclipsada por el auge de la teoría de las élites a principios del siglo XIX. El rasgo común de todos los oligarcas es que la riqueza les define, les da poder y les expone intrínsecamente a diferentes amenazas. Lo que varía a lo largo de la historia es la naturaleza de las amenazas y cómo responden los oligarcas para defender su patrimonio.",
                 "imagen": "https://imagessl8.casadellibro.com/a/l/t5/58/9788419558558.jpg"
+            },
+            {
+                "id": 865,
+                "titulo": "VIVIR EN HORIZONTAL",
+                "autor": "BERND BRUNNER",
+                "isbn": 9788419036919,
+                "editorial": "ACANTILADO",
+                "numPaginas": 125,
+                "precio": "UYU 1100",
+                "descripcion": "Pasamos un tercio de nuestras vidas tumbados: durmiendo, soñando, amando, leyendo o recuperándonos. Más allá de representar la pasividad y la pereza, el acto de reposar acostados puede constituir una forma de protesta: una oportunidad para reordenar nuestros pensamientos en un mundo regido por la incesante exigencia de productividad. Bernd Brunner nos invita a redescubrir el poder de la horizontalidad a través de entretenidísimas e insólitas historias como el origen del colchón, las formas de descanso en la remota Edad de Piedra, la importancia del diván en la consulta de Sigmund Freud o los últimos hallazgos sobre el sueño.",
+                "imagen": "https://imagessl5.casadellibro.com/a/l/t5/19/9788419036919.jpg"
+            },
+            {
+                "id": 866,
+                "titulo": "EL REENCUENTRO DE LOS COMPAÑEROS DE ARMAS",
+                "autor": "MO YAN",
+                "isbn": 9788418345753,
+                "editorial": "KAILAS EDITORIAL, S.L.",
+                "numPaginas": 272,
+                "precio": "UYU 1050",
+                "descripcion": "Una novela poética y nostálgica en la que Mo Yan muestra su rabia, combinada con una ironía feroz, contra la estupidez de la guerra y quienes la libran, y una ternura apasionada por los que la sufren. El reencuentro de los compañeros de armas transmite con asombrosa vivacidad los sentimientos de dos veteranos del ejército de las aldeas rurales de la China más profunda. Uno de ellos murió en el frente de forma ignominiosa. El otro llegó a ser oficial. Los dos amigos se reúnen en espacios imaginarios y hablan de la vida, de su infancia campesina, de sus años en los cuarteles, de sus amores frustrados y de las batallas donde, en todas partes, la farsa compite con la tragedia.",
+                "imagen": "https://imagessl7.casadellibro.com/a/l/t5/53/9788418345753.jpg"
+            },
+            {
+                "id": 867,
+                "titulo": "LOS EXTRAÑADOS",
+                "autor": "JORGE FREIRE GUTIERREZ",
+                "isbn": 9788410178168,
+                "editorial": "LIBROS DEL ASTEROIDE S.L.U.",
+                "numPaginas": 224,
+                "precio": "UYU 990",
+                "descripcion": "¿Cómo es posible que Wodehouse, genio del humor británico, se convirtiera en un apestado en Inglaterra? ¿O que el poeta Bergamín, madrileño de raíces malagueñas, cerrase filas con la causa abertzale durante los años de plomo? ¿Que Vicente Blasco Ibáñez, después de convertirse en el escritor español más exitoso de la historia, solo consiguiera reconciliarse con su patria estando fuera de ella? A través de historias de escritores desarraigados, Jorge Freire reflexiona sobre el sentimiento de no pertenencia y el asombro que conlleva vivir en un continuo estado de extrañeza.",
+                "imagen": "https://imagessl1.casadellibro.com/a/l/t5/68/9788410178168.jpg"
+            },
+            {
+                "id": 868,
+                "titulo": "RELATOS AUTOBIOGRÁFICOS",
+                "autor": "THOMAS BERNHARD",
+                "isbn": 9788433918215,
+                "editorial": "ANAGRAMA",
+                "numPaginas": 432,
+                "precio": "UYU 1390",
+                "descripcion": "La descripción de una vida como invención de una vida: estas páginas esconden la clave para entender cómo Bernhard llegó a ser el escritor que fue. Se reúnen aquí los cinco volúmenes de los escritos autobiográficos, cuya publicación se inició con El origen (1983), seguido de El sótano, El aliento, El frío y Un niño. El lector descubrirá cómo, a contracorriente y rozando las últimas fronteras de la vida, Bernhard logró concebir y construir una obra que es una exaltación de la supervivencia.",
+                "imagen": "https://imagessl2.casadellibro.com/a/l/t5/15/9788433918215.jpg"
             }
 ]
