@@ -9627,5 +9627,49 @@
                 "precio": "UYU 1090",
                 "descripcion": "Corre la década de 1920. Después de perder casi dos millones de soldados en la Primera Guerra Mundial, con una economía en ruinas y más de cuatro millones de heridos e inválidos, Alemania intenta restañar sus heridas. Berlín —donde se dice que las faldas suben más rápido que la inflación— es un imán para artistas e intelectuales, pero también para quienes sólo desean cambiar su suerte. Entre los primeros se cuenta Heinrich Mann (1871-1950), destacado pacifista y respetado escritor; entre los segundos, la joven Nelly Kröger (1898-1944), hija ilegítima de una sirvienta, simpatizante comunista y Animierdame, o 'animadora', en un club nocturno. Igual que sus contemporáneos, la improbable pareja es testigo de la funesta llegada del régimen nazi y su espiral de locura y muerte. Como muchos alemanes, checos o polacos, deben huir dejándolo todo atrás, y desde un primer exilio europeo asisten al sacrificio cruel y sistemático de judíos y disidentes. Más tarde se ven obligados a marchar a Estados Unidos, un refugio del que otro exiliado dirá: 'Si mi interior no estuviese tan mal como está, sería muy agradable vivir aquí'. Evelyn Juers traza la apasionante biografía colectiva de una época convulsa, con secundarios de lujo como Thomas Mann, Virginia Woolf, Bertolt Brecht, James Joyce o Walter Benjamin.",
                 "imagen": "https://imagessl8.casadellibro.com/a/l/s7/78/9788477652878.webp"
+            },
+            {
+                "id": 873,
+                "titulo": "¿QUIÉN HA VISTO EL VIENTO?",
+                "autor": "CARSON MCCULLERS",
+                "isbn": 9788432219191,
+                "editorial": "AUSTRAL",
+                "numPaginas": 320,
+                "precio": "UYU 590",
+                "descripcion": "Carson McCullers transmitió con una maestría insuperable la grandeza y la tragedia del alma humana. Su obra ha seducido a generaciones de lectores, mientras la crítica la encumbraba en el pedestal de los clásicos del siglo XX. Por estas páginas transitan el amor, la violencia, la soledad y el fracaso. Dotadas de una insólita musicalidad, desprenden una fuerza y una pasión que sacuden a quien las lee.",
+                "imagen": "https://imagessl1.casadellibro.com/a/l/s7/91/9788432219191.webp"
+            },
+            {
+                "id": 874,
+                "titulo": "NIÑOS TRISTES",
+                "autor": "CARSON MCCULLERS",
+                "isbn": 9789974879607,
+                "editorial": "FARO EDICIONES",
+                "numPaginas": 96,
+                "precio": "UYU 450",
+                "descripcion": "Los relatos reunidos aquí fueron escritos por Carson McCullers durante su prodigiosa adolescencia y juventud - con la excepción del clásico 'Un árbol, una roca, una nube', que cierra el volumen-, y son una muestra poderosa del talento intuitivo de una autora que se convertiría en una de las máximas figuras literarias de su época con la publicación de su ópera prima. 'El corazón es un cazador solitario' (1940). Las niñas y niños que viven en estos relatos -y los demás personajes con un corazón infantil-, proyectan su amor al mundo y son íntimamente transformados cuando ese mundo les devuelve su amor convertido en algo que ellos no esperaban. La traducción que presentamos aquí busca actualizar y recuperar al menos una parte de la frescura y alegría de la prosa original de McCullers.",
+                "imagen": "https://www.puroverso.uy/images/virtuemart/product/resized/9789974879607_500x500.jpg"
+            },
+            {
+                "id": 875,
+                "titulo": "CUENTOS DE AMOR, DE LOCURA Y DE MUERTE",
+                "autor": "HORACIO QUIROGA",
+                "isbn": 9789974863088,
+                "editorial": "FARO EDICIONES",
+                "numPaginas": 212,
+                "precio": "UYU 450",
+                "descripcion": "Más de cien años han pasado desde la primera edición de los 'Cuentos de amor, de locura y de muerte' (1917), el libro que marcó el comienzo de la madurez creativa de sus futuras creaciones. Aquí tenemos a un autor que comienza a andar el camino de la apropiación definitiva de las lecciones de sus maestros literarios para proyectarlas a través del tamiz de su propia experiencia vital. Las dos primeras ediciones de este conjunto de 1917 y 1918, estaban formadas por 18 cuentos. A partir de la tercera edición, el volumen se redujo a quince, mediante la supresión de 'Los ojos sombríos', 'El infierno artificial' y 'El perro rabioso'. Hemos decidido volver a incluirlos aquí para reproducir fielmente la forma original de aquella primera edición que habría bastado por sí sola para garantizarle a Quiroga un lugar central en la historia de la literatura del Río de la Plata.",
+                "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/f0/7a/f07acb39913425f7f9d1a64aeef792d3.jpg"
+            },
+            {
+                "id": 876,
+                "titulo": "TRES CUENTOS DE LA SELVA",
+                "autor": "HORACIO QUIROGA",
+                "isbn": 9789974112384,
+                "editorial": "BANDA ORIENTAL",
+                "numPaginas": 225,
+                "precio": "UYU 750",
+                "descripcion": "Nadie puede negar que 'Cuentos de la Selva', de Horacio Quiroga, es uno de los libros más importantes de nuestra literatura para niños y jóvenes. A medida que pasan las generaciones, lectores de todas las edades se acercan a disfrutar las aventuras creadas por uno de nuestros mayores escritores, quien conoció muy de cerca a cada uno de los animales que pueblan la selva de Misiones. En esta edición te presentamos tres de esos cuentos: 'Las medias de los flamencos', 'La guerra de los yacarés' y 'El paso del Yabebirí', ilustrados por Fidel Sclavo. A partir de ahora vas a mirar muy bien de qué material son las medias de tu vecino.",
+                "imagen": "https://www.bookshop.com.uy/media/catalog/product/cache/da73607d3528e7d3c6633d199d3d4f17/t/r/tres-cuentos-de-la-selva-horacio-quiroga.jpg"
             }
 ]
