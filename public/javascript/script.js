@@ -48,53 +48,61 @@ setInterval(showNextSlide, 3000);
 /******************************************/
 /*                CARRUSEL                */
 /******************************************/
-
 document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.book-carousel-section'); // Seleccionar todos los carruseles
 
     carousels.forEach(carousel => {
         const track = carousel.querySelector('.carousel-track'); // Pista del carrusel
+        if (!track) return;
         const slides = Array.from(track.children); // Diapositivas del carrusel
+        if (slides.length === 0) return;
         const nextButton = carousel.querySelector('.next-button'); // Botón siguiente
         const prevButton = carousel.querySelector('.prev-button'); // Botón anterior
         const slideWidth = slides[0].getBoundingClientRect().width; // Ancho de cada diapositiva
 
-        // Posicionar diapositivas horizontalmente
+        // Posicionar diapositivas horizontalmente y actualizar precios con descuento
         slides.forEach((slide, index) => {
             slide.style.left = slideWidth * index + 'px';
 
-            // Actualizar precios con descuento
             const priceElement = slide.querySelector('.book-price');
-            const originalPrice = parseFloat(priceElement.textContent.replace('UYU ', ''));
-            const discountedPrice = Math.round(originalPrice * 0.95);
-
-            priceElement.innerHTML = `<span class="original-price">UYU ${originalPrice}</span> <span class="discounted-price">UYU ${discountedPrice} (-5%)</span>`;
+            if (priceElement) {
+                const originalPrice = parseFloat(priceElement.textContent.replace('UYU ', ''));
+                const discountedPrice = Math.round(originalPrice * 0.95);
+                priceElement.innerHTML = `<span class="original-price">UYU ${originalPrice}</span> <span class="discounted-price">UYU ${discountedPrice} (-5%)</span>`;
+            }
         });
+
+        // Si ninguna diapositiva tiene la clase current-slide, asignarla al primer slide
+        if (!track.querySelector('.current-slide')) {
+            slides[0].classList.add('current-slide');
+        }
 
         // Función para mover a una diapositiva específica
         const moveToSlide = (track, currentSlide, targetSlide) => {
-            if (!targetSlide) return; // Salir si no hay diapositiva objetivo
+            if (!targetSlide) return;
             track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
             currentSlide.classList.remove('current-slide');
             targetSlide.classList.add('current-slide');
         };
 
-        // Mover a la siguiente diapositiva al hacer clic en el botón siguiente
+        // Mover a la siguiente diapositiva al hacer clic en el botón siguiente (con loop)
         nextButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
-            const nextSlide = currentSlide.nextElementSibling;
-            if (nextSlide) {
-                moveToSlide(track, currentSlide, nextSlide);
+            let nextSlide = currentSlide.nextElementSibling;
+            if (!nextSlide) {
+                nextSlide = slides[0]; // Si es el último, volver al primero
             }
+            moveToSlide(track, currentSlide, nextSlide);
         });
 
-        // Mover a la diapositiva anterior al hacer clic en el botón anterior
+        // Mover a la diapositiva anterior al hacer clic en el botón anterior (con loop)
         prevButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
-            const prevSlide = currentSlide.previousElementSibling;
-            if (prevSlide) {
-                moveToSlide(track, currentSlide, prevSlide);
+            let prevSlide = currentSlide.previousElementSibling;
+            if (!prevSlide) {
+                prevSlide = slides[slides.length - 1]; // Si es el primero, ir al último
             }
+            moveToSlide(track, currentSlide, prevSlide);
         });
 
         // Variables para el deslizamiento táctil
@@ -114,7 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isDragging) return;
             currentX = e.touches[0].pageX;
             const deltaX = currentX - startX;
-            track.style.transform = `translateX(calc(-${track.querySelector('.current-slide').style.left} + ${deltaX}px))`;
+            const currentSlide = track.querySelector('.current-slide');
+            track.style.transform = `translateX(calc(-${currentSlide.style.left} + ${deltaX}px))`;
         });
 
         // Finalizar el deslizamiento táctil
@@ -124,21 +133,24 @@ document.addEventListener('DOMContentLoaded', function() {
             const deltaX = currentX - startX;
             const currentSlide = track.querySelector('.current-slide');
             if (deltaX < -50) {
-                const nextSlide = currentSlide.nextElementSibling;
-                if (nextSlide) {
-                    moveToSlide(track, currentSlide, nextSlide);
+                let nextSlide = currentSlide.nextElementSibling;
+                if (!nextSlide) {
+                    nextSlide = slides[0];
                 }
+                moveToSlide(track, currentSlide, nextSlide);
             } else if (deltaX > 50) {
-                const prevSlide = currentSlide.previousElementSibling;
-                if (prevSlide) {
-                    moveToSlide(track, currentSlide, prevSlide);
+                let prevSlide = currentSlide.previousElementSibling;
+                if (!prevSlide) {
+                    prevSlide = slides[slides.length - 1];
                 }
+                moveToSlide(track, currentSlide, prevSlide);
             } else {
                 track.style.transform = `translateX(-${currentSlide.style.left})`;
             }
         });
     });
 });
+
 // FIN CARRUSEL
 
 
