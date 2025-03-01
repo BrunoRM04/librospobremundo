@@ -1130,80 +1130,53 @@ footer {
 
 
 
-/* CARRITO */
-.cart-button {
-    padding: 8px 8px;
-    background-color: #9E0001;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.cart-button:hover {
-    background-color: black;
-    transition: 0.3s;
-}
-
-.cart-button i {
-    margin-right: 8px;
-}
-
-/* CARRITO */
-#cart-icon-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #9E0001;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-#cart-icon-container #cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: white;
-    color: black;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* CARRITO */
+/******************************************/
+/*        ESTILOS GENERALES CARRITO       */
+/******************************************/
 #cart-container {
     position: fixed;
     bottom: 80px;
     right: 20px;
-    background: white;
+    background: #fff;
     border: 2px solid #9E0001;
     padding: 20px;
-    z-index: 1000;
     border-radius: 10px;
+    width: 320px;
+    max-height: 70vh; /* Altura máxima para permitir scroll */
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
+#cart-container h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #9E0001;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/******************************************/
+/*        ESTILOS PARA CADA LIBRO         */
+/******************************************/
 .cart-book {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.cart-book:last-child {
+    border-bottom: none;
 }
 
 .cart-book img {
     width: 60px;
     height: 90px;
     object-fit: cover;
-    margin-right: 15px;
     border-radius: 5px;
+    margin-right: 15px;
 }
 
 .cart-info {
@@ -1211,46 +1184,178 @@ footer {
 }
 
 .cart-info h3 {
-    font-size: 14px;
-    color: black;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
 }
 
 .cart-info p {
-    font-size: 12px;
+    margin: 4px 0;
+    font-size: 13px;
     color: #666;
-    margin-bottom: 5px;
 }
 
+/******************************************/
+/*       BOTONES Y ACCIONES LIBRO         */
+/******************************************/
 .cart-info button {
     padding: 5px 10px;
     background-color: #9E0001;
-    color: white;
+    color: #fff;
     border: none;
-    cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
     border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#send-whatsapp-button {
+.cart-info button:hover {
+    background-color: #000;
+}
+
+/******************************************/
+/*       BOTÓN PRINCIPAL DEL CARRITO      */
+/******************************************/
+.cart-button {
+    padding: 8px 12px;
     background-color: #9E0001;
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
     border: none;
     cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+    background-color: #000;
+}
+
+/******************************************/
+/*            ICONO DEL CARRITO           */
+/******************************************/
+#cart-icon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #9E0001;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#cart-icon-container #cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #fff;
+    color: #9E0001;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #9E0001;
+}
+
+/******************************************/
+/*   ESTILOS PARA EL TOTAL Y DESCUENTO    */
+/******************************************/
+#cart-total {
+    font-size: 14px;
+    color: #333;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#cart-total p {
+    margin: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+#cart-total p strong {
+    color: #9E0001;
+}
+
+/******************************************/
+/*      BOTÓN PARA ENVIAR A WHATSAPP      */
+/******************************************/
+#send-whatsapp-button {
+    background-color: #9E0001;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
     font-size: 14px;
     width: 100%;
     text-align: center;
     border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 #send-whatsapp-button:hover {
-    background-color: black;
-    transition: 0.3s;
+    background-color: #000;
 }
 
-/* CARRITO */
+/******************************************/
+/*          MEDIA QUERIES (RESPONSIVE)    */
+/******************************************/
+@media (max-width: 480px) {
+    #cart-container {
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-height: 60vh;
+        padding: 15px;
+    }
+
+    #cart-icon-container {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .cart-info h3 {
+        font-size: 15px;
+    }
+
+    .cart-info p {
+        font-size: 12px;
+    }
+
+    .cart-info button {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    #send-whatsapp-button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #cart-container {
+        width: 280px;
+    }
+}
+
+
 
 
 
