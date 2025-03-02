@@ -18,7 +18,6 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -109,6 +108,7 @@ nav ul li a:hover {
 }
 
 /*BANNER*/
+
 /*BUSCADOR*/
 .search-section {
     padding: 20px;
@@ -249,6 +249,7 @@ nav ul li a:hover {
 }
 
 /*BUSCADOR*/
+
 /*titulos*/
 .novedades-section {
     text-align: center;
@@ -273,6 +274,7 @@ nav ul li a:hover {
 }
 
 /*titulos*/
+
 /*CARRUSEL*/
 .book-carousel-section {
     text-align: center;
@@ -309,7 +311,6 @@ nav ul li a:hover {
     height: 300px;
     object-fit: cover;
     display: inline-block;
-    /* Asegúrate de que la imagen se comporte como un elemento en línea */
 }
 
 .book-info {
@@ -381,6 +382,7 @@ nav ul li a:hover {
 }
 
 /*CARRUSEL*/
+
 /*DETALLES LIBRO*/
 .details-container {
     display: flex;
@@ -423,7 +425,6 @@ nav ul li a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
-    /* Permite el ajuste en múltiples líneas */
     color: #333;
     font-weight: bold;
 }
@@ -540,101 +541,25 @@ nav ul li a:hover {
     color: #000;
     margin-bottom: 10px;
 }
-
-/* Media Queries */
-@media (max-width: 768px) {
-
-    .details-left,
-    .details-right {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .details-container {
-        padding: 15px;
-    }
-
-    .details-left {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .details-right .book-title {
-        font-size: 22px;
-    }
-
-    .details-right .book-author,
-    .details-right .book-isbn,
-    .details-right .book-editorial,
-    .details-right .book-pages,
-    .details-right .book-price {
-        font-size: 14px;
-    }
-
-    .details-right .book-description {
-        font-size: 12px;
-    }
-
-    .details-right .buy-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    .details-right .shipping-info {
-        font-size: 12px;
-    }
-
-    .details-right .payment-info img {
-        max-width: 80px;
-    }
-
-    .details-right .social-share button {
-        font-size: 14px;
-    }
+.original-price {
+    text-decoration: line-through;
+    color: #242424;
+    margin-right: 8px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-@media (max-width: 480px) {
-    .details-container {
-        padding: 10px;
-    }
-
-    .details-right .book-title {
-        font-size: 20px;
-    }
-
-    .details-right .book-author,
-    .details-right .book-isbn,
-    .details-right .book-editorial,
-    .details-right .book-pages,
-    .details-right .book-price {
-        font-size: 12px;
-    }
-
-    .details-right .book-description {
-        font-size: 10px;
-    }
-
-    .details-right .buy-button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .details-right .shipping-info {
-        font-size: 10px;
-    }
-
-    .details-right .payment-info img {
-        max-width: 60px;
-    }
-
-    .details-right .social-share button {
-        font-size: 12px;
-    }
+.discounted-price {
+    font-weight: bold;
+    color: #9E0001;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /*DETALLES LIBRO*/
 
-/* Botón de categorías y barra lateral (queda igual) */
 #boton-categorias {
     position: fixed;
     top: 200px;
@@ -754,108 +679,161 @@ nav ul li a:hover {
     box-shadow: 0 0 0 2px #9E0001;
 }
 
-/* Contenedor principal del catálogo */
-.catalogo-container {
-    padding: 20px;
-}
 
-/* 
-   Configuramos la cuadrícula para que:
-   1) Cada tarjeta tenga un min-width razonable (p.e. 220px).
-   2) Se centre automáticamente en caso de haber pocas tarjetas.
-*/
-.catalogo-grid {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CATALOGO */
+/* Contenedor para sidebar y catálogo */
+.content-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  /* Sidebar (barra lateral) */
+  .sidebar {
+    flex: 0 0 250px;
+    padding: 20px;
+    background-color: #9E0001;
+  }
+  
+  .sidebar .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .filter-section h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .sidebar .filter-section input[type="range"],
+  .sidebar .filter-section select,
+  .sidebar .filter-section input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  #price-value {
+    font-size: 14px;
+    color: white;
+  }
+  
+  /* Catálogo */
+  .catalogo-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* Grilla de libros */
+  .catalogo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
     margin-top: 20px;
     place-items: center;
-}
-
-/* Ajustes de la tarjeta */
-.catalogo-card {
+  }
+  
+  /* Tarjetas de catálogo */
+  .catalogo-card {
     position: relative;
     width: 100%;
     max-width: 250px;
-    /* Ajusta si deseas más ancho */
     text-align: left;
     transition: transform 0.2s;
     overflow: hidden;
     margin: 0 auto;
-}
-
-.catalogo-image-wrapper {
+  }
+  
+  .catalogo-image-wrapper {
     width: 100%;
     height: 280px;
-    /* La altura fija que quieres */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* Evita desbordes feos si fuera más grande */
     background-color: #fff;
-    /* Fondo, por si la imagen no llena el espacio */
-}
-
-.catalogo-image-wrapper img {
+  }
+  
+  .catalogo-image-wrapper img {
     max-height: 100%;
-    /* Se ajusta a la altura de 280px */
     width: auto;
-    /* Mantiene proporción */
     object-fit: contain;
-}
-
-/* Imagen de la tarjeta */
-.catalogo-card img {
+  }
+  
+  .catalogo-card img {
     width: 100%;
-    /* Toma el 100% del ancho del contenedor .catalogo-card */
     height: auto;
-    /* Que se ajuste la altura en función del ancho */
     object-fit: contain;
-    /* Para que no recorte la imagen */
     display: block;
     margin: 0 auto;
-}
-
-/* Contenedor de la info dentro de la tarjeta */
-.catalogo-info {
+  }
+  
+  .catalogo-info {
     padding: 10px;
-}
-
-.catalogo-title {
+  }
+  
+  .catalogo-title {
     font-size: 16px;
     color: #000;
     margin: 10px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.catalogo-author {
+  }
+  
+  .catalogo-author {
     font-size: 12px;
     color: #555;
     margin-bottom: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.catalogo-price {
+  }
+  
+  .catalogo-price {
     font-size: 14px;
     color: #9E0001;
     margin-bottom: 10px;
     font-weight: bold;
-}
-
-.catalogo-buttons {
+  }
+  
+  .catalogo-buttons {
     display: flex;
     gap: 10px;
     margin-top: 10px;
-}
-
-.catalogo-vermas-button,
-.catalogo-cart-button {
+  }
+  
+  .catalogo-vermas-button,
+  .catalogo-cart-button {
     flex: 1;
     padding: 8px 0;
     background-color: #9E0001;
@@ -866,14 +844,15 @@ nav ul li a:hover {
     text-align: center;
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-
-.catalogo-vermas-button:hover,
-.catalogo-cart-button:hover {
+  }
+  
+  .catalogo-vermas-button:hover,
+  .catalogo-cart-button:hover {
     background-color: black;
-}
-
-.book-status {
+  }
+  
+  /* Estado del libro */
+  .book-status {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -884,49 +863,134 @@ nav ul li a:hover {
     font-size: 0.9em;
     font-weight: bold;
     z-index: 1;
-}
-
-.original-price {
-    text-decoration: line-through;
-    color: #242424;
-    margin-right: 8px;
-    font-size: 14px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.discounted-price {
-    font-weight: bold;
-    color: #9E0001;
-    font-size: 18px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-
-    .original-price,
-    .discounted-price {
-        font-size: 12px;
+  }
+  
+  /* ===================== */
+  /* Ajustes Responsive    */
+  /* ===================== */
+  
+  /* Para pantallas hasta 768px */
+  @media (max-width: 768px) {
+    /* Reorganización en columna */
+    .content-wrapper {
+      flex-direction: column;
     }
-
-    .discounted-price {
-        font-size: 14px;
+    
+    /* Ajuste de la sidebar */
+    .sidebar {
+      width: 100%;
+      padding: 10px;
+      border-right: none;
+      border-bottom: 2px solid #9E0001;
     }
-}
-
-@media (max-width: 480px) {
-
-    .original-price,
-    .discounted-price {
-        font-size: 10px;
+    
+    /* Reducir padding del catálogo */
+    .catalogo-container {
+      padding: 10px;
     }
-
-    .discounted-price {
-        font-size: 12px;
+    
+    /* Reducción de márgenes en la grilla */
+    .catalogo-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      padding: 10px;
+      margin-top: 10px;
     }
-}
+    
+    /* Tarjetas más compactas */
+    .catalogo-card {
+      max-width: 180px;
+    }
+    
+    /* Ajuste de la altura de las imágenes */
+    .catalogo-image-wrapper {
+      height: 200px;
+    }
+    
+    /* Reducir tamaños de fuente */
+    .catalogo-title {
+      font-size: 14px;
+    }
+    .catalogo-author {
+      font-size: 10px;
+    }
+    .catalogo-price {
+      font-size: 12px;
+    }
+    
+    /* Botones más pequeños */
+    .catalogo-vermas-button,
+    .catalogo-cart-button {
+      font-size: 10px;
+      padding: 6px 0;
+    }
+  }
+  
+  /* Para pantallas muy pequeñas (hasta 480px) */
+  @media (max-width: 480px) {
+    .catalogo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .catalogo-card {
+      max-width: 140px;
+    }
+    
+    .catalogo-image-wrapper {
+      height: 180px;
+    }
+    
+    .catalogo-title {
+      font-size: 12px;
+    }
+    .catalogo-author {
+      font-size: 9px;
+    }
+    .catalogo-price {
+      font-size: 10px;
+    }
+    
+    .catalogo-vermas-button,
+    .catalogo-cart-button {
+      font-size: 9px;
+    }
+  }
+  
+
+/* CATALOGO */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*FOOTER*/
 footer {
@@ -970,6 +1034,7 @@ footer {
 }
 
 /*FOOTER*/
+
 /*BURBUJA*/
 .whatsapp-bubble {
     position: fixed;
@@ -997,6 +1062,7 @@ footer {
 }
 
 /*BURBUJA*/
+
 /*NOT FOUND*/
 .simple-notfound-container {
     text-align: center;
@@ -1046,7 +1112,6 @@ footer {
 /*BOTON EMERGENTE*/
 .popup {
     display: none;
-    /* Oculto por defecto */
     position: fixed;
     top: 0;
     left: 0;
@@ -1056,7 +1121,6 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    /* Mayor que el z-index del carrusel */
 }
 
 .popup-content {
@@ -1066,7 +1130,6 @@ footer {
     text-align: center;
     max-width: 80%;
     z-index: 10001;
-    /* Mayor que el z-index del popup */
 }
 
 #popup-image {
@@ -1093,11 +1156,9 @@ footer {
         padding: 15px;
         z-index: 10001;
     }
-
     #popup-image {
         max-width: 90%;
     }
-
     .close-button {
         font-size: 25px;
         top: 5px;
@@ -1111,11 +1172,9 @@ footer {
         padding: 10px;
         z-index: 10001;
     }
-
     #popup-image {
         max-width: 100%;
     }
-
     .close-button {
         font-size: 20px;
         top: 5px;
@@ -1124,11 +1183,6 @@ footer {
 }
 
 /*BOTON EMERGENTE*/
-
-
-
-
-
 
 /******************************************/
 /*        ESTILOS GENERALES CARRITO       */
@@ -1142,7 +1196,7 @@ footer {
     padding: 20px;
     border-radius: 10px;
     width: 320px;
-    max-height: 70vh; /* Altura máxima para permitir scroll */
+    max-height: 70vh;
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -1355,70 +1409,6 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*RESPONSIVES*/
 @media (max-width: 768px) {
     .top-banner {
@@ -1594,7 +1584,6 @@ footer {
 @media (min-width: 576px) {
     .book-card {
         width: 200px;
-        /* Ajuste para pantallas medianas */
         margin: 0 5px;
     }
 
@@ -1606,7 +1595,6 @@ footer {
 @media (min-width: 768px) {
     .book-card {
         width: 250px;
-        /* Ajuste para pantallas grandes */
         margin: 0 5px;
     }
 
@@ -1618,34 +1606,11 @@ footer {
 @media (min-width: 992px) {
     .book-card {
         width: 300px;
-        /* Ajuste para pantallas muy grandes */
         margin: 0 5px;
     }
 
     .book-title {
         font-size: 22px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .catalogo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .catalogo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
-    }
-
-    .catalogo-title {
-        font-size: 14px;
-    }
-
-    .catalogo-author,
-    .catalogo-price,
-    .catalogo-button {
-        font-size: 10px;
     }
 }
 

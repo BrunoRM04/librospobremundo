@@ -1,3 +1,4 @@
+// Función para el menú
 function toggleMenu() {
     const menu = document.getElementById("nav-menu");
     const body = document.body;
@@ -14,6 +15,7 @@ function toggleMenu() {
     }
 }
 
+// Slider de banner
 function initBannerSlider() {
     const slides = document.querySelector(".slides");
     if (!slides) return;
@@ -30,6 +32,7 @@ function initBannerSlider() {
     setInterval(showNextSlide, 3000);
 }
 
+// Carrusel de secciones de libros
 function initCarousel() {
     const carousels = document.querySelectorAll(".book-carousel-section");
     if (!carousels) return;
@@ -45,14 +48,12 @@ function initCarousel() {
             slide.style.left = `${slideWidth * index}px`;
             const priceElement = slide.querySelector(".book-price");
             if (priceElement) {
-                const originalPrice = parseFloat(
-                    priceElement.textContent.replace("UYU ", "")
-                );
+                const originalPrice = parseFloat(priceElement.textContent.replace("UYU ", ""));
                 const discountedPrice = Math.round(originalPrice * 0.95);
                 priceElement.innerHTML = `
-                <span class="original-price">UYU ${originalPrice}</span>
-                <span class="discounted-price"> UYU ${discountedPrice} (-5%)</span>
-            `;
+                    <span class="original-price">UYU ${originalPrice}</span>
+                    <span class="discounted-price"> UYU ${discountedPrice} (-5%)</span>
+                `;
             }
         });
         if (!track.querySelector(".current-slide")) {
@@ -112,8 +113,10 @@ function initCarousel() {
     });
 }
 
+// Variable global para los datos de libros
 let librosData = [];
 
+// Carga de datos desde el JSON
 function loadLibrosData(callback) {
     fetch("../libros.json")
         .then((response) => response.json())
@@ -122,11 +125,66 @@ function loadLibrosData(callback) {
             console.log("Datos cargados:", librosData);
             if (callback) callback();
         })
-        .catch((error) =>
-            console.error("Error al cargar el archivo JSON:", error)
-        );
+        .catch((error) => console.error("Error al cargar el archivo JSON:", error));
 }
 
+// Genera dinámicamente el filtro de autores (por la primera letra)
+function populateAuthorFilter() {
+    const select = document.getElementById("author-filter");
+    const letters = new Set();
+    librosData.forEach((book) => {
+        if (book.autor && book.autor.length > 0) {
+            letters.add(book.autor[0].toUpperCase());
+        }
+    });
+    const lettersArray = Array.from(letters).sort();
+    let options = `<option value="">Todos</option>`;
+    lettersArray.forEach((letter) => {
+        options += `<option value="${letter}">${letter}</option>`;
+    });
+    select.innerHTML = options;
+}
+
+// Aplica los filtros: precio, autor, título y orden por id (como proxy de fecha)
+function applyFilters() {
+    let filteredBooks = librosData.slice();
+
+    // Filtro de precio
+    const maxPrice = parseFloat(document.getElementById("price-range").value);
+    filteredBooks = filteredBooks.filter((book) => {
+        const price = parseFloat(book.precio.replace("UYU ", ""));
+        return price <= maxPrice;
+    });
+
+    // Filtro de autor (por la primera letra)
+    const authorLetter = document.getElementById("author-filter").value;
+    if (authorLetter) {
+        filteredBooks = filteredBooks.filter((book) =>
+            book.autor && book.autor[0].toUpperCase() === authorLetter.toUpperCase()
+        );
+    }
+
+    // Filtro por título
+    const titleText = document.getElementById("title-filter").value.trim().toLowerCase();
+    if (titleText) {
+        filteredBooks = filteredBooks.filter((book) =>
+            book.titulo.toLowerCase().includes(titleText)
+        );
+    }
+
+    // Ordenar por id: "newest" muestra primero los libros con mayor id (más nuevos) y "oldest" los de menor id (más viejos)
+    const idSort = document.getElementById("date-sort").value;
+    if (idSort === "newest") {
+        filteredBooks.sort((a, b) => b.id - a.id);
+    } else if (idSort === "oldest") {
+        filteredBooks.sort((a, b) => a.id - b.id);
+    }
+
+    // Muestra los libros filtrados
+    displayBooks(filteredBooks);
+}
+
+// Función de búsqueda general (en caso de usar input de búsqueda global)
 function buscarLibros() {
     const searchInput = document.getElementById("search-input");
     if (!searchInput) return;
@@ -138,25 +196,12 @@ function buscarLibros() {
         console.log("Entrada vacía, no se realiza la búsqueda");
         return;
     }
-    const resultados = librosData.filter(
-        (libro) =>
-            libro.titulo
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .includes(input) ||
-            libro.autor
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .includes(input) ||
-            (libro.isbn && String(libro.isbn).includes(input)) ||
-            (libro.editorial &&
-                libro.editorial
-                    .toLowerCase()
-                    .normalize("NFD")
-                    .replace(/[\u0300-\u036f]/g, "")
-                    .includes(input))
+    const resultados = librosData.filter((libro) =>
+        libro.titulo.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
+        libro.autor.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input) ||
+        (libro.isbn && String(libro.isbn).includes(input)) ||
+        (libro.editorial &&
+            libro.editorial.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(input))
     );
     if (resultados.length === 0) {
         resultsContainer.innerHTML = "<p>No se encontraron resultados.</p>";
@@ -165,19 +210,20 @@ function buscarLibros() {
             const resultCard = document.createElement("div");
             resultCard.className = "result-card";
             resultCard.innerHTML = `
-            <img src="${libro.imagen}" alt="${libro.titulo}">
-            <div class="result-info">
-                <h3 class="result-title">${libro.titulo}</h3>
-                <p class="result-author">${libro.autor}</p>
-                <p class="result-price">${libro.precio}</p>
-                <button class="result-button" onclick="verMas(${libro.id})">Ver más</button>
-            </div>
+                <img src="${libro.imagen}" alt="${libro.titulo}">
+                <div class="result-info">
+                    <h3 class="result-title">${libro.titulo}</h3>
+                    <p class="result-author">${libro.autor}</p>
+                    <p class="result-price">${libro.precio}</p>
+                    <button class="result-button" onclick="verMas(${libro.id})">Ver más</button>
+                </div>
             `;
             resultsContainer.appendChild(resultCard);
         });
     }
 }
 
+// Muestra los libros en el catálogo
 function displayBooks(booksArray) {
     const catalogoGrid = document.getElementById("catalogo-grid");
     if (!catalogoGrid) return;
@@ -188,27 +234,25 @@ function displayBooks(booksArray) {
         const precioOriginal = parseFloat(libro.precio.replace("UYU ", ""));
         const precioDescuento = Math.round(precioOriginal * 0.95);
         const bookStatus = libro.estado
-            ? `<div class="book-status ${libro.estado}">${libro.estado.charAt(
-                0
-            ).toUpperCase() + libro.estado.slice(1)}</div>`
+            ? `<div class="book-status ${libro.estado}">${libro.estado.charAt(0).toUpperCase() + libro.estado.slice(1)}</div>`
             : "";
         bookCard.innerHTML = `
             <div class="catalogo-image-wrapper">
-            <img src="${libro.imagen}" alt="${libro.titulo}">
+                <img src="${libro.imagen}" alt="${libro.titulo}">
             </div>
             <div class="catalogo-info">
-            <h3 class="catalogo-title">${libro.titulo}</h3>
-            <p class="catalogo-author">${libro.autor}</p>
-            <p class="catalogo-price">
-                <span class="original-price">UYU ${precioOriginal}</span>
-                <span class="discounted-price">UYU ${precioDescuento}</span> (-5%)
-            </p>
-            <div class="catalogo-buttons">
-                <button class="catalogo-vermas-button" onclick="verMas(${libro.id})">Ver más</button>
-                <button class="catalogo-cart-button" onclick="addToCart(${libro.id})">
-                <i class="fas fa-shopping-cart"></i> Añadir
-                </button>
-            </div>
+                <h3 class="catalogo-title">${libro.titulo}</h3>
+                <p class="catalogo-author">${libro.autor}</p>
+                <p class="catalogo-price">
+                    <span class="original-price">UYU ${precioOriginal}</span>
+                    <span class="discounted-price">UYU ${precioDescuento}</span> (-5%)
+                </p>
+                <div class="catalogo-buttons">
+                    <button class="catalogo-vermas-button" onclick="verMas(${libro.id})">Ver más</button>
+                    <button class="catalogo-cart-button" onclick="addToCart(${libro.id})">
+                        <i class="fas fa-shopping-cart"></i> Añadir
+                    </button>
+                </div>
             </div>
             ${bookStatus}
         `;
@@ -216,6 +260,7 @@ function displayBooks(booksArray) {
     });
 }
 
+// Función auxiliar para mezclar un array
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -223,6 +268,7 @@ function shuffleArray(array) {
     }
 }
 
+// Funciones para el carrito
 function addToCart(bookId) {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     let existingItem = cart.find((item) => item.bookId === bookId);
@@ -285,20 +331,18 @@ function displayCart() {
     cart.forEach((item) => {
         const book = librosData.find((libro) => libro.id === item.bookId);
         if (book) {
-            const priceNumber = parseFloat(
-                book.precio.replace("UYU", "").trim()
-            );
+            const priceNumber = parseFloat(book.precio.replace("UYU", "").trim());
             const itemTotal = priceNumber * item.quantity;
             subtotal += itemTotal;
             const bookElement = document.createElement("div");
             bookElement.className = "cart-book";
             bookElement.innerHTML = `
-            <img src="${book.imagen}" alt="${book.titulo}">
-            <div class="cart-info">
-                <h3>${book.titulo}</h3>
-                <p>${book.autor}</p>
-                <button onclick="removeFromCart(${book.id})">Eliminar</button>
-            </div>
+                <img src="${book.imagen}" alt="${book.titulo}">
+                <div class="cart-info">
+                    <h3>${book.titulo}</h3>
+                    <p>${book.autor}</p>
+                    <button onclick="removeFromCart(${book.id})">Eliminar</button>
+                </div>
             `;
             cartList.appendChild(bookElement);
         }
@@ -315,7 +359,7 @@ function displayCart() {
         totalElement.innerHTML = `
             <hr>
             <p><strong>Subtotal:</strong> UYU ${subtotal.toFixed(2)}</p>
-          <p><strong>Descuento (5%):</strong> -UYU ${(subtotal * descuento).toFixed(2)}</p>
+            <p><strong>Descuento (5%):</strong> -UYU ${(subtotal * descuento).toFixed(2)}</p>
             <p><strong>Total a pagar:</strong> UYU ${totalConDescuento.toFixed(2)}</p>
         `;
     } else {
@@ -341,6 +385,7 @@ function sendCartToWhatsApp() {
     window.open(whatsappUrl, "_blank");
 }
 
+// Muestra/oculta el carrito
 function initCartToggle() {
     const cartIconContainer = document.getElementById("cart-icon-container");
     if (cartIconContainer) {
@@ -348,8 +393,7 @@ function initCartToggle() {
             const cartContainer = document.getElementById("cart-container");
             if (cartContainer) {
                 cartContainer.style.display =
-                    cartContainer.style.display === "none" ||
-                        cartContainer.style.display === ""
+                    cartContainer.style.display === "none" || cartContainer.style.display === ""
                         ? "block"
                         : "none";
             }
@@ -401,8 +445,7 @@ function initCarouselDetail() {
         });
     prevButton &&
         prevButton.addEventListener("click", () => {
-            currentSlideIndex =
-                (currentSlideIndex - 1 + slides.length) % slides.length;
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
             track.style.transform = `translateX(-${slideWidth * currentSlideIndex}px)`;
         });
 }
@@ -412,6 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCarousel();
     initPopup();
     initCartToggle();
+
     if (document.getElementById("catalogo-grid") || document.getElementById("search-input")) {
         loadLibrosData(() => {
             const searchInput = document.getElementById("search-input");
@@ -419,13 +463,37 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchInput.addEventListener("input", buscarLibros);
             }
             if (document.getElementById("catalogo-grid")) {
+                populateAuthorFilter();
                 shuffleArray(librosData);
                 displayBooks(librosData);
             }
             updateCartCount();
             displayCart();
+
+            const priceRange = document.getElementById("price-range");
+            if (priceRange) {
+                priceRange.addEventListener("input", function() {
+                    const maxPrice = parseFloat(this.value);
+                    document.getElementById("price-value").textContent = "$0 - $" + maxPrice;
+                    applyFilters();
+                });
+            }
+            const authorFilter = document.getElementById("author-filter");
+            if (authorFilter) {
+                authorFilter.addEventListener("change", applyFilters);
+            }
+            const titleFilter = document.getElementById("title-filter");
+            if (titleFilter) {
+                titleFilter.addEventListener("input", applyFilters);
+            }
+            const dateSort = document.getElementById("date-sort");
+            if (dateSort) {
+                dateSort.addEventListener("change", applyFilters);
+            }
         });
     }
+
+    // Configuración para la página de detalles
     if (document.getElementById("details-content")) {
         fetch("/libros.json")
             .then((response) => response.json())
@@ -440,37 +508,37 @@ document.addEventListener("DOMContentLoaded", () => {
                     const precioOriginal = parseFloat(libro.precio.replace("UYU ", ""));
                     const precioDescuento = Math.round(precioOriginal * 0.95);
                     const estado = libro.estado || "Desconocido";
-                    const estadoClase = estado.toLowerCase().includes("nuevo")
-                        ? "nuevo"
-                        : "usado";
+                    const estadoClase = estado.toLowerCase().includes("nuevo") ? "nuevo" : "usado";
                     detailsContent.innerHTML = `
-                <div class="details-left" style="position: relative;">
-                    <img src="${imagePath}" alt="${libro.titulo}">
-                    ${estado !== "Desconocido" ? `<div class="book-status ${estadoClase}">${estado}</div>` : ""}
-                </div>
-                <div class="details-right">
-                    <h1 class="book-title">${libro.titulo}</h1>
-                    <p class="book-author">${libro.autor}</p>
-                    <p class="book-editorial"><strong>Editorial:</strong> ${libro.editorial}</p>
-                    <p class="book-isbn"><strong>ISBN:</strong> ${libro.isbn}</p>
-                    <p class="book-price"><strong>Precio:</strong> <span class="original-price">UYU ${precioOriginal}</span> <span class="discounted-price">UYU ${precioDescuento}</span> (5%)</p>
-                    <p class="book-pages"><strong>Número de páginas:</strong> ${libro.numPaginas}</p>
-                    <p class="book-description">${libro.descripcion}</p>
-                    <div class="button-container">
-                    <button class="buy-button" data-whatsapp="59894090711">Comprar</button>
-                    <button class="cart-button-detalle" onclick="addToCart(${libro.id})"><i class="fas fa-shopping-cart"></i> Añadir</button>
-                    </div>
-                    <div class="shipping-info">
-                    <h3>Envíos a todo el país por DAC.</h3>
-                    </div>
-                    <div class="payment-info">
-                    <img src="../img/pagos/mercadopago rojo.png" alt="Mercado Pago">
-                    <img src="../img/pagos/itau rojo.png" alt="Itau">
-                    <img src="../img/pagos/prex rojo.png" alt="Prex">
-                    <img src="../img/pagos/oca blue rojo.png" alt="Oca Blue">
-                    </div>
-                </div>
-                `;
+                        <div class="details-left" style="position: relative;">
+                            <img src="${imagePath}" alt="${libro.titulo}">
+                            ${estado !== "Desconocido" ? `<div class="book-status ${estadoClase}">${estado}</div>` : ""}
+                        </div>
+                        <div class="details-right">
+                            <h1 class="book-title">${libro.titulo}</h1>
+                            <p class="book-author">${libro.autor}</p>
+                            <p class="book-editorial"><strong>Editorial:</strong> ${libro.editorial}</p>
+                            <p class="book-isbn"><strong>ISBN:</strong> ${libro.isbn}</p>
+                            <p class="book-price"><strong>Precio:</strong> <span class="original-price">UYU ${precioOriginal}</span> <span class="discounted-price">UYU ${precioDescuento}</span> (5%)</p>
+                            <p class="book-pages"><strong>Número de páginas:</strong> ${libro.numPaginas}</p>
+                            <p class="book-description">${libro.descripcion}</p>
+                            <div class="button-container">
+                                <button class="buy-button" data-whatsapp="59894090711">Comprar</button>
+                                <button class="cart-button-detalle" onclick="addToCart(${libro.id})">
+                                    <i class="fas fa-shopping-cart"></i> Añadir
+                                </button>
+                            </div>
+                            <div class="shipping-info">
+                                <h3>Envíos a todo el país por DAC.</h3>
+                            </div>
+                            <div class="payment-info">
+                                <img src="../img/pagos/mercadopago rojo.png" alt="Mercado Pago">
+                                <img src="../img/pagos/itau rojo.png" alt="Itau">
+                                <img src="../img/pagos/prex rojo.png" alt="Prex">
+                                <img src="../img/pagos/oca blue rojo.png" alt="Oca Blue">
+                            </div>
+                        </div>
+                    `;
                     document.querySelector(".buy-button").addEventListener("click", (e) => {
                         const whatsappNumber = e.target.getAttribute("data-whatsapp");
                         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola,%20estoy%20interesado%20en%20comprar%20el%20libro%20${libro.titulo}%20de%20${libro.autor}`;
@@ -486,29 +554,27 @@ document.addEventListener("DOMContentLoaded", () => {
                             const bookSlide = document.createElement("div");
                             bookSlide.className = "carousel-slide";
                             bookSlide.innerHTML = `
-                    <img src="${getImagePath(libro.imagen)}" alt="${libro.titulo}">
-                    <div class="book-info">
-                        <h3 class="book-title">${libro.titulo}</h3>
-                        <p class="book-author">${libro.autor}</p>
-                        <p class="book-price">${libro.precio}</p>
-                            <button class="more-button" onclick="verMas(${libro.id})">Ver más</button>
-                    </div>
-                    `;
+                                <img src="${getImagePath(libro.imagen)}" alt="${libro.titulo}">
+                                <div class="book-info">
+                                    <h3 class="book-title">${libro.titulo}</h3>
+                                    <p class="book-author">${libro.autor}</p>
+                                    <p class="book-price">${libro.precio}</p>
+                                    <button class="more-button" onclick="verMas(${libro.id})">Ver más</button>
+                                </div>
+                            `;
                             carouselTrack.appendChild(bookSlide);
                         });
                         initCarouselDetail();
                     }
                 } else {
-                    document.getElementById("details-content").innerHTML =
-                        "<p>Libro no encontrado.</p>";
+                    document.getElementById("details-content").innerHTML = "<p>Libro no encontrado.</p>";
                 }
             })
-            .catch((error) =>
-                console.error("Error al cargar el archivo JSON:", error)
-            );
+            .catch((error) => console.error("Error al cargar el archivo JSON:", error));
     }
 });
 
+// Redirige a la página de detalles
 function verMas(id) {
     window.location.href = `public/html/libro-detalle.html?id=${id}`;
 }

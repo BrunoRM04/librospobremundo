@@ -61,17 +61,45 @@
     </header>
 
     <main>
-
         <section class="novedades-section" style="margin-top: 100px;">
             <h2><span></span>NUESTRO CATÁLOGO<span></span></h2>
         </section>
-        <div class="catalogo-container">
-            <section id="catalogo" class="catalogo-section">
-                <div class="catalogo-grid" id="catalogo-grid">
-                    <!-- Las tarjetas de los libros se cargarán aquí dinámicamente -->
+
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <div class="filter-section">
+                    <h3>Filtro de Precio</h3>
+                    <input type="range" id="price-range" min="0" max="10000" step="100">
+                    <div id="price-value">$0 - $10000</div>
                 </div>
-            </section>
+                <div class="filter-section">
+                    <h3>Autores</h3>
+                    <select id="author-filter">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="filter-section">
+                    <h3>Títulos</h3>
+                    <input type="text" id="title-filter" placeholder="Buscar título">
+                </div>
+                <div class="filter-section">
+                    <h3>Ordenar por Fecha</h3>
+                    <select id="date-sort">
+                        <option value="newest">Más nuevos a más viejos</option>
+                        <option value="oldest">Más viejos a más nuevos</option>
+                    </select>
+                </div>
+            </aside>
+
+            <div class="catalogo-container">
+                <section id="catalogo" class="catalogo-section">
+                    <div class="catalogo-grid" id="catalogo-grid">
+                        <!-- Se cargan las tarjetas de libros dinámicamente -->
+                    </div>
+                </section>
+            </div>
         </div>
+
         <div id="cart-icon-container">
             <i class="fas fa-shopping-cart"></i>
             <span id="cart-count">0</span>
@@ -86,7 +114,6 @@
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
-
     </main>
 
     <footer>
@@ -102,7 +129,7 @@
                 <img src="public/img/pagos/oca blue.png" alt="Método de pago 4">
             </div>
         </div>
-        
+
     </footer>
     <script src="public/javascript/script.js"></script>
 </body>
