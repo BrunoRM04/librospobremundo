@@ -472,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const priceRange = document.getElementById("price-range");
             if (priceRange) {
-                priceRange.addEventListener("input", function() {
+                priceRange.addEventListener("input", function () {
                     const maxPrice = parseFloat(this.value);
                     document.getElementById("price-value").textContent = "$0 - $" + maxPrice;
                     applyFilters();
@@ -576,5 +576,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Redirige a la página de detalles
 function verMas(id) {
-    window.location.href = `public/html/libro-detalle.html?id=${id}`;
+    // Si la URL actual ya contiene "public/html", entonces no se antepone la carpeta.
+    if (window.location.pathname.indexOf('/public/html/') !== -1) {
+        window.location.href = "libro-detalle.html?id=" + id;
+    } else {
+        window.location.href = "public/html/libro-detalle.html?id=" + id;
+    }
 }
