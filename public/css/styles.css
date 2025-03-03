@@ -1663,3 +1663,266 @@ footer {
         font-size: 1em;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sección de detalles del libro */
+#book-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #fff;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Área izquierda: imagen y estado */
+.details-left {
+    flex: 1 1 300px;
+    position: relative;
+    text-align: center;
+}
+
+.details-left img {
+    width: 100%;
+    max-width: 400px;
+    border: 5px solid #9E0001;
+    border-radius: 5px;
+}
+
+/* Indicador de estado (Nuevo, Usado, etc.) */
+.book-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #9E0001;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+/* Área derecha: información del libro */
+.details-right {
+    flex: 2 1 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Título */
+.details-right h1.book-title {
+    font-size: 2rem;
+    color: #9E0001;
+    margin-bottom: 10px;
+}
+
+/* Párrafos de información */
+.details-right p {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.details-right p strong {
+    color: #9E0001;
+}
+
+/* Rectángulo redondo para resaltar elementos (por ejemplo, autor) */
+.highlight-rect {
+    display: inline-block;
+    background-color: #9E0001;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Información de precios */
+.details-right .book-price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.details-right .book-price .original-price {
+    text-decoration: line-through;
+    color: #777;
+    margin-right: 10px;
+}
+
+.details-right .book-price .discounted-price {
+    color: #9E0001;
+    font-weight: bold;
+}
+
+/* Botones de acción */
+.button-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón para comprar */
+.buy-button {
+    background-color: #9E0001;
+    color: #fff;
+}
+
+.buy-button:hover {
+    background-color: #800000; /* Variante ligeramente más oscura */
+}
+
+/* Botón para agregar al carrito */
+.cart-button-detalle {
+    background-color: #000;
+    color: #fff;
+}
+
+.cart-button-detalle:hover {
+    background-color: #333;
+}
+
+/* Sección de información adicional: envíos y pagos */
+.shipping-info,
+.payment-info {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.shipping-info h3 {
+    color: #9E0001;
+    font-size: 1.2rem;
+}
+
+/* Acomodo de los logotipos de pago */
+.payment-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.payment-info img {
+    max-height: 40px;
+    margin: 10px;
+}
+
+/* Estilos para dispositivos hasta 768px */
+@media screen and (max-width: 768px) {
+    #book-details {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .details-left,
+    .details-right {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .details-left {
+        text-align: center;
+    }
+    .details-left img {
+        display: block;
+        margin: 0 auto 20px auto; /* Se añade margen inferior para separar de la info */
+    }
+    .details-right {
+        padding: 20px;
+        line-height: 1.6; /* Mejor separación en líneas */
+    }
+    .details-right h1.book-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .details-right p {
+        text-align: center;
+        margin: 0 0 15px 0; /* Separación inferior entre párrafos */
+    }
+    .button-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .shipping-info {
+        text-align: center;
+        width: 100%;
+        margin: 25px 0;
+    }
+    .payment-info {
+        display: none;
+    }
+}
+
+/* Ajustes adicionales para dispositivos hasta 425px */
+@media screen and (max-width: 425px) {
+    .details-right {
+        padding: 15px;
+    }
+    .details-right h1.book-title {
+        font-size: 1.8rem;
+    }
+    .details-right p {
+        font-size: 0.95rem;
+    }
+    .button-container {
+        margin: 15px 0;
+    }
+}
+
+/* Ajustes adicionales para dispositivos hasta 375px */
+@media screen and (max-width: 375px) {
+    .details-right {
+        padding: 10px;
+    }
+    .details-right h1.book-title {
+        font-size: 1.7rem;
+    }
+    .details-right p {
+        font-size: 0.9rem;
+    }
+    .button-container {
+        margin: 15px 0;
+    }
+}
