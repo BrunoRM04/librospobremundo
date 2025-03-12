@@ -49,10 +49,14 @@ function initCarousel() {
             const priceElement = slide.querySelector(".book-price");
             if (priceElement) {
                 const originalPrice = parseFloat(priceElement.textContent.replace("UYU ", ""));
-                const discountedPrice = Math.round(originalPrice * 0.95);
+                // Si el slide tiene el atributo data-discount, se usa ese valor; si no, se aplica 5%
+                const discountAttr = slide.getAttribute("data-discount");
+                const discountPercentage = discountAttr ? parseInt(discountAttr) : 5;
+                const discountFactor = 1 - discountPercentage / 100;
+                const discountedPrice = Math.round(originalPrice * discountFactor);
                 priceElement.innerHTML = `
                     <span class="original-price">UYU ${originalPrice}</span>
-                    <span class="discounted-price"> UYU ${discountedPrice} (-5%)</span>
+                    <span class="discounted-price"> UYU ${discountedPrice} (-${discountPercentage}%)</span>
                 `;
             }
         });
@@ -110,6 +114,39 @@ function initCarousel() {
                 track.style.transform = `translateX(-${currentSlide.style.left})`;
             }
         });
+    });
+}
+
+// Función que asigna el clic a las imágenes de las tarjetas de libros (tanto en index como en catálogo)
+// sin modificar el HTML. Busca imágenes en elementos con clase .book-card o .catalogo-card.
+function attachBookImageClick() {
+    // Seleccionamos imágenes en ambos contenedores
+    const selectors = [".book-card img", ".catalogo-card img"];
+    const bookImages = document.querySelectorAll(selectors.join(", "));
+    bookImages.forEach((img) => {
+        if (!img.dataset.clickAttached) {
+            // Buscamos el contenedor más cercano, ya sea .book-card o .catalogo-card
+            const bookCard = img.closest(".book-card") || img.closest(".catalogo-card");
+            if (bookCard) {
+                // Buscamos el botón "Ver más" o "catalogo-vermas-button"
+                const moreButton = bookCard.querySelector(".more-button") || bookCard.querySelector(".catalogo-vermas-button");
+                if (moreButton) {
+                    const onclickAttr = moreButton.getAttribute("onclick");
+                    if (onclickAttr) {
+                        // Se espera el formato verMas(123)
+                        const match = onclickAttr.match(/verMas\((\d+)\)/);
+                        if (match) {
+                            const bookId = match[1];
+                            img.style.cursor = "pointer";
+                            img.addEventListener("click", () => {
+                                verMas(bookId);
+                            });
+                            img.dataset.clickAttached = "true";
+                        }
+                    }
+                }
+            }
+        }
     });
 }
 
@@ -232,7 +269,10 @@ function displayBooks(booksArray) {
         const bookCard = document.createElement("div");
         bookCard.classList.add("catalogo-card");
         const precioOriginal = parseFloat(libro.precio.replace("UYU ", ""));
-        const precioDescuento = Math.round(precioOriginal * 0.95);
+        // Si el libro es uno de los especiales, aplicar 15% de descuento; de lo contrario, 5%
+        const discountPercentage = (libro.id === 1068 || libro.id === 1069) ? 15 : 5;
+        const discountFactor = 1 - discountPercentage / 100;
+        const precioDescuento = Math.round(precioOriginal * discountFactor);
         const bookStatus = libro.estado
             ? `<div class="book-status ${libro.estado}">${libro.estado.charAt(0).toUpperCase() + libro.estado.slice(1)}</div>`
             : "";
@@ -245,7 +285,7 @@ function displayBooks(booksArray) {
                 <p class="catalogo-author">${libro.autor}</p>
                 <p class="catalogo-price">
                     <span class="original-price">UYU ${precioOriginal}</span>
-                    <span class="discounted-price">UYU ${precioDescuento}</span> (-5%)
+                    <span class="discounted-price">UYU ${precioDescuento}</span> (-${discountPercentage}%)
                 </p>
                 <div class="catalogo-buttons">
                     <button class="catalogo-vermas-button" onclick="verMas(${libro.id})">Ver más</button>
@@ -328,12 +368,18 @@ function displayCart() {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     cartList.innerHTML = "";
     let subtotal = 0;
+    let discountedSubtotal = 0;
     cart.forEach((item) => {
         const book = librosData.find((libro) => libro.id === item.bookId);
         if (book) {
             const priceNumber = parseFloat(book.precio.replace("UYU", "").trim());
             const itemTotal = priceNumber * item.quantity;
             subtotal += itemTotal;
+            // Si el libro es especial, descuento 15%, sino 5%
+            const discountPercentage = (book.id === 1068 || book.id === 1069) ? 15 : 5;
+            const discountFactor = 1 - discountPercentage / 100;
+            const discountedUnitPrice = Math.round(priceNumber * discountFactor);
+            discountedSubtotal += discountedUnitPrice * item.quantity;
             const bookElement = document.createElement("div");
             bookElement.className = "cart-book";
             bookElement.innerHTML = `
@@ -347,8 +393,7 @@ function displayCart() {
             cartList.appendChild(bookElement);
         }
     });
-    const descuento = 0.05;
-    const totalConDescuento = subtotal - subtotal * descuento;
+    const discountTotal = subtotal - discountedSubtotal;
     let totalElement = document.getElementById("cart-total");
     if (!totalElement) {
         totalElement = document.createElement("div");
@@ -359,8 +404,8 @@ function displayCart() {
         totalElement.innerHTML = `
             <hr>
             <p><strong>Subtotal:</strong> UYU ${subtotal.toFixed(2)}</p>
-            <p><strong>Descuento (5%):</strong> -UYU ${(subtotal * descuento).toFixed(2)}</p>
-            <p><strong>Total a pagar:</strong> UYU ${totalConDescuento.toFixed(2)}</p>
+            <p><strong>Descuento total:</strong> -UYU ${discountTotal.toFixed(2)}</p>
+            <p><strong>Total a pagar:</strong> UYU ${discountedSubtotal.toFixed(2)}</p>
         `;
     } else {
         totalElement.innerHTML = "<p>El carrito está vacío.</p>";
@@ -490,6 +535,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (dateSort) {
                 dateSort.addEventListener("change", applyFilters);
             }
+            // Asigna el clic a las imágenes en las tarjetas de libro (incluye catálogo)
+            attachBookImageClick();
         });
     }
 
@@ -506,7 +553,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     const detailsContent = document.getElementById("details-content");
                     const imagePath = getImagePath(libro.imagen);
                     const precioOriginal = parseFloat(libro.precio.replace("UYU ", ""));
-                    const precioDescuento = Math.round(precioOriginal * 0.95);
+                    // Si el libro es especial, descuento 15%; de lo contrario, 5%
+                    const discountPercentage = (libro.id === 1068 || libro.id === 1069) ? 15 : 5;
+                    const discountFactor = 1 - discountPercentage / 100;
+                    const precioDescuento = Math.round(precioOriginal * discountFactor);
                     const estado = libro.estado || "Desconocido";
                     const estadoClase = estado.toLowerCase().includes("nuevo") ? "nuevo" : "usado";
                     detailsContent.innerHTML = `
@@ -519,7 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="book-author">${libro.autor}</p>
                             <p class="book-editorial"><strong>Editorial:</strong> ${libro.editorial}</p>
                             <p class="book-isbn"><strong>ISBN:</strong> ${libro.isbn}</p>
-                            <p class="book-price"><strong>Precio:</strong> <span class="original-price">UYU ${precioOriginal}</span> <span class="discounted-price">UYU ${precioDescuento}</span> (5%)</p>
+                            <p class="book-price"><strong>Precio:</strong> <span class="original-price">UYU ${precioOriginal}</span> <span class="discounted-price">UYU ${precioDescuento}</span> (-${discountPercentage}%)</p>
                             <p class="book-pages"><strong>Número de páginas:</strong> ${libro.numPaginas}</p>
                             <p class="book-description">${libro.descripcion}</p>
                             <div class="button-container">
@@ -565,6 +615,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             carouselTrack.appendChild(bookSlide);
                         });
                         initCarouselDetail();
+                        // Asigna también el clic a las imágenes en el carrusel de detalles
+                        attachBookImageClick();
                     }
                 } else {
                     document.getElementById("details-content").innerHTML = "<p>Libro no encontrado.</p>";
@@ -572,6 +624,9 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch((error) => console.error("Error al cargar el archivo JSON:", error));
     }
+
+    // Por último, asigna el clic a cualquier imagen que ya esté en el DOM
+    attachBookImageClick();
 });
 
 // Redirige a la página de detalles
