@@ -8,8 +8,7 @@
         "numPaginas": 178,
         "precio": "UYU 850",
         "descripcion": "La puntuación, como sabemos, tiene una larga historia, desde los libros de cuentas de los antiguos escribas egipcios hasta los últimos smileys. Sin dejar de prestar la máxima atención al arte de la puntuación en sus formas clásica y contemporánea, este libro pretende abrir un campo más amplio: el de la estigmatología (del griego stigmê: 'punto'), que analiza los efectos de puntuación allí donde aparecen. En la experiencia estética, en primer lugar: escuchar, mirar, significa siempre puntuar la imagen o el sonido, como ejemplifican la práctica de la auscultación (que dista mucho de limitarse a la medicina) o la práctica del cabeceo en el cine. En segundo lugar, en la narrativa y en la producción autobiográfica del yo: el sujeto no es más que la secuela de una serie de puntuaciones, como sugieren el psicoanálisis y la literatura, desde Tristram Shandy hasta Lacan y el extraordinario cuento de Chéjov El signo de exclamación. Para describir todos estos efectos de puntuación, intentamos finalmente construir un concepto filosófico de la puntuación -con Hegel, Nietzsche y algunos otros- que esté atento al ritmo y a la pulsación del fraseo, así como a las implicaciones políticas inherentes a cada punto final. P. Sz.",
-        "imagen": "./public/img/portadas/a fuerza de puntos.jpg",
-        "categoria": "Filosofía"
+        "imagen": "./public/img/portadas/a fuerza de puntos.jpg"
     },
     {
         "id": 2,
@@ -11794,5 +11793,82 @@
         "precio": "UYU 950",
         "descripcion": "«… ese mayo de locos que termina esta noche, un clavo ardiente hecho de comunicados rimbombantes y titulares grandilocuentes y gallardías desbordadas…, y la puta necesidad de encajar…». Buenos Aires, 2 de abril de 1982. Los argentinos amanecen con una novedad mayúscula: “¡Recuperamos las Malvinas!”. Y así comienzan tres meses inolvidables, tres meses en que aquellas islas de los mapas escolares se vuelven el eje de la conmoción social, tres meses en que los protagonistas de esta historia pasarán de la euforia a la desolación. Y comienza también la pesadilla para las familias de Carlitos, Antonio y el Conejo, soldados conscriptos clase 1962 recién licenciados, que son reincorporados y enviados a pelear. A miles de kilómetros del escenario del conflicto, en medio de la desinformación y la publicidad engañosa, la guerra contra los ingleses es una abstracción, un relato borroso y escurridizo que cada quien puebla con sus propias fantasías y preconceptos. Unidos o enfrentados, lúcidos u obnubilados, los personajes de este gran fresco de Eduardo Sacheri atravesarán, junto con los lectores, este período vertiginoso, contradictorio y plagado de significados de la historia argentina reciente.",
         "imagen": "https://f.fcdn.app/imgs/6993ad/grupolibros.com.uy/gli/be9a/webp/catalogo/978991569079797899156907971/345x535/demasiado-lejos-demasiado-lejos.jpg"
+    },
+    {
+        "id": 1070,
+        "titulo": "ABEL",
+        "autor": "ALESSANDRO BARICCO",
+        "isbn": 9788433927316,
+        "editorial": "ANAGRAMA",
+        "numPaginas": 176,
+        "precio": "UYU 790",
+        "descripcion": "Ocho años después de su última novela, Baricco regresa con un western excepcional y trascendente. El sheriff Abel Crow tiene 27 años y ya es un personaje de leyenda. Sus dotes innatas como tirador —su disparo preferido es «el Místico», uno doble, cruzado y simultáneo, con ambas manos, sobre blancos distintos—, no podrán evitar, sin embargo, que en un momento crítico se replantee el sentido de la existencia. Las relaciones, entre otros, con su novia, que entra y sale libremente de su vida, pero que lo conoce incluso mejor que él mismo; con sus hermanos (un predicador, un rico minero, un cartero demente y una visionaria, empeñada en reunirlos a todos para rescatar del patíbulo a su madre, que los abandonó cuando eran niños); con las curanderas y una bruja indias, portadoras de la sabiduría ancestral de los nativos; y con su Maestro, quien siendo adolescente logró aniquilar a casi toda la tripulación de un barco pirata, constituyen parte de un viaje espiritual que culmina con la percepción de que no existe (o no funciona como pensamos) la relación causa-efecto, de que no hay un antes y un después claramente definibles. Buena prueba de ello es también la estructura no lineal del relato, que avanza, retrocede y se repite, y donde cada uno de los veintisiete capítulos (o cantos) constituye una pieza de un puzle que al final nos devolverá la imagen caleidoscópica de Abel Crow durante su aprendizaje. Baricco nos presenta así un western que pone en cuestión una de las piedras angulares del género, la noción de frontera, desplazándola aquí del exterior al interior: es límite y confín entre lo visible y lo invisible, entre lo físico y lo metafísico, entre la vida y la muerte. Si los espacios son los propios del género, como en una película de Sergio Leone (las praderas interminables, el pueblo, con su banco y su saloon, las aldeas indias, el río de aguas bravas, el desierto abrasador…), no dejan de ser también reverberaciones de una unidad profunda del universo, del mismo modo que todos y cada uno de nosotros somos parte de un único aliento.",
+        "imagen": "https://imagessl6.casadellibro.com/a/l/s7/16/9788433927316.webp"
+    },
+    {
+        "id": 1071,
+        "titulo": "AFIRMACIÓN Y RESISTENCIA",
+        "autor": "CARLOS MARTÍN BERISTAIN / FRANCESC RIERA",
+        "isbn": 9788488455055,
+        "editorial": "VIRUS",
+        "numPaginas": 220,
+        "precio": "UYU 690",
+        "descripcion": "A partir de los testimonios de personas que han sufrido tortura, encarcelamiento o «desaparición» en Latinoamérica se analizan fines y consecuencias psicológicas de los métodos represivos empleados, proponiéndose una metodología que, tomando la comunidad como apoyo, permita contrarrestar y afrontar los problemas originados por la represión.",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNsd1i3yNkpxFQfLHPTS0ibyCrXhSC7UDSDg&s"
+    },
+    {
+        "id": 1072,
+        "titulo": "ALQUIMIA Y RELIGIÓN. LO OCULTO EN LOS SIGLOS XVI Y XVII",
+        "autor": "RAIMON AROLA",
+        "isbn": 9788418708572,
+        "editorial": "SIRUELA",
+        "numPaginas": 280,
+        "precio": "UYU 1515",
+        "descripcion": "En esta edición revisada de Alquimia y religión, Raimon Arola amplía el volumen original con sus investigaciones acerca de «lo oculto», situando este concepto como lo que está detrás de un velo, alejándose así de lo que se conoce como ocultismo, el movimiento del siglo XIX, que, en general, fue una degeneración de las ciencias tradicionales. En la primera parte del libro se incide en el estudio de la alquimia tal y como se conformó en la Edad Moderna, en especial a partir de Paracelso, cuando se convirtió en el lugar donde algunos sabios concentraron un tesoro de conocimiento y desarrollo espiritual que, según ellos, debía llegar a convertirse en el núcleo interior y secreto de la tradición cristiana, así como el impulso necesario para una reforma religiosa. Con el racionalismo que se impuso en Europa a finales del siglo XVII, a esta ciencia o arte se la encerró en un cajón de sastre —ocultismo, espiritismo, esoterismo, etc.— y se la consideró como algo ajeno a la religión. Sin embargo, tras la aparente locura de los antiguos alquimistas se esconde una enseñanza que merece ser tenida en cuenta por los filósofos e historiadores de las religiones, de las artes y de las ciencias actuales. Sus postulados esclarecen registros y modos del ser humano que han permanecido olvidados o enmarcados en campos disciplinares ajenos a la vida del espíritu. Con este olvido, se ha marginado del pensamiento occidental su universo simbólico más íntimo, expresado básicamente por medio de imágenes.",
+        "imagen": "https://imagessl2.casadellibro.com/a/l/s7/72/9788418708572.webp"
+    },
+    {
+        "id": 1073,
+        "titulo": "AMOR POR UN PUÑADO DE PELOS",
+        "autor": "MOHAMED MRABET",
+        "isbn": 9788494443411,
+        "editorial": "CABARET VOLTAIRE",
+        "numPaginas": 224,
+        "precio": "UYU 1300",
+        "descripcion": "En el clima mágico que envuelve los actos y sentimientos de los personajes de este relato, descubrimos uno de los temas más recurrentes de la cultura marroquí: la brujería como medio para conseguir o para deshacer un amor. Mohamed y Mina son los dos jóvenes marginales que protagonizan esta truculenta historia de amor marcada por hechizos, filtros, maleficios y venenos. Una acción que contrasta con la seducción cosmopolita del Tánger internacional donde se desarrolla y con la peculiar relación de amistad que Mohamed mantiene con Mr. David, un inglés dueño de un pequeño hotel. 'Amor por un puñado de pelos' se publicó en 1967 y fue el primer resultado de una larga colaboración literaria entre Paul Bowles y Mohamed Mrabet.",
+        "imagen": "https://imagessl1.casadellibro.com/a/l/s7/11/9788494443411.webp"
+    },
+    {
+        "id": 1074,
+        "titulo": "ANIMALES LUMINOSOS",
+        "autor": "JEREMÍAS GAMBOA",
+        "isbn": 9788439739692,
+        "editorial": "EDITORIAL SUDAMERICANA",
+        "numPaginas": 224,
+        "precio": "UYU 790",
+        "descripcion": "Un estudiante llega a una universidad de Colorado, en los Estados Unidos, en busca del sueño americano en su versión académica. La promesa del campus como un santuario en cuyas fronteras se han resuelto los problemas de Occidente —origen, raza, clase— sucumbe ante la realidad nocturna: los alumnos deambulan por los extramuros de la ciudad, a la caza de todo aquello que el día les niega: luz, compañía, ternura, certezas. La mirada del protagonista explora las historias que se enhebran durante una noche interminable: la obsesión por Sudamérica como destino romántico, sexual y político; los amores paralelos y tóxicos; la necesidad de borrar las señas de identidad para crear otras nuevas; la literatura como resguardo; el futuro en la forma de una oscuridad apenas iluminada por algunas estrellas lejanas y ajenas. 'Animales luminosos' es una novela íntima donde se abordan los temas fundamentales de nuestro tiempo, como la migración y el choque cultural. Pero también los pequeños grandes dramas de un grupo de amigos que viven sus dudas con una profunda vitalidad, una en la que el amor se torna refugio y quizá, también, respuesta.",
+        "imagen": "https://www.bookshop.com.uy/media/catalog/product/cache/da73607d3528e7d3c6633d199d3d4f17/a/n/animales_luminosos.jpg"
+    },
+    {
+        "id": 1075,
+        "titulo": "ANTEPARAÍSO",
+        "autor": "RAÚL ZURITA",
+        "isbn": 9788426424129,
+        "editorial": "LUMEN",
+        "numPaginas": 168,
+        "precio": "UYU 890",
+        "descripcion": "Un libro clave en la obra de Raúl Zurita, premio Reina Sofía de Poesía y uno de los poetas vivos más deslumbrantes de la lengua española. \"[Una poesía] que emerge, es alternativamente fría, suave, estremecedora y finalmente liberadora\". John Ashbery. Cuando 'Anteparaíso' se publicó originalmente en 1982 supuso el arribo a cimas y el descenso a abismos impensados para la poesía en lengua castellana. Esta edición, que al cabo de cuarenta años el autor presenta en su 'versión final', revela cómo toda su alucinada energía, su violencia y su belleza desgarradas siguen no sólo intactas, sino multiplicadas en los paisajes y amores, en los sueños y cielos que pueblan sus páginas.",
+        "imagen": "https://isadoralibros.com.uy/cdn/shop/files/isaci-23290_9788426424129_8a5812c0-7c18-4114-99c9-ba96bda3b791.jpg?v=1731685443&width=493"
+    },
+    {
+        "id": 1076,
+        "titulo": "APRENDIENDO A TRABAJAR. COMO LOS CHICOS DE LA CLASE OBRERA CONSIGUEN TRABAJOS DE CLASE OBRERA",
+        "autor": "PAUL WILLIS",
+        "isbn": 9788446044987,
+        "editorial": "EDICIONES AKAL",
+        "numPaginas": 304,
+        "precio": "UYU 1520",
+        "descripcion": "¿Por qué los chicos de orígenes obreros abandonan la escuela a las primeras de cambio y se dedican a trabajos poco cualificados? A lo largo de tres años Paul Willis estudió profundamente estos problemas, siguiendo la trayectoria de un grupo de chicos británicos desde sus dos últimos años en la escuela hasta sus primeros meses en el trabajo. El libro muestra cómo para una parte importante de ellos es su propia cultura la que bloquea la enseñanza e impide la realización de los objetivos educativos liberales.",
+        "imagen": "https://imagessl7.casadellibro.com/a/l/s7/87/9788446044987.webp"
     }
 ]

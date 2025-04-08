@@ -292,6 +292,9 @@ function displayBooks(booksArray) {
                     <button class="catalogo-cart-button" onclick="addToCart(${libro.id})">
                         <i class="fas fa-shopping-cart"></i> Añadir
                     </button>
+                    <button class="catalogo-buy-button" onclick="comprarLibro(${libro.id})">
+    <i class="fas fa-credit-card"></i> Comprar
+</button>
                 </div>
             </div>
             ${bookStatus}
@@ -589,10 +592,29 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                         </div>
                     `;
-                    document.querySelector(".buy-button").addEventListener("click", (e) => {
-                        const whatsappNumber = e.target.getAttribute("data-whatsapp");
-                        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola,%20estoy%20interesado%20en%20comprar%20el%20libro%20${libro.titulo}%20de%20${libro.autor}`;
-                        window.open(whatsappUrl, "_blank");
+                    document.querySelector(".buy-button").addEventListener("click", () => {
+                        fetch("http://localhost:3000/crear-preferencia", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                titulo: libro.titulo,
+                                precio: Math.round(precioDescuento)  // Usa el precio con descuento
+                            })
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.init_point) {
+                                    window.location.href = data.init_point;
+                                } else {
+                                    alert("No se pudo generar el link de pago.");
+                                }
+                            })
+                            .catch(err => {
+                                console.error("❌ Error al crear preferencia:", err);
+                                alert("Ocurrió un error al generar el pago.");
+                            });
                     });
                     const randomBooks = getRandomBooks(
                         data.filter((item) => item.id != bookId),
@@ -638,3 +660,70 @@ function verMas(id) {
         window.location.href = "public/html/libro-detalle.html?id=" + id;
     }
 }
+
+function comprarLibro(id) {
+    const libro = librosData.find((libro) => libro.id === id);
+    if (!libro) return;
+
+    const precioOriginal = parseFloat(libro.precio.replace("UYU", ""));
+    const descuento = (libro.id === 1068 || libro.id === 1069) ? 15 : 5;
+    const precioFinal = Math.round(precioOriginal * (1 - descuento / 100));
+
+    fetch("http://localhost:3000/crear-preferencia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ titulo: libro.titulo, precio: precioFinal })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.init_point) {
+            window.location.href = data.init_point;
+        } else {
+            alert("Error al generar el pago.");
+        }
+    })
+    .catch(err => {
+        console.error("❌ Error:", err);
+        alert("No se pudo conectar con el servidor de pago.");
+    });
+}
+
+document.getElementById("pay-cart-button").addEventListener("click", () => {
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
+
+    let total = 0;
+    let titulo = "Compra múltiple: ";
+
+    cart.forEach((item, index) => {
+        const libro = librosData.find(libro => libro.id === item.bookId);
+        if (libro) {
+            const precio = parseFloat(libro.precio.replace("UYU", ""));
+            const descuento = (libro.id === 1068 || libro.id === 1069) ? 15 : 5;
+            const precioFinal = Math.round(precio * (1 - descuento / 100));
+            total += precioFinal * item.quantity;
+            titulo += `${libro.titulo}${index < cart.length - 1 ? ", " : ""}`;
+        }
+    });
+
+    fetch("http://localhost:3000/crear-preferencia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ titulo: titulo, precio: total })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.init_point) {
+            window.location.href = data.init_point;
+        } else {
+            alert("No se pudo generar el link de pago.");
+        }
+    })
+    .catch(err => {
+        console.error("❌ Error:", err);
+        alert("Ocurrió un error al generar el pago.");
+    });
+});
