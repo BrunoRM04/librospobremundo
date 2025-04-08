@@ -593,7 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     `;
                     document.querySelector(".buy-button").addEventListener("click", () => {
-                        fetch("http://localhost:3000/crear-preferencia", {
+                        fetch("https://librospobremundo.onrender.com/crear-preferencia", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
@@ -669,7 +669,7 @@ function comprarLibro(id) {
     const descuento = (libro.id === 1068 || libro.id === 1069) ? 15 : 5;
     const precioFinal = Math.round(precioOriginal * (1 - descuento / 100));
 
-    fetch("http://localhost:3000/crear-preferencia", {
+    fetch("https://librospobremundo.onrender.com/crear-preferencia", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ titulo: libro.titulo, precio: precioFinal })
@@ -709,9 +709,9 @@ document.getElementById("pay-cart-button").addEventListener("click", () => {
         }
     });
 
-    fetch("http://localhost:3000/crear-preferencia", {
+    fetch("https://librospobremundo.onrender.com/crear-preferencia", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headerFs: { "Content-Type": "application/json" },
         body: JSON.stringify({ titulo: titulo, precio: total })
     })
     .then(res => res.json())
