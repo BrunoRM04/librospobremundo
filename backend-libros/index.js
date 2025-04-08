@@ -8,8 +8,8 @@ app.use(cors());
 
 // Configurar credenciales
 mercadopago.configure({
-    access_token: process.env.MERCADOPAGO_TOKEN
-}); 
+    access_token: process.env.ACCESS_TOKEN
+});
 
 // Ruta que crea una preferencia de pago
 app.post("/crear-preferencia", async (req, res) => {
