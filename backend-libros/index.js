@@ -30,7 +30,8 @@ app.post("/crear-preferencia", async (req, res) => {
                 failure: "http://localhost:5500/public/html/failure.html",
                 pending: "http://localhost:5500/public/html/pending.html"
             },
-            auto_return: "approved"
+            auto_return: "approved",
+            installments: 12
         };
 
         const response = await mercadopago.preferences.create(preference);
